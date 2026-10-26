@@ -87,7 +87,7 @@
             max-width: 380px;
             height: 94vh;
             max-height: 800px;
-            padding: 26px 20px;
+            padding: 24px 20px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -115,10 +115,10 @@
             width: 100%;
         }
 
-        /* LOGO PRINCIPALE ANCOR PIÙ GRANDE */
+        /* LOGO PRINCIPALE MOLTO GRANDE */
         .main-logo-container {
             width: 100%;
-            max-height: 105px;
+            max-height: 115px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -128,20 +128,20 @@
         }
 
         .main-logo-img {
-            max-width: 95%;
-            max-height: 100px;
+            max-width: 100%;
+            max-height: 110px;
             object-fit: contain;
         }
 
-        /* RUOLO / CONCESSIONARIA SU DUE RIGHE E PIÙ GRANDE */
+        /* RUOLO / CONCESSIONARIA MOLTO PIÙ GRANDE E SU DUE RIGHE */
         .job-title {
-            font-size: 0.78rem;
+            font-size: 0.85rem;
             font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: 0.8px;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.75);
+            color: rgba(255, 255, 255, 0.85);
             margin-top: 10px;
-            line-height: 1.4;
+            line-height: 1.35;
             opacity: 0;
             transform: translateY(25px);
             filter: blur(12px);
@@ -153,7 +153,7 @@
             width: 100px;
             height: 3px;
             background-color: #e60000;
-            margin: 12px auto 16px auto;
+            margin: 10px auto 14px auto;
             border-radius: 2px;
             opacity: 0;
             transform: scaleX(0);
@@ -165,7 +165,7 @@
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 9px;
+            gap: 8px;
             width: 100%;
         }
 
@@ -177,10 +177,10 @@
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 12px;
-            padding: 10px 14px;
+            padding: 9px 14px;
             color: #ffffff;
             text-decoration: none;
-            font-size: 0.88rem;
+            font-size: 0.86rem;
             font-weight: 500;
             letter-spacing: 0.3px;
             opacity: 0;
@@ -236,7 +236,7 @@
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 12px;
-            padding: 9px;
+            padding: 8px;
             color: #ffffff;
             text-decoration: none;
             font-size: 0.8rem;
@@ -253,7 +253,7 @@
         /* AZIENDA & PARTITA IVA */
         .company-info {
             text-align: center;
-            font-size: 0.78rem;
+            font-size: 0.76rem;
             line-height: 1.4;
             color: rgba(255, 255, 255, 0.8);
             opacity: 0;
@@ -266,7 +266,7 @@
 
         .company-name {
             font-weight: 800;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             margin-bottom: 2px;
             color: #ffffff;
             letter-spacing: 0.5px;
@@ -276,7 +276,7 @@
             color: rgba(255, 255, 255, 0.6) !important;
             -webkit-text-fill-color: rgba(255, 255, 255, 0.6) !important;
             text-decoration: none !important;
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             font-weight: 500;
             display: block;
             margin-top: 2px;
@@ -289,98 +289,4 @@
             animation: fadeInVerySlow 3.2s cubic-bezier(0.1, 1, 0.2, 1) forwards;
         }
 
-        .animate-line {
-            animation: expandLineVerySlow 3.2s cubic-bezier(0.1, 1, 0.2, 1) forwards;
-        }
-
-        @keyframes fadeInVerySlow {
-            0% {
-                opacity: 0;
-                transform: translateY(25px);
-                filter: blur(12px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-                filter: blur(0px);
-            }
-        }
-
-        @keyframes expandLineVerySlow {
-            0% {
-                opacity: 0;
-                transform: scaleX(0);
-            }
-            100% {
-                opacity: 1;
-                transform: scaleX(1);
-            }
-        }
-
-        /* TEMPI DI APPARIZIONE SEQUENZIALI */
-        .delay-1 { animation-delay: 3.8s; } /* Logo principale */
-        .delay-2 { animation-delay: 4.3s; } /* Ruolo / Concessionaria */
-        .delay-3 { animation-delay: 4.8s; } /* Linea Rossa */
-        .delay-4 { animation-delay: 5.3s; } /* Email */
-        .delay-5 { animation-delay: 5.8s; } /* Telefono */
-        .delay-6 { animation-delay: 6.3s; } /* Soccorso H24 */
-        .delay-7 { animation-delay: 6.8s; } /* Social & Web */
-        .delay-8 { animation-delay: 7.3s; } /* Info Aziendali */
-    </style>
-</head>
-
-<body>
-
-    <!-- INTRO LOGO -->
-    <div id="loader">
-        <img src="logo intro.png" alt="Logo" class="intro-logo-img">
-    </div>
-
-    <!-- CARD DIGITALE -->
-    <div class="card">
-        <div class="header-content">
-            <!-- Logo Principale Ingrandito -->
-            <div class="main-logo-container animate-in delay-1">
-                <img src="logo impromart.png" alt="Logo Impromart" class="main-logo-img">
-            </div>
-
-            <!-- Ruolo / Concessionaria su due righe -->
-            <div class="job-title animate-in delay-2">
-                CONCESSIONARIA E OFFICINA<br>AUTORIZZATA MAN
-            </div>
-
-            <!-- Linea Rossa MAN -->
-            <div class="red-line animate-line delay-3"></div>
-
-            <!-- Contatti -->
-            <div class="contact-info">
-                <!-- EMAIL -->
-                <a href="mailto:info@impromart.com" class="btn-action animate-in delay-4">
-                    <svg class="svg-icon" viewBox="0 0 24 24">
-                        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                    </svg>
-                    info@impromart.com
-                </a>
-
-                <!-- TELEFONO PRINCIPALE -->
-                <a href="#" onclick="handlePhoneClick(event)" class="btn-action animate-in delay-5">
-                    <svg class="svg-icon" viewBox="0 0 24 24">
-                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                    </svg>
-                    +39 081 596 2139
-                </a>
-
-                <!-- SOCCORSO H24 -->
-                <a href="tel:999999999" class="btn-action animate-in delay-6">
-                    <span class="h24-badge">H24</span>
-                    Soccorso: 999 9999 999
-                </a>
-            </div>
-        </div>
-
-        <!-- SOCIAL & WEB -->
-        <div class="social-web-container animate-in delay-7">
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/impromart.it?mdxt=MThyZjU2eXNuYW5zbA==" target="_blank" class="btn-social">
-                <svg class="svg-icon" viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.0
+        .
