@@ -22,10 +22,17 @@
             padding: 0;
         }
 
-        html, body {
+        html {
+            background-color: #000000;
             width: 100%;
             height: 100%;
-            background-color: #000000;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            min-height: 100vh;
+            min-height: 100dvh;
             background: radial-gradient(circle at center, #3a4b5d 0%, #1e2732 100%);
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             color: #ffffff;
@@ -46,55 +53,59 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 99999;
-            transition: opacity 0.8s ease;
+            z-index: 9999;
+            transition: opacity 1s ease;
         }
 
-        #loader.fade-out {
+        #loader.hidden {
             opacity: 0;
             pointer-events: none;
         }
 
         .intro-logo-img {
-            max-width: 60vw;
-            max-height: 40vh;
+            max-width: 50vw;
+            max-height: 35vh;
             object-fit: contain;
-            animation: pulseIntro 2.5s ease infinite alternate;
+            opacity: 0;
+            transform: scale(0.92);
+            filter: blur(12px);
+            animation: continuousZoomFade 2.8s linear forwards;
         }
 
-        @keyframes pulseIntro {
-            0% { transform: scale(0.95); opacity: 0.8; }
-            100% { transform: scale(1.05); opacity: 1; }
+        @keyframes continuousZoomFade {
+            0% { opacity: 0; transform: scale(0.92); filter: blur(12px); }
+            30% { opacity: 1; filter: blur(0px); }
+            70% { opacity: 1; filter: blur(0px); }
+            100% { opacity: 0; transform: scale(1.05); filter: blur(10px); }
         }
 
         /* ----------------------------------------------------
             2. BIGLIETTO DA VISITA DIGITALE
         ---------------------------------------------------- */
         .card {
-            width: 92%;
+            width: 90%;
             max-width: 380px;
-            height: 90vh;
-            max-height: 750px;
-            padding: 22px 18px;
+            height: 94vh;
+            max-height: 800px;
+            padding: 26px 20px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
             text-align: center;
-            background: rgba(255, 255, 255, 0.04);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-sizing: border-box;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 24px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
             opacity: 0;
-            transform: translateY(15px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+            animation: fadeInCard 1.2s ease forwards 2.8s;
         }
 
-        .card.visible {
-            opacity: 1;
-            transform: translateY(0);
+        @keyframes fadeInCard {
+            to { opacity: 1; }
         }
 
         .header-content {
@@ -104,48 +115,57 @@
             width: 100%;
         }
 
-        /* LOGO PRINCIPALE */
+        /* LOGO PRINCIPALE ANCOR PIÙ GRANDE */
         .main-logo-container {
             width: 100%;
-            height: 85px;
+            max-height: 105px;
             display: flex;
             align-items: center;
             justify-content: center;
+            opacity: 0;
+            transform: translateY(25px);
+            filter: blur(12px);
         }
 
         .main-logo-img {
-            max-width: 90%;
-            max-height: 80px;
+            max-width: 95%;
+            max-height: 100px;
             object-fit: contain;
         }
 
-        /* RUOLO / CONCESSIONARIA SU DUE RIGHE */
+        /* RUOLO / CONCESSIONARIA SU DUE RIGHE E PIÙ GRANDE */
         .job-title {
-            font-size: 0.82rem;
+            font-size: 0.78rem;
             font-weight: 700;
-            letter-spacing: 0.8px;
+            letter-spacing: 1px;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.85);
-            margin-top: 8px;
-            line-height: 1.35;
+            color: rgba(255, 255, 255, 0.75);
+            margin-top: 10px;
+            line-height: 1.4;
+            opacity: 0;
+            transform: translateY(25px);
+            filter: blur(12px);
             width: 100%;
         }
 
         /* LINEA ROSSA MAN */
         .red-line {
-            width: 90px;
+            width: 100px;
             height: 3px;
             background-color: #e60000;
-            margin: 10px auto;
+            margin: 12px auto 16px auto;
             border-radius: 2px;
-            box-shadow: 0 0 10px rgba(230, 0, 0, 0.6);
+            opacity: 0;
+            transform: scaleX(0);
+            transform-origin: center;
+            box-shadow: 0 0 12px rgba(230, 0, 0, 0.5);
         }
 
-        /* CONTATTI (PULSANTI) */
+        /* CONTATTI (PULSANTI/SCHEDE) */
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 9px;
             width: 100%;
         }
 
@@ -153,48 +173,58 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            background: rgba(255, 255, 255, 0.06);
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 12px;
-            padding: 9px 12px;
+            padding: 10px 14px;
             color: #ffffff;
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.88rem;
             font-weight: 500;
-            transition: background 0.2s ease, transform 0.1s ease;
+            letter-spacing: 0.3px;
+            opacity: 0;
+            transform: translateY(25px);
+            filter: blur(10px);
+            transition: all 0.2s ease;
+            cursor: pointer;
         }
 
         .btn-action:active {
-            background: rgba(230, 0, 0, 0.25);
+            background: rgba(230, 0, 0, 0.2);
             border-color: #e60000;
             transform: scale(0.98);
         }
 
         /* ICONE VETTORIALI BIANCHE */
         .svg-icon {
-            width: 16px;
-            height: 16px;
+            width: 18px;
+            height: 18px;
             fill: #ffffff;
             flex-shrink: 0;
         }
 
-        /* BADGE H24 */
+        /* BADGE H24 PERSONALIZZATO */
         .h24-badge {
             background-color: #e60000;
             color: #ffffff;
-            font-size: 0.6rem;
+            font-size: 0.65rem;
             font-weight: 800;
-            padding: 2px 5px;
+            padding: 3px 6px;
             border-radius: 4px;
+            letter-spacing: 0.5px;
+            flex-shrink: 0;
             box-shadow: 0 0 8px rgba(230, 0, 0, 0.6);
         }
 
         /* SEZIONE SOCIAL & WEB IN BASSO */
         .social-web-container {
             display: flex;
-            gap: 8px;
+            gap: 10px;
             width: 100%;
+            opacity: 0;
+            transform: translateY(25px);
+            filter: blur(10px);
         }
 
         .btn-social {
@@ -202,20 +232,20 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 6px;
-            background: rgba(255, 255, 255, 0.06);
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 12px;
-            padding: 8px;
+            padding: 9px;
             color: #ffffff;
             text-decoration: none;
             font-size: 0.8rem;
             font-weight: 500;
-            transition: background 0.2s ease;
+            transition: all 0.2s ease;
         }
 
         .btn-social:active {
-            background: rgba(230, 0, 0, 0.25);
+            background: rgba(230, 0, 0, 0.2);
             border-color: #e60000;
             transform: scale(0.98);
         }
@@ -223,26 +253,79 @@
         /* AZIENDA & PARTITA IVA */
         .company-info {
             text-align: center;
-            font-size: 0.75rem;
-            line-height: 1.35;
-            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.78rem;
+            line-height: 1.4;
+            color: rgba(255, 255, 255, 0.8);
+            opacity: 0;
+            transform: translateY(25px);
+            filter: blur(10px);
+            user-select: none;
             width: 100%;
+            margin-top: 4px;
         }
 
         .company-name {
             font-weight: 800;
-            font-size: 0.86rem;
-            margin-bottom: 1px;
+            font-size: 0.9rem;
+            margin-bottom: 2px;
             color: #ffffff;
+            letter-spacing: 0.5px;
         }
 
         .piva-text {
-            color: rgba(255, 255, 255, 0.55) !important;
-            font-size: 0.68rem;
+            color: rgba(255, 255, 255, 0.6) !important;
+            -webkit-text-fill-color: rgba(255, 255, 255, 0.6) !important;
+            text-decoration: none !important;
+            font-size: 0.72rem;
             font-weight: 500;
             display: block;
-            margin-top: 1px;
+            margin-top: 2px;
         }
+
+        /* ----------------------------------------------------
+            ANIMAZIONI LENTE
+        ---------------------------------------------------- */
+        .animate-in {
+            animation: fadeInVerySlow 3.2s cubic-bezier(0.1, 1, 0.2, 1) forwards;
+        }
+
+        .animate-line {
+            animation: expandLineVerySlow 3.2s cubic-bezier(0.1, 1, 0.2, 1) forwards;
+        }
+
+        @keyframes fadeInVerySlow {
+            0% {
+                opacity: 0;
+                transform: translateY(25px);
+                filter: blur(12px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0px);
+            }
+        }
+
+        @keyframes expandLineVerySlow {
+            0% {
+                opacity: 0;
+                transform: scaleX(0);
+            }
+            100% {
+                opacity: 1;
+                transform: scaleX(1);
+            }
+        }
+
+        /* TEMPI DI APPARIZIONE SEQUENZIALI */
+        .delay-1 { animation-delay: 3.8s; } /* Logo principale */
+        .delay-2 { animation-delay: 4.3s; } /* Ruolo / Concessionaria */
+        .delay-3 { animation-delay: 4.8s; } /* Linea Rossa */
+        .delay-4 { animation-delay: 5.3s; } /* Email */
+        .delay-5 { animation-delay: 5.8s; } /* Telefono */
+        .delay-6 { animation-delay: 6.3s; } /* Soccorso H24 */
+        .delay-7 { animation-delay: 6.8s; } /* Social & Web */
+        .delay-8 { animation-delay: 7.3s; } /* Info Aziendali */
     </style>
 </head>
 
@@ -254,25 +337,25 @@
     </div>
 
     <!-- CARD DIGITALE -->
-    <div class="card" id="mainCard">
+    <div class="card">
         <div class="header-content">
-            <!-- Logo Principale -->
-            <div class="main-logo-container">
+            <!-- Logo Principale Ingrandito -->
+            <div class="main-logo-container animate-in delay-1">
                 <img src="logo impromart.png" alt="Logo Impromart" class="main-logo-img">
             </div>
 
             <!-- Ruolo / Concessionaria su due righe -->
-            <div class="job-title">
-                CONCESSIONARIA ED OFFICINA<br>AUTORIZZATA MAN
+            <div class="job-title animate-in delay-2">
+                CONCESSIONARIA E OFFICINA<br>AUTORIZZATA MAN
             </div>
 
             <!-- Linea Rossa MAN -->
-            <div class="red-line"></div>
+            <div class="red-line animate-line delay-3"></div>
 
             <!-- Contatti -->
             <div class="contact-info">
                 <!-- EMAIL -->
-                <a href="mailto:info@impromart.com" class="btn-action">
+                <a href="mailto:info@impromart.com" class="btn-action animate-in delay-4">
                     <svg class="svg-icon" viewBox="0 0 24 24">
                         <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                     </svg>
@@ -280,7 +363,7 @@
                 </a>
 
                 <!-- TELEFONO PRINCIPALE -->
-                <a href="#" onclick="handlePhoneClick(event)" class="btn-action">
+                <a href="#" onclick="handlePhoneClick(event)" class="btn-action animate-in delay-5">
                     <svg class="svg-icon" viewBox="0 0 24 24">
                         <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                     </svg>
@@ -288,7 +371,7 @@
                 </a>
 
                 <!-- SOCCORSO H24 -->
-                <a href="tel:999999999" class="btn-action">
+                <a href="tel:999999999" class="btn-action animate-in delay-6">
                     <span class="h24-badge">H24</span>
                     Soccorso: 999 9999 999
                 </a>
@@ -296,7 +379,7 @@
         </div>
 
         <!-- SOCIAL & WEB -->
-        <div class="social-web-container">
+        <div class="social-web-container animate-in delay-7">
             <!-- Instagram -->
             <a href="https://www.instagram.com/impromart.it?mdxt=MThyZjU2eXNuYW5zbA==" target="_blank" class="btn-social">
                 <svg class="svg-icon" viewBox="0 0 24 24">
@@ -315,7 +398,7 @@
         </div>
 
         <!-- Dati Aziendali -->
-        <div class="company-info">
+        <div class="company-info animate-in delay-8">
             <div class="company-name">Impromart SRL</div>
             Traversa Fossitelli snc &bull; 80147 Napoli<br>
             <span class="piva-text">P.IVA: 04911&#8203;050633</span>
@@ -323,23 +406,16 @@
     </div>
 
     <script>
-        // Gestione fluida della comparsa dopo 2.5 secondi esatti
-        window.addEventListener("DOMContentLoaded", () => {
-            setTimeout(() => {
-                const loader = document.getElementById("loader");
-                const card = document.getElementById("mainCard");
-                
-                if (loader) {
-                    loader.classList.add("fade-out");
-                    setTimeout(() => loader.style.display = 'none', 800);
-                }
-                if (card) {
-                    card.classList.add("visible");
-                }
-            }, 2500);
-        });
+        // Nasconde l'intro e sblocca la pagina dopo 2.8s
+        setTimeout(() => {
+            const loader = document.getElementById("loader");
+            if (loader) {
+                loader.classList.add("hidden");
+                setTimeout(() => loader.style.display = 'none', 1000);
+            }
+        }, 2800);
 
-        // Funzione per vCard e chiamata
+        // Gestione Salva Contatto + Chiamata al tap del numero principale
         function handlePhoneClick(e) {
             e.preventDefault();
             
