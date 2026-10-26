@@ -11,7 +11,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="format-detection" content="telephone=no">
 
-    <title>Massimo Ciotola - MAN</title>
+    <title>Impromart - MAN</title>
     <!-- Font moderno e pulito -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -44,7 +44,7 @@
         }
 
         /* ----------------------------------------------------
-           1. SCHERMATA INTRO LOGO (3 SECONDI)
+            1. SCHERMATA INTRO LOGO (3 SECONDI)
         ---------------------------------------------------- */
         #loader {
             position: fixed;
@@ -80,17 +80,17 @@
         }
 
         /* ----------------------------------------------------
-           2. BIGLIETTO DA VISITA DIGITALE
+            2. BIGLIETTO DA VISITA DIGITALE
         ---------------------------------------------------- */
         .card {
             width: 90%;
             max-width: 380px;
-            height: 85vh;
-            max-height: 720px;
-            padding: 45px 28px;
+            height: 90vh;
+            max-height: 760px;
+            padding: 35px 24px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between; /* Distribuisce lo spazio equamente */
+            justify-content: space-between;
             align-items: center;
             text-align: center;
             box-sizing: border-box;
@@ -115,38 +115,44 @@
             width: 100%;
         }
 
-        /* NOME E COGNOME */
-        .name-title {
-            font-size: 2.2rem;
-            font-weight: 800;
-            line-height: 1.1;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: #ffffff;
+        /* LOGO PRINCIPALE AL POSTO DEL TESTO */
+        .main-logo-container {
+            width: 100%;
+            max-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             opacity: 0;
             transform: translateY(25px);
             filter: blur(12px);
         }
 
-        /* RUOLO PROFESSIONALE */
+        .main-logo-img {
+            max-width: 70%;
+            max-height: 75px;
+            object-fit: contain;
+        }
+
+        /* RUOLO PROFESSIONALE / CONCESSIONARIA */
         .job-title {
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 1.8px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.7);
-            margin-top: 12px;
+            color: rgba(255, 255, 255, 0.75);
+            margin-top: 14px;
             opacity: 0;
             transform: translateY(25px);
             filter: blur(12px);
+            line-height: 1.3;
         }
 
         /* LINEA ROSSA MAN */
         .red-line {
-            width: 140px;
+            width: 120px;
             height: 4px;
             background-color: #e60000;
-            margin: 28px auto 36px auto;
+            margin: 20px auto 24px auto;
             border-radius: 2px;
             opacity: 0;
             transform: scaleX(0);
@@ -158,7 +164,7 @@
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 12px;
             width: 100%;
         }
 
@@ -170,10 +176,10 @@
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 14px;
-            padding: 16px;
+            padding: 14px 16px;
             color: #ffffff;
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 500;
             letter-spacing: 0.3px;
             opacity: 0;
@@ -197,24 +203,37 @@
             flex-shrink: 0;
         }
 
+        /* BADGE H24 PERSONALIZZATO */
+        .h24-badge {
+            background-color: #e60000;
+            color: #ffffff;
+            font-size: 0.7rem;
+            font-weight: 800;
+            padding: 3px 6px;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+            flex-shrink: 0;
+            box-shadow: 0 0 8px rgba(230, 0, 0, 0.6);
+        }
+
         /* AZIENDA & PARTITA IVA */
         .company-info {
             text-align: center;
-            font-size: 0.95rem;
-            line-height: 1.6;
+            font-size: 0.85rem;
+            line-height: 1.5;
             color: rgba(255, 255, 255, 0.8);
             opacity: 0;
             transform: translateY(25px);
             filter: blur(10px);
             user-select: none;
             width: 100%;
-            margin-top: 20px;
+            margin-top: 10px;
         }
 
         .company-name {
             font-weight: 800;
-            font-size: 1.1rem;
-            margin-bottom: 4px;
+            font-size: 1rem;
+            margin-bottom: 2px;
             color: #ffffff;
             letter-spacing: 0.5px;
         }
@@ -223,14 +242,14 @@
             color: rgba(255, 255, 255, 0.6) !important;
             -webkit-text-fill-color: rgba(255, 255, 255, 0.6) !important;
             text-decoration: none !important;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 500;
             display: block;
-            margin-top: 4px;
+            margin-top: 2px;
         }
 
         /* ----------------------------------------------------
-           ANIMAZIONI LENTE
+            ANIMAZIONI LENTE
         ---------------------------------------------------- */
         .animate-in {
             animation: fadeInVerySlow 3.2s cubic-bezier(0.1, 1, 0.2, 1) forwards;
@@ -265,12 +284,13 @@
         }
 
         /* TEMPI DI APPARIZIONE */
-        .delay-1 { animation-delay: 3.8s; } /* Nome */
-        .delay-2 { animation-delay: 4.3s; } /* Ruolo */
+        .delay-1 { animation-delay: 3.8s; } /* Logo principale */
+        .delay-2 { animation-delay: 4.3s; } /* Ruolo / Concessionaria */
         .delay-3 { animation-delay: 4.8s; } /* Linea Rossa */
         .delay-4 { animation-delay: 5.3s; } /* Email */
         .delay-5 { animation-delay: 5.8s; } /* Telefono */
-        .delay-6 { animation-delay: 6.3s; } /* Azienda */
+        .delay-6 { animation-delay: 6.3s; } /* Soccorso H24 */
+        .delay-7 { animation-delay: 6.8s; } /* Info Aziendali */
     </style>
 </head>
 
@@ -284,14 +304,14 @@
     <!-- CARD DIGITALE -->
     <div class="card">
         <div class="header-content">
-            <!-- Nome e Cognome -->
-            <div class="name-title animate-in delay-1">
-                MASSIMO<br>CIOTOLA
+            <!-- Logo Principale al posto del testo -->
+            <div class="main-logo-container animate-in delay-1">
+                <img src="logo impromart.png" alt="Logo Impromart" class="main-logo-img">
             </div>
 
-            <!-- Ruolo Professionale -->
+            <!-- Ruolo / Concessionaria -->
             <div class="job-title animate-in delay-2">
-                Vendita Veicoli Industriali
+                CONCESSIONARIA ED OFFICINA AUTORIZZATA MAN
             </div>
 
             <!-- Linea Rossa MAN -->
@@ -299,26 +319,32 @@
 
             <!-- Contatti -->
             <div class="contact-info">
-                <!-- EMAIL CON ICONA SVG BIANCA -->
-                <a href="mailto:massimo.impromart@gmail.com" class="btn-action animate-in delay-4">
+                <!-- EMAIL -->
+                <a href="mailto:info@impromart.com" class="btn-action animate-in delay-4">
                     <svg class="svg-icon" viewBox="0 0 24 24">
                         <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                     </svg>
-                    massimo.impromart@gmail.com
+                    info@impromart.com
                 </a>
 
-                <!-- TELEFONO CON ICONA SVG BIANCA -->
+                <!-- TELEFONO PRINCIPALE -->
                 <a href="#" onclick="handlePhoneClick(event)" class="btn-action animate-in delay-5">
                     <svg class="svg-icon" viewBox="0 0 24 24">
                         <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                     </svg>
-                    +39 334 604 4926
+                    081 596 2139
+                </a>
+
+                <!-- SOCCORSO H24 -->
+                <a href="tel:999999999" class="btn-action animate-in delay-6">
+                    <span class="h24-badge">H24</span>
+                    Soccorso: 999 9999 999
                 </a>
             </div>
         </div>
 
         <!-- Dati Aziendali -->
-        <div class="company-info animate-in delay-6">
+        <div class="company-info animate-in delay-7">
             <div class="company-name">Impromart SRL</div>
             Traversa Fossitelli snc &bull; 80147 Napoli<br>
             <span class="piva-text">P.IVA: 04911&#8203;050633</span>
@@ -335,19 +361,19 @@
             }
         }, 2800);
 
-        // Gestione Salva Contatto + Chiamata al tap del numero
+        // Gestione Salva Contatto + Chiamata al tap del numero principale
         function handlePhoneClick(e) {
             e.preventDefault();
             
             const vcardData = 
 `BEGIN:VCARD
 VERSION:3.0
-N:Ciotola;Massimo;;;
-FN:Massimo Ciotola
+N:Impromart;Concessionaria;;;
+FN:Impromart SRL - MAN
 ORG:Impromart SRL
-TITLE:Venditore Veicoli Industriali
-TEL;TYPE=CELL:+393346044926
-EMAIL;TYPE=WORK:massimo.impromart@gmail.com
+TITLE:Concessionaria ed Officina Autorizzata MAN
+TEL;TYPE=WORK:+390815962139
+EMAIL;TYPE=WORK:info@impromart.com
 ADR;TYPE=WORK:;;Traversa Fossitelli snc;Napoli;;80147;Italy
 END:VCARD`;
 
@@ -355,13 +381,13 @@ END:VCARD`;
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.setAttribute('download', 'Massimo_Ciotola_MAN.vcf');
+            a.setAttribute('download', 'Impromart_MAN.vcf');
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
 
             setTimeout(() => {
-                window.location.href = "tel:+393346044926";
+                window.location.href = "tel:+390815962139";
             }, 300);
         }
     </script>
