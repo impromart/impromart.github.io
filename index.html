@@ -150,7 +150,7 @@
         /* LINEA ROSSA MAN */
         .red-line {
             width: 140px;
-            height: 3px;
+            height: 2px;
             background-color: #e60000;
             margin: 18px auto 14px auto;
             border-radius: 2px;
@@ -163,7 +163,7 @@
         /* FRASE SOTTO LA LINEA ROSSA (SEMIBOLD) */
         .help-text {
             font-size: 0.9rem;
-            font-weight: 600; /* Semibold */
+            font-weight: 600;
             color: rgba(255, 255, 255, 0.9);
             margin-bottom: 22px;
             letter-spacing: 0.3px;
@@ -213,6 +213,20 @@
             height: 18px;
             fill: #ffffff;
             flex-shrink: 0;
+        }
+
+        /* ICONA ROSSA PER H24 */
+        .svg-icon-red {
+            width: 18px;
+            height: 18px;
+            fill: #e60000;
+            flex-shrink: 0;
+        }
+
+        /* ETICHETTA PICCOLA PER I BOTTONI (es. H24 o Officina) */
+        .btn-label {
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
 
         /* AZIENDA & PARTITA IVA */
@@ -287,8 +301,8 @@
         .delay-2 { animation-delay: 4.3s; } /* Testo Concessionaria */
         .delay-3 { animation-delay: 4.8s; } /* Linea Rossa */
         .delay-3-5 { animation-delay: 5.1s; } /* Come possiamo aiutarti? */
-        .delay-4 { animation-delay: 5.4s; } /* Email */
-        .delay-5 { animation-delay: 5.9s; } /* Telefono */
+        .delay-4 { animation-delay: 5.4s; } /* H24 */
+        .delay-5 { animation-delay: 5.9s; } /* Officina */
         .delay-6 { animation-delay: 6.4s; } /* Azienda */
     </style>
 </head>
@@ -323,20 +337,20 @@
 
             <!-- Contatti -->
             <div class="contact-info">
-                <!-- EMAIL CON ICONA SVG BIANCA -->
-                <a href="mailto:massimo.impromart@gmail.com" class="btn-action animate-in delay-4">
-                    <svg class="svg-icon" viewBox="0 0 24 24">
-                        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                <!-- H24 CON ICONA ROSSA -->
+                <a href="tel:99999999999" class="btn-action animate-in delay-4">
+                    <svg class="svg-icon-red" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
                     </svg>
-                    massimo.impromart@gmail.com
+                    <span class="btn-label">H24</span> 999 999 999 99
                 </a>
 
-                <!-- TELEFONO CON ICONA SVG BIANCA -->
+                <!-- OFFICINA CON ICONA TELEFONO E DOWNLOAD VCARD -->
                 <a href="#" onclick="handlePhoneClick(event)" class="btn-action animate-in delay-5">
                     <svg class="svg-icon" viewBox="0 0 24 24">
                         <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                     </svg>
-                    +39 334 604 4926
+                    <span class="btn-label">Officina</span> +39 081 596 2139
                 </a>
             </div>
         </div>
@@ -359,7 +373,7 @@
             }
         }, 2800);
 
-        // Gestione Salva Contatto + Chiamata al tap del numero
+        // Gestione Salva Contatto (vCard aggiornata con il numero dell'officina) + Chiamata al tap
         function handlePhoneClick(e) {
             e.preventDefault();
             
@@ -370,8 +384,7 @@ N:Ciotola;Massimo;;;
 FN:Massimo Ciotola
 ORG:Impromart SRL
 TITLE:Concessionaria e Officina Autorizzata MAN
-TEL;TYPE=CELL:+393346044926
-EMAIL;TYPE=WORK:massimo.impromart@gmail.com
+TEL;TYPE=CELL:+390815962139
 ADR;TYPE=WORK:;;Traversa Fossitelli snc;Napoli;;80147;Italy
 END:VCARD`;
 
@@ -379,13 +392,13 @@ END:VCARD`;
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.setAttribute('download', 'Massimo_Ciotola_MAN.vcf');
+            a.setAttribute('download', 'Impromart_Officina.vcf');
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
 
             setTimeout(() => {
-                window.location.href = "tel:+393346044926";
+                window.location.href = "tel:+390815962139";
             }, 300);
         }
     </script>
