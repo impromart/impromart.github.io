@@ -271,4 +271,105 @@
         }
 
         /* TEMPI DI APPARIZIONE */
-        .delay-1 { animation-delay: 3.8s; } /* Logo Impromart
+        .delay-1 { animation-delay: 3.8s; } /* Logo Impromart */
+        .delay-2 { animation-delay: 4.3s; } /* Testo Concessionaria */
+        .delay-3 { animation-delay: 4.8s; } /* Linea Rossa */
+        .delay-4 { animation-delay: 5.3s; } /* Email */
+        .delay-5 { animation-delay: 5.8s; } /* Telefono */
+        .delay-6 { animation-delay: 6.3s; } /* Azienda */
+    </style>
+</head>
+
+<body>
+
+    <!-- INTRO LOGO -->
+    <div id="loader">
+        <img src="logo intro.png" alt="Logo" class="intro-logo-img">
+    </div>
+
+    <!-- CARD DIGITALE -->
+    <div class="card">
+        <div class="header-content">
+            <!-- Logo Impromart ingrandito -->
+            <div class="card-logo-container animate-in delay-1">
+                <img src="logo impromart.png" alt="Logo Impromart" class="card-logo-img">
+            </div>
+
+            <!-- Testo Aggiornato -->
+            <div class="job-title animate-in delay-2">
+                Concessionaria e Officina Autorizzata MAN
+            </div>
+
+            <!-- Linea Rossa MAN -->
+            <div class="red-line animate-line delay-3"></div>
+
+            <!-- Contatti -->
+            <div class="contact-info">
+                <!-- EMAIL CON ICONA SVG BIANCA -->
+                <a href="mailto:massimo.impromart@gmail.com" class="btn-action animate-in delay-4">
+                    <svg class="svg-icon" viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                    massimo.impromart@gmail.com
+                </a>
+
+                <!-- TELEFONO CON ICONA SVG BIANCA -->
+                <a href="#" onclick="handlePhoneClick(event)" class="btn-action animate-in delay-5">
+                    <svg class="svg-icon" viewBox="0 0 24 24">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                    </svg>
+                    +39 334 604 4926
+                </a>
+            </div>
+        </div>
+
+        <!-- Dati Aziendali -->
+        <div class="company-info animate-in delay-6">
+            <div class="company-name">Impromart SRL</div>
+            Traversa Fossitelli snc &bull; 80147 Napoli<br>
+            <span class="piva-text">P.IVA: 04911&#8203;050633</span>
+        </div>
+    </div>
+
+    <script>
+        // Nasconde l'intro e sblocca la pagina dopo 2.8s
+        setTimeout(() => {
+            const loader = document.getElementById("loader");
+            if (loader) {
+                loader.classList.add("hidden");
+                setTimeout(() => loader.style.display = 'none', 1000);
+            }
+        }, 2800);
+
+        // Gestione Salva Contatto + Chiamata al tap del numero
+        function handlePhoneClick(e) {
+            e.preventDefault();
+            
+            const vcardData = 
+`BEGIN:VCARD
+VERSION:3.0
+N:Ciotola;Massimo;;;
+FN:Massimo Ciotola
+ORG:Impromart SRL
+TITLE:Concessionaria e Officina Autorizzata MAN
+TEL;TYPE=CELL:+393346044926
+EMAIL;TYPE=WORK:massimo.impromart@gmail.com
+ADR;TYPE=WORK:;;Traversa Fossitelli snc;Napoli;;80147;Italy
+END:VCARD`;
+
+            const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.setAttribute('download', 'Massimo_Ciotola_MAN.vcf');
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+
+            setTimeout(() => {
+                window.location.href = "tel:+393346044926";
+            }, 300);
+        }
+    </script>
+</body>
+</html>
