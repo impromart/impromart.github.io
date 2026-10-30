@@ -115,7 +115,7 @@
             width: 100%;
         }
 
-        /* LOGO AZIENDALE ANCORA PIÙ GRANDE NELLA CARD */
+        /* LOGO AZIENDALE NELLA CARD */
         .card-logo-container {
             width: 100%;
             display: flex;
@@ -127,8 +127,8 @@
         }
 
         .card-logo-img {
-            max-width: 300px; /* Ingrandito ulteriormente */
-            max-height: 125px; /* Ingrandito ulteriormente */
+            max-width: 300px;
+            max-height: 125px;
             object-fit: contain;
             filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
         }
@@ -152,12 +152,24 @@
             width: 140px;
             height: 3px;
             background-color: #e60000;
-            margin: 18px auto 22px auto;
+            margin: 18px auto 14px auto;
             border-radius: 2px;
             opacity: 0;
             transform: scaleX(0);
             transform-origin: center;
             box-shadow: 0 0 12px rgba(230, 0, 0, 0.5);
+        }
+
+        /* FRASE SOTTO LA LINEA ROSSA (SEMIBOLD) */
+        .help-text {
+            font-size: 0.9rem;
+            font-weight: 600; /* Semibold */
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 22px;
+            letter-spacing: 0.3px;
+            opacity: 0;
+            transform: translateY(25px);
+            filter: blur(12px);
         }
 
         /* CONTATTI (PULSANTI/SCHEDE) */
@@ -270,13 +282,14 @@
             }
         }
 
-        /* TEMPI DI APPARIZIONE */
+        /* TEMPI DI APPARIZIONE AGGIORNATI */
         .delay-1 { animation-delay: 3.8s; } /* Logo Impromart */
         .delay-2 { animation-delay: 4.3s; } /* Testo Concessionaria */
         .delay-3 { animation-delay: 4.8s; } /* Linea Rossa */
-        .delay-4 { animation-delay: 5.3s; } /* Email */
-        .delay-5 { animation-delay: 5.8s; } /* Telefono */
-        .delay-6 { animation-delay: 6.3s; } /* Azienda */
+        .delay-3-5 { animation-delay: 5.1s; } /* Come possiamo aiutarti? */
+        .delay-4 { animation-delay: 5.4s; } /* Email */
+        .delay-5 { animation-delay: 5.9s; } /* Telefono */
+        .delay-6 { animation-delay: 6.4s; } /* Azienda */
     </style>
 </head>
 
@@ -290,7 +303,7 @@
     <!-- CARD DIGITALE -->
     <div class="card">
         <div class="header-content">
-            <!-- Logo Impromart ingrandito ulteriormente -->
+            <!-- Logo Impromart -->
             <div class="card-logo-container animate-in delay-1">
                 <img src="logo impromart.png" alt="Logo Impromart" class="card-logo-img">
             </div>
@@ -302,6 +315,11 @@
 
             <!-- Linea Rossa MAN -->
             <div class="red-line animate-line delay-3"></div>
+
+            <!-- Frase Come possiamo aiutarti? -->
+            <div class="help-text animate-in delay-3-5">
+                Come possiamo aiutarti?
+            </div>
 
             <!-- Contatti -->
             <div class="contact-info">
