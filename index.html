@@ -87,7 +87,7 @@
             max-width: 380px;
             height: 94vh;
             max-height: 800px;
-            padding: 26px 20px;
+            padding: 24px 20px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -102,6 +102,7 @@
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
             opacity: 0;
             animation: fadeInCard 1.2s ease forwards 2.8s;
+            overflow-y: auto;
         }
 
         @keyframes fadeInCard {
@@ -115,10 +116,10 @@
             width: 100%;
         }
 
-        /* LOGO PRINCIPALE ANCOR PIÙ GRANDE */
+        /* LOGO PRINCIPALE */
         .main-logo-container {
             width: 100%;
-            max-height: 105px;
+            max-height: 90px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -129,18 +130,18 @@
 
         .main-logo-img {
             max-width: 95%;
-            max-height: 100px;
+            max-height: 85px;
             object-fit: contain;
         }
 
-        /* RUOLO / CONCESSIONARIA SU DUE RIGHE E PIÙ GRANDE */
+        /* RUOLO / CONCESSIONARIA */
         .job-title {
             font-size: 0.78rem;
             font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
             color: rgba(255, 255, 255, 0.75);
-            margin-top: 10px;
+            margin-top: 8px;
             line-height: 1.4;
             opacity: 0;
             transform: translateY(25px);
@@ -153,7 +154,7 @@
             width: 100px;
             height: 3px;
             background-color: #e60000;
-            margin: 12px auto 16px auto;
+            margin: 10px auto 10px auto;
             border-radius: 2px;
             opacity: 0;
             transform: scaleX(0);
@@ -161,11 +162,38 @@
             box-shadow: 0 0 12px rgba(230, 0, 0, 0.5);
         }
 
+        /* FRASE IN EVIDENZA */
+        .callout-text {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+            letter-spacing: 0.4px;
+            opacity: 0;
+            transform: translateY(25px);
+            filter: blur(12px);
+        }
+
+        /* INTRO SEZIONE BACK OFFICE */
+        .section-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.85);
+            margin-top: 14px;
+            margin-bottom: 6px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(25px);
+            filter: blur(10px);
+        }
+
         /* CONTATTI (PULSANTI/SCHEDE) */
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 9px;
+            gap: 8px;
             width: 100%;
         }
 
@@ -177,10 +205,10 @@
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 12px;
-            padding: 10px 14px;
+            padding: 9px 14px;
             color: #ffffff;
             text-decoration: none;
-            font-size: 0.88rem;
+            font-size: 0.85rem;
             font-weight: 500;
             letter-spacing: 0.3px;
             opacity: 0;
@@ -225,6 +253,7 @@
             opacity: 0;
             transform: translateY(25px);
             filter: blur(10px);
+            margin-top: 10px;
         }
 
         .btn-social {
@@ -236,7 +265,7 @@
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 12px;
-            padding: 9px;
+            padding: 8px;
             color: #ffffff;
             text-decoration: none;
             font-size: 0.8rem;
@@ -253,7 +282,7 @@
         /* AZIENDA & PARTITA IVA */
         .company-info {
             text-align: center;
-            font-size: 0.78rem;
+            font-size: 0.75rem;
             line-height: 1.4;
             color: rgba(255, 255, 255, 0.8);
             opacity: 0;
@@ -261,12 +290,12 @@
             filter: blur(10px);
             user-select: none;
             width: 100%;
-            margin-top: 4px;
+            margin-top: 6px;
         }
 
         .company-name {
             font-weight: 800;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             margin-bottom: 2px;
             color: #ffffff;
             letter-spacing: 0.5px;
@@ -276,7 +305,7 @@
             color: rgba(255, 255, 255, 0.6) !important;
             -webkit-text-fill-color: rgba(255, 255, 255, 0.6) !important;
             text-decoration: none !important;
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             font-weight: 500;
             display: block;
             margin-top: 2px;
@@ -319,13 +348,17 @@
 
         /* TEMPI DI APPARIZIONE SEQUENZIALI */
         .delay-1 { animation-delay: 3.8s; } /* Logo principale */
-        .delay-2 { animation-delay: 4.3s; } /* Ruolo / Concessionaria */
-        .delay-3 { animation-delay: 4.8s; } /* Linea Rossa */
-        .delay-4 { animation-delay: 5.3s; } /* Email */
-        .delay-5 { animation-delay: 5.8s; } /* Telefono */
-        .delay-6 { animation-delay: 6.3s; } /* Soccorso H24 */
-        .delay-7 { animation-delay: 6.8s; } /* Social & Web */
-        .delay-8 { animation-delay: 7.3s; } /* Info Aziendali */
+        .delay-2 { animation-delay: 4.2s; } /* Ruolo / Concessionaria */
+        .delay-3 { animation-delay: 4.6s; } /* Linea Rossa */
+        .delay-4 { animation-delay: 5.0s; } /* Frase aiuto */
+        .delay-5 { animation-delay: 5.4s; } /* Email principale */
+        .delay-6 { animation-delay: 5.8s; } /* Telefono principale */
+        .delay-7 { animation-delay: 6.2s; } /* Soccorso H24 */
+        .delay-8 { animation-delay: 6.6s; } /* Titolo Back Office */
+        .delay-9 { animation-delay: 7.0s; } /* Email Back Office */
+        .delay-10 { animation-delay: 7.4s; } /* Telefono Back Office */
+        .delay-11 { animation-delay: 7.8s; } /* Social & Web */
+        .delay-12 { animation-delay: 8.2s; } /* Info Aziendali */
     </style>
 </head>
 
@@ -352,10 +385,15 @@
             <!-- Linea Rossa MAN -->
             <div class="red-line animate-line delay-3"></div>
 
-            <!-- Contatti -->
+            <!-- Frase in Evidenza -->
+            <div class="callout-text animate-in delay-4">
+                Come possiamo aiutarti?
+            </div>
+
+            <!-- Contatti Principali -->
             <div class="contact-info">
-                <!-- EMAIL -->
-                <a href="mailto:info@impromart.com" class="btn-action animate-in delay-4">
+                <!-- EMAIL PRINCIPALE -->
+                <a href="mailto:info@impromart.com" class="btn-action animate-in delay-5">
                     <svg class="svg-icon" viewBox="0 0 24 24">
                         <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                     </svg>
@@ -363,7 +401,7 @@
                 </a>
 
                 <!-- TELEFONO PRINCIPALE -->
-                <a href="#" onclick="handlePhoneClick(event)" class="btn-action animate-in delay-5">
+                <a href="#" onclick="handlePhoneClick(event)" class="btn-action animate-in delay-6">
                     <svg class="svg-icon" viewBox="0 0 24 24">
                         <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                     </svg>
@@ -371,15 +409,36 @@
                 </a>
 
                 <!-- SOCCORSO H24 -->
-                <a href="tel:999999999" class="btn-action animate-in delay-6">
+                <a href="tel:999999999" class="btn-action animate-in delay-7">
                     <span class="h24-badge">H24</span>
                     Soccorso: 999 9999 999
+                </a>
+
+                <!-- SEZIONE BACK OFFICE -->
+                <div class="section-title animate-in delay-8">
+                    Back Office
+                </div>
+
+                <!-- EMAIL BACK OFFICE -->
+                <a href="mailto:giovanni.impromart@gmail.com" class="btn-action animate-in delay-9">
+                    <svg class="svg-icon" viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                    giovanni.impromart@gmail.com
+                </a>
+
+                <!-- TELEFONO BACK OFFICE -->
+                <a href="tel:+3908117784248" class="btn-action animate-in delay-10">
+                    <svg class="svg-icon" viewBox="0 0 24 24">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                    </svg>
+                    +39 081 1778 4248
                 </a>
             </div>
         </div>
 
         <!-- SOCIAL & WEB -->
-        <div class="social-web-container animate-in delay-7">
+        <div class="social-web-container animate-in delay-11">
             <!-- Instagram -->
             <a href="https://www.instagram.com/impromart.it?mdxt=MThyZjU2eXNuYW5zbA==" target="_blank" class="btn-social">
                 <svg class="svg-icon" viewBox="0 0 24 24">
@@ -398,7 +457,7 @@
         </div>
 
         <!-- Dati Aziendali -->
-        <div class="company-info animate-in delay-8">
+        <div class="company-info animate-in delay-12">
             <div class="company-name">Impromart SRL</div>
             Traversa Fossitelli snc &bull; 80147 Napoli<br>
             <span class="piva-text">P.IVA: 04911&#8203;050633</span>
