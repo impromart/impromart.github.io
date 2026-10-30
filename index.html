@@ -140,7 +140,7 @@
             letter-spacing: 1.2px;
             text-transform: uppercase;
             color: rgba(255, 255, 255, 0.8);
-            margin-top: 14px;
+            margin-top: 10px;
             line-height: 1.4;
             opacity: 0;
             transform: translateY(25px);
@@ -150,7 +150,7 @@
         /* LINEA ROSSA MAN */
         .red-line {
             width: 140px;
-            height: 2px;
+            height: 3px;
             background-color: #e60000;
             margin: 18px auto 14px auto;
             border-radius: 2px;
@@ -162,7 +162,7 @@
 
         /* FRASE SOTTO LA LINEA ROSSA (SEMIBOLD) */
         .help-text {
-            font-size: 0.9rem;
+            font-size: 1.5rem;
             font-weight: 600;
             color: rgba(255, 255, 255, 0.9);
             margin-bottom: 22px;
@@ -207,7 +207,7 @@
             transform: scale(0.98);
         }
 
-        /* ICONE VETTORIALI BIANCHE */
+        /* ICONA TELEFONO BIANCA */
         .svg-icon {
             width: 18px;
             height: 18px;
@@ -215,15 +215,19 @@
             flex-shrink: 0;
         }
 
-        /* ICONA ROSSA PER H24 */
-        .svg-icon-red {
-            width: 18px;
-            height: 18px;
-            fill: #e60000;
-            flex-shrink: 0;
+        /* RIQUADRO ROSSO PER H24 */
+        .badge-h24 {
+            background-color: #e60000;
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 0.8rem;
+            padding: 4px 8px;
+            border-radius: 6px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 0 8px rgba(230, 0, 0, 0.4);
         }
 
-        /* ETICHETTA PICCOLA PER I BOTTONI (es. H24 o Officina) */
+        /* ETICHETTA PER OFFICINA */
         .btn-label {
             font-weight: 700;
             letter-spacing: 0.5px;
@@ -337,12 +341,9 @@
 
             <!-- Contatti -->
             <div class="contact-info">
-                <!-- H24 CON ICONA ROSSA -->
+                <!-- H24 CON RIQUADRO ROSSO -->
                 <a href="tel:99999999999" class="btn-action animate-in delay-4">
-                    <svg class="svg-icon-red" viewBox="0 0 24 24">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
-                    </svg>
-                    <span class="btn-label">H24</span> 999 999 999 99
+                    <span class="badge-h24">H24</span> 999 999 999 99
                 </a>
 
                 <!-- OFFICINA CON ICONA TELEFONO E DOWNLOAD VCARD -->
@@ -373,7 +374,7 @@
             }
         }, 2800);
 
-        // Gestione Salva Contatto (vCard aggiornata con il numero dell'officina) + Chiamata al tap
+        // Gestione Salva Contatto + Chiamata al tap
         function handlePhoneClick(e) {
             e.preventDefault();
             
