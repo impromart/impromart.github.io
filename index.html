@@ -90,7 +90,7 @@
             padding: 45px 28px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between; /* Distribuisce lo spazio equamente */
+            justify-content: space-between;
             align-items: center;
             text-align: center;
             box-sizing: border-box;
@@ -116,27 +116,34 @@
         }
 
         /* LOGO AZIENDALE NELLA CARD */
-        .card-logo-img {
-            max-width: 65%;
-            max-height: 70px;
-            object-fit: contain;
+        .card-logo-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             opacity: 0;
             transform: translateY(25px);
             filter: blur(12px);
         }
 
+        .card-logo-img {
+            max-width: 180px;
+            max-height: 75px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+        }
+
         /* RUOLO PROFESSIONALE */
         .job-title {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 600;
-            letter-spacing: 1.2px;
+            letter-spacing: 1.8px;
             text-transform: uppercase;
             color: rgba(255, 255, 255, 0.7);
             margin-top: 16px;
             opacity: 0;
             transform: translateY(25px);
             filter: blur(12px);
-            line-height: 1.4;
         }
 
         /* LINEA ROSSA MAN */
@@ -166,4 +173,136 @@
             justify-content: center;
             gap: 12px;
             background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 2
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 14px;
+            padding: 16px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            opacity: 0;
+            transform: translateY(25px);
+            filter: blur(10px);
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .btn-action:active {
+            background: rgba(230, 0, 0, 0.2);
+            border-color: #e60000;
+            transform: scale(0.98);
+        }
+
+        /* ICONE VETTORIALI BIANCHE */
+        .svg-icon {
+            width: 18px;
+            height: 18px;
+            fill: #ffffff;
+            flex-shrink: 0;
+        }
+
+        /* AZIENDA & PARTITA IVA */
+        .company-info {
+            text-align: center;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+            opacity: 0;
+            transform: translateY(25px);
+            filter: blur(10px);
+            user-select: none;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .company-name {
+            font-weight: 800;
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+
+        .piva-text {
+            color: rgba(255, 255, 255, 0.6) !important;
+            -webkit-text-fill-color: rgba(255, 255, 255, 0.6) !important;
+            text-decoration: none !important;
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: block;
+            margin-top: 4px;
+        }
+
+        /* ----------------------------------------------------
+            ANIMAZIONI LENTE
+        ---------------------------------------------------- */
+        .animate-in {
+            animation: fadeInVerySlow 3.2s cubic-bezier(0.1, 1, 0.2, 1) forwards;
+        }
+
+        .animate-line {
+            animation: expandLineVerySlow 3.2s cubic-bezier(0.1, 1, 0.2, 1) forwards;
+        }
+
+        @keyframes fadeInVerySlow {
+            0% {
+                opacity: 0;
+                transform: translateY(25px);
+                filter: blur(12px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0px);
+            }
+        }
+
+        @keyframes expandLineVerySlow {
+            0% {
+                opacity: 0;
+                transform: scaleX(0);
+            }
+            100% {
+                opacity: 1;
+                transform: scaleX(1);
+            }
+        }
+
+        /* TEMPI DI APPARIZIONE */
+        .delay-1 { animation-delay: 3.8s; } /* Logo Impromart */
+        .delay-2 { animation-delay: 4.3s; } /* Ruolo */
+        .delay-3 { animation-delay: 4.8s; } /* Linea Rossa */
+        .delay-4 { animation-delay: 5.3s; } /* Email */
+        .delay-5 { animation-delay: 5.8s; } /* Telefono */
+        .delay-6 { animation-delay: 6.3s; } /* Azienda */
+    </style>
+</head>
+
+<body>
+
+    <!-- INTRO LOGO -->
+    <div id="loader">
+        <img src="logo intro.png" alt="Logo" class="intro-logo-img">
+    </div>
+
+    <!-- CARD DIGITALE -->
+    <div class="card">
+        <div class="header-content">
+            <!-- Logo Impromart al posto del nome -->
+            <div class="card-logo-container animate-in delay-1">
+                <img src="logo impromart.png" alt="Logo Impromart" class="card-logo-img">
+            </div>
+
+            <!-- Ruolo Professionale -->
+            <div class="job-title animate-in delay-2">
+                Vendita Veicoli Industriali
+            </div>
+
+            <!-- Linea Rossa MAN -->
+            <div class="red-line animate-line delay-3"></div>
+
+            <!-- Contatti -->
+            <div class="contact-info">
+                <!-- EMAIL CON ICONA SVG BIANCA -->
+                <a href="mailto:massimo.impromart@gmail.com" class="btn-action animate-in delay-4">
