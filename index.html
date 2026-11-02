@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     
-    <!-- DISABILITA RILEVAMENTO AUTOMATICO NUMERI SU SAFARI/IOS -->
-    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="telephone=yes">
     <meta name="theme-color" content="#000000">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -376,7 +375,7 @@
             transform: scale(0.98);
         }
 
-        /* DATI AZIENDALI E PARTITA IVA (CORRETTA ED EVITATI LINK AUTOMATICI) */
+        /* DATI AZIENDALI E PARTITA IVA NON CLICCABILE */
         .company-info {
             text-align: center;
             font-size: 0.82rem;
@@ -415,7 +414,7 @@
             margin-top: 8px;
         }
 
-        /* --- STILI TERZA PAGINA (ICONE PIÙ GRANDI) --- */
+        /* --- STILI TERZA PAGINA (SOCIAL & WEB) --- */
         .social-page-desc {
             font-size: 0.95rem;
             font-weight: 500;
@@ -454,7 +453,6 @@
             border-color: rgba(52, 152, 219, 0.6);
         }
 
-        /* INGRANDITE LE ICONE SVG INTERNE A 38px */
         .social-btn svg {
             width: 38px;
             height: 38px;
@@ -503,12 +501,12 @@
 
                     <!-- Contatti -->
                     <div class="contact-info animate-seq delay-4">
-                        <!-- H24 PULITO -->
+                        <!-- H24 -->
                         <a href="tel:0080066245324" class="btn-action">
                             <span class="badge-h24">H24</span> 00800 66 24 53 24
                         </a>
 
-                        <!-- ACCETTAZIONE PULITO -->
+                        <!-- ACCETTAZIONE -->
                         <a href="tel:+390815962139" class="btn-action">
                             <span class="btn-label">Accettazione</span>
                             <svg class="svg-icon" viewBox="0 0 24 24">
@@ -582,13 +580,13 @@
 
                     <!-- FRASE CENTRATA -->
                     <div class="social-page-desc">
-                        Rimani aggiornato sulle novità ed esplora la nostra gamma completa di veicoli!
+                        Rimani aggiornato sulle novità ed esplora la nostra gamma completa di veicoli
                     </div>
 
-                    <!-- ICONE CLICCABILI INGRANDITE CENTRATE -->
+                    <!-- ICONE CLICCABILI AGGIORNATE CON I LINK SPECIFICI -->
                     <div class="social-buttons-container">
-                        <!-- Instagram -->
-                        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
+                        <!-- Instagram con link specifico -->
+                        <a href="https://www.instagram.com/impromart.it/?hl=it" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
                             <svg viewBox="0 0 24 24">
                                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
@@ -596,8 +594,8 @@
                             </svg>
                         </a>
 
-                        <!-- Web -->
-                        <a href="https://www.impromart.it" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Sito Web">
+                        <!-- Web con link specifico -->
+                        <a href="https://www.impromart.it/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Sito Web">
                             <svg viewBox="0 0 24 24">
                                 <circle cx="12" cy="12" r="10"/>
                                 <line x1="2" y1="12" x2="22" y2="12"/>
@@ -607,7 +605,7 @@
                     </div>
                 </div>
 
-                <!-- DATI AZIENDALI CON P.IVA NON CLICCABILE E BIANCA -->
+                <!-- DATI AZIENDALI -->
                 <div class="company-info">
                     <div class="company-name">Impromart SRL</div>
                     Traversa Fossitelli snc &bull; 80147 Napoli<br>
