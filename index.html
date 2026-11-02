@@ -54,7 +54,7 @@
             align-items: center;
             justify-content: center;
             z-index: 9999;
-            transition: opacity 1s ease;
+            transition: opacity 0.8s ease;
         }
 
         #loader.hidden {
@@ -85,8 +85,8 @@
         .card-container {
             width: 90%;
             max-width: 380px;
-            height: 88vh;
-            max-height: 750px;
+            height: 90vh;
+            max-height: 760px;
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
@@ -97,7 +97,7 @@
             flex-direction: column;
             overflow: hidden;
             opacity: 0;
-            animation: fadeInCard 1.2s ease forwards 2.8s;
+            animation: fadeInCard 0.8s ease forwards 2.6s;
             position: relative;
         }
 
@@ -116,7 +116,7 @@
         .card-page {
             width: 50%;
             height: 100%;
-            padding: 28px 22px;
+            padding: 24px 20px 15px 20px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -124,11 +124,11 @@
             text-align: center;
             box-sizing: border-box;
             overflow-y: auto;
-            scrollbar-width: none; /* Firefox */
+            scrollbar-width: none;
         }
 
         .card-page::-webkit-scrollbar {
-            display: none; /* Chrome/Safari */
+            display: none;
         }
 
         /* INDICATORI A PALLINI (DOTS) IN BASSO */
@@ -168,30 +168,24 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            opacity: 0;
-            transform: translateY(25px);
-            filter: blur(12px);
         }
 
         .card-logo-img {
-            max-width: 240px;
-            max-height: 90px;
+            max-width: 220px;
+            max-height: 80px;
             object-fit: contain;
             filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
         }
 
         /* RUOLO / TESTO SPLITTATO SU DUE RIGHE */
         .job-title {
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-weight: 700;
             letter-spacing: 1.2px;
             text-transform: uppercase;
             color: rgba(255, 255, 255, 0.8);
             margin-top: 8px;
             line-height: 1.4;
-            opacity: 0;
-            transform: translateY(25px);
-            filter: blur(12px);
         }
 
         /* LINEA ROSSA MAN */
@@ -199,24 +193,18 @@
             width: 120px;
             height: 3px;
             background-color: #e60000;
-            margin: 14px auto 10px auto;
+            margin: 12px auto 8px auto;
             border-radius: 2px;
-            opacity: 0;
-            transform: scaleX(0);
-            transform-origin: center;
             box-shadow: 0 0 12px rgba(230, 0, 0, 0.5);
         }
 
         /* FRASE SOTTO LA LINEA ROSSA */
         .help-text {
-            font-size: 1.05rem;
+            font-size: 1rem;
             font-weight: 600;
             color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 14px;
+            margin-bottom: 12px;
             letter-spacing: 0.3px;
-            opacity: 0;
-            transform: translateY(25px);
-            filter: blur(12px);
         }
 
         /* CONTATTI (PULSANTI/SCHEDE) */
@@ -241,16 +229,13 @@
             font-size: 0.9rem;
             font-weight: 500;
             letter-spacing: 0.3px;
-            opacity: 0;
-            transform: translateY(25px);
-            filter: blur(10px);
             transition: all 0.2s ease;
             cursor: pointer;
         }
 
         .btn-action:active {
-            background: rgba(230, 0, 0, 0.2);
-            border-color: #e60000;
+            background: rgba(41, 128, 185, 0.3);
+            border-color: #2980b9;
             transform: scale(0.98);
         }
 
@@ -279,59 +264,61 @@
             letter-spacing: 0.5px;
         }
 
-        /* --- NUOVI BOX INFORMATIVI (PAGINA 1 e 2) --- */
+        /* --- BOX INFORMATIVI (PAGINA 1 e 2) --- */
         .info-box {
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 14px;
-            padding: 14px;
+            padding: 12px 14px;
             width: 100%;
             text-align: left;
-            margin-top: 5px;
+            margin-top: 14px;
         }
 
         .info-box-title {
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 6px;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 7px;
         }
 
-        .info-box-title span.highlight-dot {
-            width: 8px;
-            height: 8px;
-            background-color: #e60000;
-            border-radius: 50%;
-            display: inline-block;
-            box-shadow: 0 0 8px #e60000;
+        .info-box-title svg.web-icon {
+            width: 16px;
+            height: 16px;
+            fill: rgba(255, 255, 255, 0.9);
+            flex-shrink: 0;
         }
 
         .info-box-desc {
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             color: rgba(255, 255, 255, 0.75);
             line-height: 1.4;
             margin-bottom: 10px;
         }
 
+        /* TASTI D'AZIONE BLU/GRIGIO */
         .info-action-btn {
             display: block;
             width: 100%;
             text-align: center;
-            background: #e60000;
+            background: rgba(41, 128, 185, 0.85);
+            border: 1px solid rgba(52, 152, 219, 0.5);
             color: #ffffff;
             text-decoration: none;
             font-size: 0.82rem;
             font-weight: 700;
-            padding: 8px;
+            padding: 9px;
             border-radius: 8px;
-            transition: opacity 0.2s;
+            box-shadow: 0 4px 12px rgba(41, 128, 185, 0.25);
+            transition: all 0.2s;
         }
 
         .info-action-btn:active {
-            opacity: 0.8;
+            background: rgba(41, 128, 185, 1);
+            transform: scale(0.98);
         }
 
         /* AZIENDA & PARTITA IVA (SOLO SECONDA PAGINA) */
@@ -369,37 +356,20 @@
             color: rgba(255, 255, 255, 0.4);
             letter-spacing: 0.5px;
             text-transform: uppercase;
-            margin-top: 5px;
+            margin-top: 8px;
         }
 
         /* ----------------------------------------------------
-            ANIMAZIONI LENTE
+            ANIMAZIONI FLUIDE ED EFFICIENTI
         ---------------------------------------------------- */
-        .animate-in {
-            animation: fadeInVerySlow 3.2s cubic-bezier(0.1, 1, 0.2, 1) forwards;
+        .animate-fade {
+            animation: fadeInSimple 0.8s ease forwards;
         }
 
-        .animate-line {
-            animation: expandLineVerySlow 3.2s cubic-bezier(0.1, 1, 0.2, 1) forwards;
+        @keyframes fadeInSimple {
+            0% { opacity: 0; transform: translateY(15px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
-
-        @keyframes fadeInVerySlow {
-            0% { opacity: 0; transform: translateY(25px); filter: blur(12px); }
-            100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
-        }
-
-        @keyframes expandLineVerySlow {
-            0% { opacity: 0; transform: scaleX(0); }
-            100% { opacity: 1; transform: scaleX(1); }
-        }
-
-        /* TEMPI DI APPARIZIONE */
-        .delay-1 { animation-delay: 3.8s; } 
-        .delay-2 { animation-delay: 4.3s; } 
-        .delay-3 { animation-delay: 4.8s; } 
-        .delay-3-5 { animation-delay: 5.1s; } 
-        .delay-4 { animation-delay: 5.4s; } 
-        .delay-5 { animation-delay: 5.9s; } 
     </style>
 </head>
 
@@ -420,32 +390,32 @@
             <div class="card-page">
                 <div class="header-content">
                     <!-- Logo Impromart -->
-                    <div class="card-logo-container animate-in delay-1">
+                    <div class="card-logo-container">
                         <img src="logo impromart.png" alt="Logo Impromart" class="card-logo-img">
                     </div>
 
                     <!-- Testo su due righe -->
-                    <div class="job-title animate-in delay-2">
+                    <div class="job-title">
                         CONCESSIONARIA E OFFICINA<br>AUTORIZZATA MAN
                     </div>
 
                     <!-- Linea Rossa MAN -->
-                    <div class="red-line animate-line delay-3"></div>
+                    <div class="red-line"></div>
 
                     <!-- Frase Come possiamo aiutarti? -->
-                    <div class="help-text animate-in delay-3-5">
+                    <div class="help-text">
                         Come possiamo aiutarti?
                     </div>
 
                     <!-- Contatti -->
                     <div class="contact-info">
                         <!-- H24 -->
-                        <a href="tel:99999999999" class="btn-action animate-in delay-4">
+                        <a href="tel:99999999999" class="btn-action">
                             <span class="badge-h24">H24</span> 999 999 999 99
                         </a>
 
                         <!-- OFFICINA + vCard -->
-                        <a href="#" onclick="handlePhoneClick(event)" class="btn-action animate-in delay-5">
+                        <a href="#" onclick="handlePhoneClick(event)" class="btn-action">
                             <svg class="svg-icon" viewBox="0 0 24 24">
                                 <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                             </svg>
@@ -456,7 +426,7 @@
                     <!-- BOX ASSISTENZA -->
                     <div class="info-box">
                         <div class="info-box-title">
-                            <span class="highlight-dot"></span> Il tuo contratto di assistenza è in scadenza?
+                            Il tuo contratto di assistenza è in scadenza?
                         </div>
                         <div class="info-box-desc">
                             Concorda un appuntamento con la nostra officina per eseguire il test semaforo e valutare un'estensione.
@@ -471,15 +441,18 @@
             <!-- ================= PAGINA 2 ================= -->
             <div class="card-page">
                 <div class="header-content">
-                    <div class="job-title" style="opacity: 1; transform: none; filter: none; margin-top: 5px;">
+                    <div class="job-title" style="margin-top: 5px;">
                         TECNOLOGIA E SERVIZI
                     </div>
-                    <div class="red-line" style="opacity: 1; transform: scaleX(1);"></div>
+                    <div class="red-line"></div>
 
                     <!-- BOX RIO -->
                     <div class="info-box" style="margin-top: 15px;">
                         <div class="info-box-title">
-                            <span class="highlight-dot"></span> Il tuo veicolo sempre connesso
+                            <svg class="web-icon" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                            </svg>
+                            Il tuo veicolo sempre connesso
                         </div>
                         <div class="info-box-desc">
                             Attiva RIO e non preoccuparti delle spie! Il tuo veicolo sarà online e la nostra officina potrà controllarlo per te. Incluso per un anno con l'acquisto del tuo veicolo.
@@ -488,7 +461,7 @@
                     </div>
                 </div>
 
-                <!-- Dati Aziendali spostati in fondo alla pagina 2 -->
+                <!-- Dati Aziendali -->
                 <div class="company-info">
                     <div class="company-name">Impromart SRL</div>
                     Traversa Fossitelli snc &bull; 80147 Napoli<br>
@@ -509,14 +482,16 @@
     </div>
 
     <script>
-        // Nasconde l'intro e sblocca la pagina dopo 2.8s
-        setTimeout(() => {
-            const loader = document.getElementById("loader");
-            if (loader) {
-                loader.classList.add("hidden");
-                setTimeout(() => loader.style.display = 'none', 1000);
-            }
-        }, 2800);
+        // Gestione corretta della scomparsa dell'intro
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const loader = document.getElementById("loader");
+                if (loader) {
+                    loader.classList.add("hidden");
+                    setTimeout(() => loader.style.display = 'none', 800);
+                }
+            }, 2600);
+        });
 
         // Gestione Salva Contatto + Chiamata al tap sulla vCard
         function handlePhoneClick(e) {
@@ -547,7 +522,7 @@ END:VCARD`;
             }, 300);
         }
 
-        // --- GESTIONE SWIPE TOUCH E MOUSE PER LE 2 PAGINE ---
+        // --- GESTIONE SWIPE TOUCH E MOUSE ---
         const wrapper = document.getElementById('pagesWrapper');
         const dot0 = document.getElementById('dot0');
         const dot1 = document.getElementById('dot1');
@@ -572,26 +547,21 @@ END:VCARD`;
             isDragging = true;
         }, {passive: true});
 
-        wrapper.addEventListener('touchmove', (e) => {
-            if (!isDragging) return;
-        }, {passive: true});
-
         wrapper.addEventListener('touchend', (e) => {
             if (!isDragging) return;
             const endX = e.changedTouches[0].clientX;
             const diff = startX - endX;
 
-            if (Math.abs(diff) > 50) { // Soglia minima swipe
+            if (Math.abs(diff) > 40) {
                 if (diff > 0 && currentPage === 0) {
-                    goToPage(1); // Vai a pagina 2
+                    goToPage(1);
                 } else if (diff < 0 && currentPage === 1) {
-                    goToPage(0); // Torna a pagina 1
+                    goToPage(0);
                 }
             }
             isDragging = false;
         });
 
-        // Supporto anche per il trascinamento da mouse (desktop preview)
         wrapper.addEventListener('mousedown', (e) => {
             startX = e.clientX;
             isDragging = true;
@@ -602,7 +572,7 @@ END:VCARD`;
             const endX = e.clientX;
             const diff = startX - endX;
 
-            if (Math.abs(diff) > 50) {
+            if (Math.abs(diff) > 40) {
                 if (diff > 0 && currentPage === 0) {
                     goToPage(1);
                 } else if (diff < 0 && currentPage === 1) {
