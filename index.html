@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     
-    <!-- BARRE BROWSER NERE -->
+    <!-- DISABILITA RILEVAMENTO AUTOMATICO NUMERI SU SAFARI/IOS -->
+    <meta name="format-detection" content="telephone=no">
     <meta name="theme-color" content="#000000">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -130,7 +131,7 @@
             display: none;
         }
 
-        /* INDICATORI A PALLINI (3 DOTS) IN BASSO */
+        /* INDICATORI A PALLINI IN BASSO */
         .pagination-dots {
             height: 35px;
             display: flex;
@@ -161,7 +162,7 @@
             width: 100%;
         }
 
-        /* ELEMENTI INIZIALMENTE NASCOSTI PER L'ANIMAZIONE IN SEQUENZA */
+        /* ELEMENTI NASCOSTI PER L'ANIMAZIONE IN SEQUENZA */
         .animate-seq {
             opacity: 0;
             transform: translateY(25px);
@@ -207,7 +208,7 @@
         .delay-4 { animation-delay: 5.4s; }
         .delay-5 { animation-delay: 5.9s; }
 
-        /* LOGO AZIENDALE NELLA CARD */
+        /* LOGO AZIENDALE */
         .card-logo-container {
             width: 100%;
             display: flex;
@@ -222,7 +223,6 @@
             filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
         }
 
-        /* RUOLO / TESTO SPLITTATO SU DUE RIGHE */
         .job-title {
             font-size: 0.78rem;
             font-weight: 700;
@@ -244,7 +244,6 @@
             box-shadow: 0 0 12px rgba(230, 0, 0, 0.5);
         }
 
-        /* FRASE SOTTO LA LINEA ROSSA */
         .help-text {
             font-size: 1rem;
             font-weight: 600;
@@ -254,7 +253,7 @@
             letter-spacing: 0.3px;
         }
 
-        /* CONTATTI (PULSANTI/SCHEDE) */
+        /* CONTATTI */
         .contact-info {
             display: flex;
             flex-direction: column;
@@ -286,7 +285,6 @@
             transform: scale(0.98);
         }
 
-        /* ICONA TELEFONO BIANCA */
         .svg-icon {
             width: 16px;
             height: 16px;
@@ -295,7 +293,6 @@
             margin: 0 2px;
         }
 
-        /* RIQUADRO ROSSO PER H24 */
         .badge-h24 {
             background-color: #e60000;
             color: #ffffff;
@@ -312,7 +309,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* --- BOX INFORMATIVI --- */
+        /* BOX INFORMATIVI */
         .info-box {
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -355,7 +352,6 @@
             margin-bottom: 10px;
         }
 
-        /* TASTI D'AZIONE BLU/GRIGIO */
         .info-action-btn {
             display: flex;
             align-items: center;
@@ -380,7 +376,7 @@
             transform: scale(0.98);
         }
 
-        /* AZIENDA & PARTITA IVA */
+        /* DATI AZIENDALI E PARTITA IVA (CORRETTA ED EVITATI LINK AUTOMATICI) */
         .company-info {
             text-align: center;
             font-size: 0.82rem;
@@ -402,14 +398,15 @@
         }
 
         .piva-text {
-            color: rgba(255, 255, 255, 0.6) !important;
-            font-size: 0.75rem;
-            font-weight: 500;
+            color: rgba(255, 255, 255, 0.8) !important;
+            font-size: 0.82rem;
+            font-weight: 400;
             display: block;
             margin-top: 2px;
+            text-decoration: none !important;
+            pointer-events: none;
         }
 
-        /* SWIPE HINT TEXT */
         .swipe-hint {
             font-size: 0.72rem;
             color: rgba(255, 255, 255, 0.4);
@@ -418,7 +415,7 @@
             margin-top: 8px;
         }
 
-        /* --- STILI TERZA PAGINA (SOCIAL & WEB) --- */
+        /* --- STILI TERZA PAGINA (ICONE PIÙ GRANDI) --- */
         .social-page-desc {
             font-size: 0.95rem;
             font-weight: 500;
@@ -457,9 +454,10 @@
             border-color: rgba(52, 152, 219, 0.6);
         }
 
+        /* INGRANDITE LE ICONE SVG INTERNE A 38px */
         .social-btn svg {
-            width: 28px;
-            height: 28px;
+            width: 38px;
+            height: 38px;
             fill: none;
             stroke: #ffffff;
             stroke-width: 1.8;
@@ -505,12 +503,12 @@
 
                     <!-- Contatti -->
                     <div class="contact-info animate-seq delay-4">
-                        <!-- H24 -->
+                        <!-- H24 PULITO -->
                         <a href="tel:0080066245324" class="btn-action">
                             <span class="badge-h24">H24</span> 00800 66 24 53 24
                         </a>
 
-                        <!-- ACCETTAZIONE CON ICONA TRA ACCETTAZIONE E NUMERO -->
+                        <!-- ACCETTAZIONE PULITO -->
                         <a href="tel:+390815962139" class="btn-action">
                             <span class="btn-label">Accettazione</span>
                             <svg class="svg-icon" viewBox="0 0 24 24">
@@ -550,7 +548,7 @@
                             <svg class="web-icon" viewBox="0 0 24 24">
                                 <circle cx="12" cy="12" r="10"/>
                                 <line x1="2" y1="12" x2="22" y2="12"/>
-                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z"/>
                             </svg>
                         </div>
                         <div class="info-box-desc">
@@ -584,10 +582,10 @@
 
                     <!-- FRASE CENTRATA -->
                     <div class="social-page-desc">
-                        Rimani aggiornato sulle novità ed esplora la nostra gamma completa di veicoli
+                        Rimani aggiornato sulle novità ed esplora la nostra gamma completa di veicoli!
                     </div>
 
-                    <!-- ICONE CLICCABILI CENTRATE (INSTAGRAM E WEB) -->
+                    <!-- ICONE CLICCABILI INGRANDITE CENTRATE -->
                     <div class="social-buttons-container">
                         <!-- Instagram -->
                         <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
@@ -603,13 +601,13 @@
                             <svg viewBox="0 0 24 24">
                                 <circle cx="12" cy="12" r="10"/>
                                 <line x1="2" y1="12" x2="22" y2="12"/>
-                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z"/>
                             </svg>
                         </a>
                     </div>
                 </div>
 
-                <!-- Dati Aziendali -->
+                <!-- DATI AZIENDALI CON P.IVA NON CLICCABILE E BIANCA -->
                 <div class="company-info">
                     <div class="company-name">Impromart SRL</div>
                     Traversa Fossitelli snc &bull; 80147 Napoli<br>
@@ -622,7 +620,7 @@
 
         </div>
 
-        <!-- INDICATORI A PALLINI (3 PAGINE) -->
+        <!-- INDICATORI A PALLINI -->
         <div class="pagination-dots">
             <div class="dot active" id="dot0"></div>
             <div class="dot" id="dot1"></div>
