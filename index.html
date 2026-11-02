@@ -249,8 +249,8 @@
         }
 
         .btn-action:active {
-            background: rgba(230, 0, 0, 0.2);
-            border-color: #e60000;
+            background: rgba(41, 128, 185, 0.3);
+            border-color: #2980b9;
             transform: scale(0.98);
         }
 
@@ -279,7 +279,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* --- NUOVI BOX INFORMATIVI (PAGINA 1 e 2) --- */
+        /* --- BOX INFORMATIVI (PAGINA 1 e 2) --- */
         .info-box {
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -287,7 +287,7 @@
             padding: 14px;
             width: 100%;
             text-align: left;
-            margin-top: 5px;
+            margin-top: 14px; /* Spostato leggermente più in basso */
         }
 
         .info-box-title {
@@ -297,16 +297,14 @@
             margin-bottom: 6px;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 7px;
         }
 
-        .info-box-title span.highlight-dot {
-            width: 8px;
-            height: 8px;
-            background-color: #e60000;
-            border-radius: 50%;
-            display: inline-block;
-            box-shadow: 0 0 8px #e60000;
+        .info-box-title svg.web-icon {
+            width: 16px;
+            height: 16px;
+            fill: rgba(255, 255, 255, 0.9);
+            flex-shrink: 0;
         }
 
         .info-box-desc {
@@ -316,22 +314,26 @@
             margin-bottom: 10px;
         }
 
+        /* NUOVO COLORE BLU/GRIGIO CHIARO PER I TASTI D'AZIONE */
         .info-action-btn {
             display: block;
             width: 100%;
             text-align: center;
-            background: #e60000;
+            background: rgba(41, 128, 185, 0.85);
+            border: 1px solid rgba(52, 152, 219, 0.5);
             color: #ffffff;
             text-decoration: none;
             font-size: 0.82rem;
             font-weight: 700;
-            padding: 8px;
+            padding: 9px;
             border-radius: 8px;
-            transition: opacity 0.2s;
+            box-shadow: 0 4px 12px rgba(41, 128, 185, 0.25);
+            transition: all 0.2s;
         }
 
         .info-action-btn:active {
-            opacity: 0.8;
+            background: rgba(41, 128, 185, 1);
+            transform: scale(0.98);
         }
 
         /* AZIENDA & PARTITA IVA (SOLO SECONDA PAGINA) */
@@ -445,172 +447,4 @@
                         </a>
 
                         <!-- OFFICINA + vCard -->
-                        <a href="#" onclick="handlePhoneClick(event)" class="btn-action animate-in delay-5">
-                            <svg class="svg-icon" viewBox="0 0 24 24">
-                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                            </svg>
-                            <span class="btn-label">Officina</span> +39 081 596 2139
-                        </a>
-                    </div>
-
-                    <!-- BOX ASSISTENZA -->
-                    <div class="info-box">
-                        <div class="info-box-title">
-                            <span class="highlight-dot"></span> Il tuo contratto di assistenza è in scadenza?
-                        </div>
-                        <div class="info-box-desc">
-                            Concorda un appuntamento con la nostra officina per eseguire il test semaforo e valutare un'estensione.
-                        </div>
-                        <a href="tel:+390815962139" class="info-action-btn">Fissa un appuntamento</a>
-                    </div>
-                </div>
-
-                <div class="swipe-hint">Scorri per scoprire di più &rarr;</div>
-            </div>
-
-            <!-- ================= PAGINA 2 ================= -->
-            <div class="card-page">
-                <div class="header-content">
-                    <div class="job-title" style="opacity: 1; transform: none; filter: none; margin-top: 5px;">
-                        TECNOLOGIA E SERVIZI
-                    </div>
-                    <div class="red-line" style="opacity: 1; transform: scaleX(1);"></div>
-
-                    <!-- BOX RIO -->
-                    <div class="info-box" style="margin-top: 15px;">
-                        <div class="info-box-title">
-                            <span class="highlight-dot"></span> Il tuo veicolo sempre connesso
-                        </div>
-                        <div class="info-box-desc">
-                            Attiva RIO e non preoccuparti delle spie! Il tuo veicolo sarà online e la nostra officina potrà controllarlo per te. Incluso per un anno con l'acquisto del tuo veicolo.
-                        </div>
-                        <a href="tel:+390815962139" class="info-action-btn">Attiva RIO o richiedi info</a>
-                    </div>
-                </div>
-
-                <!-- Dati Aziendali spostati in fondo alla pagina 2 -->
-                <div class="company-info">
-                    <div class="company-name">Impromart SRL</div>
-                    Traversa Fossitelli snc &bull; 80147 Napoli<br>
-                    <span class="piva-text">P.IVA: 04911050633</span>
-                </div>
-
-                <div class="swipe-hint">&larr; Scorri per tornare indietro</div>
-            </div>
-
-        </div>
-
-        <!-- INDICATORI A PALLINI -->
-        <div class="pagination-dots">
-            <div class="dot active" id="dot0"></div>
-            <div class="dot" id="dot1"></div>
-        </div>
-
-    </div>
-
-    <script>
-        // Nasconde l'intro e sblocca la pagina dopo 2.8s
-        setTimeout(() => {
-            const loader = document.getElementById("loader");
-            if (loader) {
-                loader.classList.add("hidden");
-                setTimeout(() => loader.style.display = 'none', 1000);
-            }
-        }, 2800);
-
-        // Gestione Salva Contatto + Chiamata al tap sulla vCard
-        function handlePhoneClick(e) {
-            e.preventDefault();
-            
-            const vcardData = 
-`BEGIN:VCARD
-VERSION:3.0
-N:Ciotola;Massimo;;;
-FN:Massimo Ciotola
-ORG:Impromart SRL
-TITLE:Concessionaria e Officina Autorizzata MAN
-TEL;TYPE=CELL:+390815962139
-ADR;TYPE=WORK:;;Traversa Fossitelli snc;Napoli;;80147;Italy
-END:VCARD`;
-
-            const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8;' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.setAttribute('download', 'Impromart_Officina.vcf');
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-
-            setTimeout(() => {
-                window.location.href = "tel:+390815962139";
-            }, 300);
-        }
-
-        // --- GESTIONE SWIPE TOUCH E MOUSE PER LE 2 PAGINE ---
-        const wrapper = document.getElementById('pagesWrapper');
-        const dot0 = document.getElementById('dot0');
-        const dot1 = document.getElementById('dot1');
-        let currentPage = 0;
-        let startX = 0;
-        let isDragging = false;
-
-        function goToPage(page) {
-            currentPage = page;
-            wrapper.style.transform = `translateX(-${currentPage * 50}%)`;
-            if (currentPage === 0) {
-                dot0.classList.add('active');
-                dot1.classList.remove('active');
-            } else {
-                dot1.classList.add('active');
-                dot0.classList.remove('active');
-            }
-        }
-
-        wrapper.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].clientX;
-            isDragging = true;
-        }, {passive: true});
-
-        wrapper.addEventListener('touchmove', (e) => {
-            if (!isDragging) return;
-        }, {passive: true});
-
-        wrapper.addEventListener('touchend', (e) => {
-            if (!isDragging) return;
-            const endX = e.changedTouches[0].clientX;
-            const diff = startX - endX;
-
-            if (Math.abs(diff) > 50) { // Soglia minima swipe
-                if (diff > 0 && currentPage === 0) {
-                    goToPage(1); // Vai a pagina 2
-                } else if (diff < 0 && currentPage === 1) {
-                    goToPage(0); // Torna a pagina 1
-                }
-            }
-            isDragging = false;
-        });
-
-        // Supporto anche per il trascinamento da mouse (desktop preview)
-        wrapper.addEventListener('mousedown', (e) => {
-            startX = e.clientX;
-            isDragging = true;
-        });
-
-        window.addEventListener('mouseup', (e) => {
-            if (!isDragging) return;
-            const endX = e.clientX;
-            const diff = startX - endX;
-
-            if (Math.abs(diff) > 50) {
-                if (diff > 0 && currentPage === 0) {
-                    goToPage(1);
-                } else if (diff < 0 && currentPage === 1) {
-                    goToPage(0);
-                }
-            }
-            isDragging = false;
-        });
-    </script>
-</body>
-</html>
+                        <a href="#" onclick="handlePhone
