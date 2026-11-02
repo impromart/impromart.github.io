@@ -245,12 +245,12 @@
             box-shadow: 0 0 12px rgba(230, 0, 0, 0.5);
         }
 
-        /* FRASE SOTTO LA LINEA ROSSA */
+        /* FRASE SOTTO LA LINEA ROSSA (Spaziatura ulteriormente aumentata) */
         .help-text {
             font-size: 1rem;
             font-weight: 600;
             color: rgba(255, 255, 255, 0.9);
-            margin-top: 14px;
+            margin-top: 22px;
             margin-bottom: 12px;
             letter-spacing: 0.3px;
         }
@@ -330,20 +330,23 @@
             margin-bottom: 6px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
             gap: 7px;
+            flex-wrap: wrap;
         }
 
-        /* Icona web simile all'immagine a destra */
+        /* Icona web vicina alla parola "connesso" */
         .web-icon {
-            width: 18px;
-            height: 18px;
+            width: 16px;
+            height: 16px;
             fill: none;
             stroke: #ffffff;
             stroke-width: 1.8;
             stroke-linecap: round;
             stroke-linejoin: round;
             flex-shrink: 0;
+            vertical-align: middle;
+            display: inline-block;
+            margin-left: 2px;
         }
 
         .info-box-desc {
@@ -468,7 +471,7 @@
                     <!-- BOX ASSISTENZA -->
                     <div class="info-box animate-seq delay-5">
                         <div class="info-box-title">
-                            Il tuo contratto di assistenza è in scadenza?
+                            Il contratto di assistenza è in scadenza?
                         </div>
                         <div class="info-box-desc">
                             Concorda un appuntamento con la nostra officina per eseguire il test semaforo e valutare un'estensione.
@@ -488,10 +491,10 @@
                     </div>
                     <div class="red-line" style="transform: scaleX(1); opacity: 1;"></div>
 
-                    <!-- BOX RIO (Icona web a destra) -->
+                    <!-- BOX RIO (Icona web vicino alla parola "connesso") -->
                     <div class="info-box" style="margin-top: 15px;">
                         <div class="info-box-title">
-                            <span>Il tuo veicolo sempre connesso</span>
+                            Il tuo veicolo sempre connesso
                             <svg class="web-icon" viewBox="0 0 24 24">
                                 <circle cx="12" cy="12" r="10"/>
                                 <line x1="2" y1="12" x2="22" y2="12"/>
