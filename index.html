@@ -249,8 +249,8 @@
         }
 
         .btn-action:active {
-            background: rgba(41, 128, 185, 0.3);
-            border-color: #2980b9;
+            background: rgba(230, 0, 0, 0.2);
+            border-color: #e60000;
             transform: scale(0.98);
         }
 
@@ -279,7 +279,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* --- BOX INFORMATIVI (PAGINA 1 e 2) --- */
+        /* --- NUOVI BOX INFORMATIVI (PAGINA 1 e 2) --- */
         .info-box {
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -287,7 +287,7 @@
             padding: 14px;
             width: 100%;
             text-align: left;
-            margin-top: 14px; /* Spostato leggermente più in basso */
+            margin-top: 5px;
         }
 
         .info-box-title {
@@ -297,14 +297,16 @@
             margin-bottom: 6px;
             display: flex;
             align-items: center;
-            gap: 7px;
+            gap: 6px;
         }
 
-        .info-box-title svg.web-icon {
-            width: 16px;
-            height: 16px;
-            fill: rgba(255, 255, 255, 0.9);
-            flex-shrink: 0;
+        .info-box-title span.highlight-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #e60000;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #e60000;
         }
 
         .info-box-desc {
@@ -314,26 +316,22 @@
             margin-bottom: 10px;
         }
 
-        /* NUOVO COLORE BLU/GRIGIO CHIARO PER I TASTI D'AZIONE */
         .info-action-btn {
             display: block;
             width: 100%;
             text-align: center;
-            background: rgba(41, 128, 185, 0.85);
-            border: 1px solid rgba(52, 152, 219, 0.5);
+            background: #e60000;
             color: #ffffff;
             text-decoration: none;
             font-size: 0.82rem;
             font-weight: 700;
-            padding: 9px;
+            padding: 8px;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(41, 128, 185, 0.25);
-            transition: all 0.2s;
+            transition: opacity 0.2s;
         }
 
         .info-action-btn:active {
-            background: rgba(41, 128, 185, 1);
-            transform: scale(0.98);
+            opacity: 0.8;
         }
 
         /* AZIENDA & PARTITA IVA (SOLO SECONDA PAGINA) */
@@ -455,10 +453,10 @@
                         </a>
                     </div>
 
-                    <!-- BOX ASSISTENZA (Spostato più in basso e senza pallino) -->
+                    <!-- BOX ASSISTENZA -->
                     <div class="info-box">
                         <div class="info-box-title">
-                            Il tuo contratto di assistenza è in scadenza?
+                            <span class="highlight-dot"></span> Il tuo contratto di assistenza è in scadenza?
                         </div>
                         <div class="info-box-desc">
                             Concorda un appuntamento con la nostra officina per eseguire il test semaforo e valutare un'estensione.
@@ -478,13 +476,10 @@
                     </div>
                     <div class="red-line" style="opacity: 1; transform: scaleX(1);"></div>
 
-                    <!-- BOX RIO (Icona web al posto del pallino) -->
+                    <!-- BOX RIO -->
                     <div class="info-box" style="margin-top: 15px;">
                         <div class="info-box-title">
-                            <svg class="web-icon" viewBox="0 0 24 24">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-                            </svg>
-                            Il tuo veicolo sempre connesso
+                            <span class="highlight-dot"></span> Il tuo veicolo sempre connesso
                         </div>
                         <div class="info-box-desc">
                             Attiva RIO e non preoccuparti delle spie! Il tuo veicolo sarà online e la nostra officina potrà controllarlo per te. Incluso per un anno con l'acquisto del tuo veicolo.
@@ -493,7 +488,7 @@
                     </div>
                 </div>
 
-                <!-- Dati Aziendali in fondo alla pagina 2 -->
+                <!-- Dati Aziendali spostati in fondo alla pagina 2 -->
                 <div class="company-info">
                     <div class="company-name">Impromart SRL</div>
                     Traversa Fossitelli snc &bull; 80147 Napoli<br>
