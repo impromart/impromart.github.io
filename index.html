@@ -53,7 +53,7 @@
             align-items: center;
             justify-content: center;
             z-index: 9999;
-            transition: opacity 1s ease;
+            transition: opacity 1.2s ease;
         }
 
         #loader.hidden {
@@ -96,7 +96,7 @@
             flex-direction: column;
             overflow: hidden;
             opacity: 0;
-            animation: fadeInCard 1.2s ease forwards 2.8s;
+            animation: fadeInCard 1.4s ease forwards 2.8s;
             position: relative;
         }
 
@@ -163,25 +163,25 @@
             flex-grow: 1;
         }
 
-        /* ELEMENTI NASCOSTI PER L'ANIMAZIONE IN SEQUENZA */
+        /* ANIMAZIONI RALLENTATE E AMMORBIDITE */
         .animate-seq {
             opacity: 0;
-            transform: translateY(25px);
-            filter: blur(12px);
-            animation: fadeInVerySlow 2.2s cubic-bezier(0.1, 1, 0.2, 1) forwards;
+            transform: translateY(20px);
+            filter: blur(10px);
+            animation: fadeInSlow 3.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
         .animate-line-seq {
             opacity: 0;
             transform: scaleX(0);
-            animation: expandLineVerySlow 2.2s cubic-bezier(0.1, 1, 0.2, 1) forwards;
+            animation: expandLineSlow 3.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        @keyframes fadeInVerySlow {
+        @keyframes fadeInSlow {
             0% {
                 opacity: 0;
-                transform: translateY(25px);
-                filter: blur(12px);
+                transform: translateY(20px);
+                filter: blur(10px);
             }
             100% {
                 opacity: 1;
@@ -190,7 +190,7 @@
             }
         }
 
-        @keyframes expandLineVerySlow {
+        @keyframes expandLineSlow {
             0% {
                 opacity: 0;
                 transform: scaleX(0);
@@ -201,10 +201,10 @@
             }
         }
 
-        /* SEQUENZA DEI RITARDI PER LOGO E TESTI */
-        .delay-1 { animation-delay: 3.4s; }
-        .delay-2 { animation-delay: 3.8s; }
-        .delay-3 { animation-delay: 4.2s; }
+        /* RITARDI DILATATI PER UN'ENTRATA PIÙ GRADUALE */
+        .delay-1 { animation-delay: 3.5s; }
+        .delay-2 { animation-delay: 4.1s; }
+        .delay-3 { animation-delay: 4.7s; }
 
         /* LOGO AZIENDALE */
         .card-logo-container {
@@ -242,7 +242,7 @@
             box-shadow: 0 0 12px rgba(230, 0, 0, 0.5);
         }
 
-        /* --- ANIMAZIONE FLUIDA IN UNICA SEQUENZA: CENTRO -> SALITA --- */
+        /* --- FRASE "COME POSSIAMO AIUTARTI?" (ENTRATA LENTA CENTRO -> SPOSTAMENTO LENTO ALTO) --- */
         .help-text {
             font-size: 1.05rem;
             font-weight: 700;
@@ -251,18 +251,18 @@
             margin-top: 15px;
             margin-bottom: 15px;
             opacity: 0;
-            animation: appearCenterAndSlideUp 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards 4.5s;
+            animation: appearSlowCenterAndSlideUp 3.2s cubic-bezier(0.25, 1, 0.25, 1) forwards 5.2s;
         }
 
-        @keyframes appearCenterAndSlideUp {
+        @keyframes appearSlowCenterAndSlideUp {
             0% {
                 opacity: 0;
                 transform: translateY(120px) scale(1.15);
-                filter: blur(10px);
+                filter: blur(12px);
             }
             45% {
                 opacity: 1;
-                transform: translateY(120px) scale(1.1);
+                transform: translateY(120px) scale(1.08);
                 filter: blur(0px);
             }
             100% {
@@ -272,27 +272,16 @@
             }
         }
 
-        /* CONTATTI (Compaiono fluidamente non appena la scritta arriva in alto) */
+        /* WRAPPER CONTATTI */
         .contact-info {
             display: flex;
             flex-direction: column;
             gap: 12px;
             width: 100%;
-            opacity: 0;
-            transform: translateY(20px);
-            filter: blur(6px);
-            animation: fadeInButtons 1s cubic-bezier(0.16, 1, 0.3, 1) forwards 5.9s;
             margin-top: 5px;
         }
 
-        @keyframes fadeInButtons {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-                filter: blur(0px);
-            }
-        }
-
+        /* ANIMAZIONE SINGOLA PER OGNI PULSANTE (UNO DOPO L'ALTRO) */
         .btn-action {
             display: flex;
             align-items: center;
@@ -307,8 +296,24 @@
             font-size: 0.9rem;
             font-weight: 600;
             letter-spacing: 0.3px;
-            transition: all 0.2s ease;
+            transition: all 0.25s ease;
             cursor: pointer;
+            opacity: 0;
+            transform: translateY(20px);
+            filter: blur(8px);
+            animation: fadeInSingleBtn 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* Ritardi in sequenza per i pulsanti (dopo il posizionamento della frase) */
+        .btn-delay-1 { animation-delay: 7.4s; }
+        .btn-delay-2 { animation-delay: 8.0s; }
+
+        @keyframes fadeInSingleBtn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0px);
+            }
         }
 
         .btn-action:active {
@@ -495,23 +500,23 @@
                     <!-- Linea Rossa MAN -->
                     <div class="red-line animate-line-seq delay-3"></div>
 
-                    <!-- Frase "Come possiamo aiutarti?" (Animata al centro e poi verso l'alto) -->
+                    <!-- Frase "Come possiamo aiutarti?" -->
                     <div class="help-text">
                         Come possiamo aiutarti?
                     </div>
 
-                    <!-- Contatti (Compaiono subito dopo lo scivolamento della frase) -->
+                    <!-- Contatti con animazione sequenziale separata -->
                     <div class="contact-info">
-                        <!-- Soccorso H24 -->
-                        <a href="tel:0080066245324" class="btn-action">
+                        <!-- Soccorso H24 (Pulsante 1) -->
+                        <a href="tel:0080066245324" class="btn-action btn-delay-1">
                             <svg class="svg-icon" viewBox="0 0 24 24">
                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
                             </svg>
                             Ho bisogno del soccorso H24
                         </a>
 
-                        <!-- Parola con l'officina -->
-                        <a href="tel:+390815962139" class="btn-action">
+                        <!-- Parola con l'officina (Pulsante 2) -->
+                        <a href="tel:+390815962139" class="btn-action btn-delay-2">
                             <svg class="svg-icon" viewBox="0 0 24 24">
                                 <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                             </svg>
@@ -632,7 +637,7 @@
             const loader = document.getElementById("loader");
             if (loader) {
                 loader.classList.add("hidden");
-                setTimeout(() => loader.style.display = 'none', 1000);
+                setTimeout(() => loader.style.display = 'none', 1200);
             }
         }, 2800);
 
