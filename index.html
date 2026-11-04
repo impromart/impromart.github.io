@@ -62,8 +62,8 @@
         }
 
         .intro-logo-img {
-            max-width: 50vw; /* Ridotto leggermente rispetto a 65vw */
-            max-height: 35vh; /* Ridotto leggermente rispetto a 45vh */
+            max-width: 58vw; /* Leggermente più grande */
+            max-height: 40vh; /* Leggermente più grande */
             object-fit: contain;
             opacity: 0;
             transform: scale(0.92);
@@ -204,7 +204,7 @@
         .delay-1 { animation-delay: 3.2s; }
         .delay-2 { animation-delay: 4.0s; }
 
-        /* LOGO AZIENDALE INGRANDITO */
+        /* LOGO AZIENDALE */
         .card-logo-container {
             width: 100%;
             display: flex;
@@ -213,60 +213,60 @@
         }
 
         .card-logo-img {
-            max-width: 360px;
-            max-height: 145px;
+            max-width: 340px;
+            max-height: 135px;
             object-fit: contain;
             filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
         }
 
-        /* TITOLO CONCESSIONARIA INGRANDITO */
+        /* TITOLO CONCESSIONARIA - Spazio superiore ridotto */
         .job-title {
             font-size: 0.98rem;
             font-weight: 800;
             letter-spacing: 1.5px;
             text-transform: uppercase;
             color: rgba(255, 255, 255, 0.95);
-            margin-top: 10px;
+            margin-top: 4px; /* Ridotto da 10px a 4px */
             line-height: 1.4;
         }
 
-        /* LINEA ROSSA MAN */
+        /* LINEA ROSSA MAN - Leggermente più stretta */
         .red-line {
-            width: 145px;
+            width: 120px; /* Ridotto da 145px a 120px */
             height: 3.5px;
             background-color: #e60000;
-            margin: 14px auto 10px auto;
+            margin: 12px auto 10px auto;
             border-radius: 2px;
             transform-origin: center;
             box-shadow: 0 0 12px rgba(230, 0, 0, 0.5);
         }
 
-        /* --- FRASE "COME POSSIAMO AIUTARTI?" INGRANDITA --- */
+        /* --- FRASE "COME POSSIAMO AIUTARTI?" (Inizia a salire prima) --- */
         .help-text {
             font-size: 1.28rem;
             font-weight: 700;
             color: #ffffff;
             letter-spacing: 0.4px;
-            margin-top: 28px;
-            margin-bottom: 22px;
+            margin-top: 22px;
+            margin-bottom: 18px;
             opacity: 0;
-            animation: slowBlurAndSmoothMove 5.0s cubic-bezier(0.45, 0, 0.25, 1) forwards 6.0s;
+            animation: slowBlurAndSmoothMove 4.5s cubic-bezier(0.45, 0, 0.25, 1) forwards 5.2s; /* Anticipata a 5.2s */
         }
 
         @keyframes slowBlurAndSmoothMove {
             0% {
                 opacity: 0;
-                transform: translateY(115px) scale(0.94);
+                transform: translateY(90px) scale(0.94); /* Partenza leggermente più vicina */
                 filter: blur(20px);
             }
             35% {
                 opacity: 1;
-                transform: translateY(115px) scale(1.0);
+                transform: translateY(90px) scale(1.0);
                 filter: blur(0px);
             }
             44% {
                 opacity: 1;
-                transform: translateY(115px) scale(1.0);
+                transform: translateY(90px) scale(1.0);
                 filter: blur(0px);
             }
             100% {
@@ -285,33 +285,65 @@
             margin-top: 4px;
         }
 
-        /* --- PULSANTI INGRANDITI --- */
+        /* --- PULSANTI ALLINEATI A SINISTRA CON ICONA E FRECCETTA --- */
         .btn-action {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start; /* Allineati a sinistra */
+            gap: 14px;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.14);
             border-radius: 14px;
-            padding: 17px 10px;
+            padding: 16px 16px;
             color: #ffffff;
             text-decoration: none;
-            font-size: 0.98rem;
+            font-size: 0.95rem;
             font-weight: 600;
             letter-spacing: 0.2px;
-            white-space: nowrap;
             transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
             cursor: pointer;
             opacity: 0;
             transform: translateY(45px);
             filter: blur(8px);
             animation: flyUpAndDecelerateSlow 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            position: relative;
         }
 
-        .btn-delay-1 { animation-delay: 10.5s; }
-        .btn-delay-2 { animation-delay: 10.9s; }
-        .btn-delay-3 { animation-delay: 11.3s; }
-        .btn-delay-4 { animation-delay: 11.7s; }
+        .btn-action .btn-icon {
+            width: 22px;
+            height: 22px;
+            stroke: #ffffff;
+            fill: none;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+        }
+
+        .btn-action .btn-text {
+            flex-grow: 1;
+            text-align: left;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .btn-action .arrow-icon {
+            width: 16px;
+            height: 16px;
+            stroke: rgba(255, 255, 255, 0.6);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+            margin-left: auto;
+        }
+
+        .btn-delay-1 { animation-delay: 9.6s; }
+        .btn-delay-2 { animation-delay: 10.0s; }
+        .btn-delay-3 { animation-delay: 10.4s; }
+        .btn-delay-4 { animation-delay: 10.8s; }
 
         @keyframes flyUpAndDecelerateSlow {
             0% {
@@ -332,7 +364,7 @@
             transform: scale(0.98);
         }
 
-        /* DATI AZIENDALI INGRANDITI (TERZA SCHERMATA) */
+        /* DATI AZIENDALI (TERZA SCHERMATA) - Spostati più in alto */
         .company-info {
             text-align: center;
             font-size: 0.95rem;
@@ -340,14 +372,14 @@
             color: rgba(255, 255, 255, 0.88);
             user-select: none;
             width: 100%;
-            margin-top: 10px;
+            margin-top: -20px; /* Spostato visibilmente più in alto */
             padding-top: 10px;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .card-page-3 .company-info {
-            margin-top: -8px; /* Spostato più in alto rispetto a prima */
-            padding-top: 12px;
+            margin-top: -25px; 
+            padding-top: 10px;
         }
 
         .company-name {
@@ -373,10 +405,10 @@
             color: rgba(255, 255, 255, 0.45);
             letter-spacing: 0.6px;
             text-transform: uppercase;
-            margin-top: 12px; /* Margine aumentato per staccarlo dai dati aziendali */
+            margin-top: 10px;
         }
 
-        /* --- STILI SECONDA E TERZA PAGINA INGRANDITI --- */
+        /* --- STILI SECONDA E TERZA PAGINA --- */
         .info-box {
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -434,7 +466,7 @@
             font-weight: 500;
             color: rgba(255, 255, 255, 0.92);
             line-height: 1.6;
-            margin: 30px 10px 25px 10px;
+            margin: 20px 10px 20px 10px;
             text-align: center;
         }
 
@@ -444,6 +476,7 @@
             align-items: center;
             gap: 22px;
             width: 100%;
+            margin-bottom: 20px;
         }
 
         .social-btn {
@@ -513,26 +546,34 @@
                         Come possiamo aiutarti?
                     </div>
 
-                    <!-- Contatti (4 Pulsanti Ingranditi) -->
+                    <!-- Contatti (4 Pulsanti con Icone e Frecce) -->
                     <div class="contact-info">
                         <!-- Pulsante 1: Soccorso stradale H24 -->
                         <a href="tel:0080066245324" class="btn-action btn-delay-1">
-                            Soccorso stradale H24
+                            <svg class="btn-icon" viewBox="0 0 24 24"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                            <span class="btn-text">Soccorso stradale H24</span>
+                            <svg class="arrow-icon" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
                         </a>
 
                         <!-- Pulsante 2: Contatta l'officina -->
                         <a href="tel:+390815962139" class="btn-action btn-delay-2">
-                            Contatta l'officina
+                            <svg class="btn-icon" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                            <span class="btn-text">Contatta l'officina</span>
+                            <svg class="arrow-icon" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
                         </a>
 
                         <!-- Pulsante 3: Contatta l'accettazione -->
                         <a href="tel:+390815962139" class="btn-action btn-delay-3">
-                            Contatta l'accettazione
+                            <svg class="btn-icon" viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg>
+                            <span class="btn-text">Contatta l'accettazione</span>
+                            <svg class="arrow-icon" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
                         </a>
 
                         <!-- Pulsante 4: Contatta il magazzino -->
                         <a href="tel:+390815962139" class="btn-action btn-delay-4">
-                            Contatta il magazzino
+                            <svg class="btn-icon" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                            <span class="btn-text">Contatta il magazzino</span>
+                            <svg class="arrow-icon" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
                         </a>
                     </div>
                 </div>
@@ -592,7 +633,7 @@
                         Rimani aggiornato sulle novità ed esplora la nostra gamma completa di veicoli
                     </div>
 
-                    <!-- 3 ICONE SOCIAL / WEB CENTRATE (INSTAGRAM, TIKTOK, WEB) -->
+                    <!-- 3 ICONE SOCIAL / WEB CENTRATE -->
                     <div class="social-buttons-container">
                         <!-- Instagram -->
                         <a href="https://www.instagram.com/impromart.it?psln=MThyZjU2eXNuYW5zbA==" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
