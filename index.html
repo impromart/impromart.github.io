@@ -174,8 +174,8 @@
         .animate-line-seq {
             opacity: 0;
             transform: scaleX(0);
-            /* Animazione riga rossa: dura fino a 6.2s totali */
-            animation: expandLineSlow 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards 4.0s;
+            /* Barra rossa parte a 3.8s e finisce esattamente a 5.4s */
+            animation: expandLineSlow 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards 3.8s;
         }
 
         @keyframes fadeInSlow {
@@ -203,7 +203,7 @@
         }
 
         .delay-1 { animation-delay: 3.2s; }
-        .delay-2 { animation-delay: 3.6s; }
+        .delay-2 { animation-delay: 3.5s; }
 
         /* LOGO AZIENDALE */
         .card-logo-container {
@@ -242,7 +242,7 @@
         }
 
         /* --- FRASE "COME POSSIAMO AIUTARTI?" --- */
-        /* Partenza a 6.3s (subito dopo il completamento della riga rossa a 6.2s) */
+        /* Partenza immediata a 5.4s (senza pause) + micro-zoom iniziale (scale 0.94 -> 1.0) */
         .help-text {
             font-size: 1.15rem;
             font-weight: 700;
@@ -251,31 +251,31 @@
             margin-top: 28px;
             margin-bottom: 22px;
             opacity: 0;
-            animation: fadeInThenEaseInOutMove 4.5s cubic-bezier(0.42, 0, 0.58, 1) forwards 6.3s;
+            animation: fadeInZoomThenEaseInOutMove 4.5s cubic-bezier(0.42, 0, 0.58, 1) forwards 5.4s;
         }
 
-        @keyframes fadeInThenEaseInOutMove {
-            /* 0% - 30%: dissolvenza lenta e graduale al centro */
+        @keyframes fadeInZoomThenEaseInOutMove {
+            /* 0% - 28%: dissolvenza al centro con leggerissimo zoom-in (da 0.94 a 1.0) */
             0% {
                 opacity: 0;
-                transform: translateY(115px);
+                transform: translateY(115px) scale(0.94);
                 filter: blur(14px);
             }
-            30% {
+            28% {
                 opacity: 1;
-                transform: translateY(115px);
+                transform: translateY(115px) scale(1.0);
                 filter: blur(0px);
             }
-            /* 30% - 52%: Pausa di 1 secondo esatto ferma al centro */
-            52% {
+            /* 28% - 50%: Pausa ferma al centro */
+            50% {
                 opacity: 1;
-                transform: translateY(115px);
+                transform: translateY(115px) scale(1.0);
                 filter: blur(0px);
             }
-            /* 52% - 100%: Parte lenta, accelera al centro e frena dolcemente in alto */
+            /* 50% - 100%: Salita con fisica Ease-in-out (decelerazione morbida in arrivo) */
             100% {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateY(0) scale(1.0);
                 filter: blur(0px);
             }
         }
@@ -289,7 +289,7 @@
             margin-top: 8px;
         }
 
-        /* PULSANTI (Compaiono dopo il termine della frenata della scritta) */
+        /* PULSANTI (Compaiono a seguire la fine della salita della scritta a ~9.9s) */
         .btn-action {
             display: flex;
             align-items: center;
@@ -312,8 +312,8 @@
             animation: fadeInSlowBtn 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        .btn-delay-1 { animation-delay: 11.0s; }
-        .btn-delay-2 { animation-delay: 11.6s; }
+        .btn-delay-1 { animation-delay: 10.0s; }
+        .btn-delay-2 { animation-delay: 10.6s; }
 
         @keyframes fadeInSlowBtn {
             to {
