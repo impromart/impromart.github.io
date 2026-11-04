@@ -242,14 +242,13 @@
         }
 
         /* --- FRASE "COME POSSIAMO AIUTARTI?" --- */
-        /* Inizio anticipato a 6.0s + maggior margine inferiore per spingere i pulsanti più in basso */
         .help-text {
             font-size: 1.2rem;
             font-weight: 700;
             color: #ffffff;
             letter-spacing: 0.4px;
             margin-top: 20px;
-            margin-bottom: 24px; /* Aumentato il distacco dai pulsanti */
+            margin-bottom: 24px;
             opacity: 0;
             animation: slowBlurAndSmoothMove 5.0s cubic-bezier(0.45, 0, 0.25, 1) forwards 6.0s;
         }
@@ -286,7 +285,7 @@
             margin-top: 4px;
         }
 
-        /* --- NUOVA ANIMAZIONE PULSANTI: SALITA DAL BASSO CON DECELERAZIONE DOLCE --- */
+        /* --- ANIMAZIONE PULSANTI: PIÙ LENTA E CON DECELERAZIONE FLUIDA --- */
         .btn-action {
             display: flex;
             align-items: center;
@@ -304,23 +303,23 @@
             transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
             cursor: pointer;
             opacity: 0;
-            transform: translateY(40px); /* Partono più in basso per evidenziare la salita */
-            filter: blur(6px);
-            /* Curva cubic-bezier per forte decelerazione finale morbida */
-            animation: flyUpAndDecelerate 1.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            transform: translateY(45px);
+            filter: blur(8px);
+            /* Durata portata a 1.8s per un movimento più lento e decelerazione morbida finale */
+            animation: flyUpAndDecelerateSlow 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        /* Timing dei pulsanti ricalibrato in sequenza fluida a seguire la frase */
-        .btn-delay-1 { animation-delay: 10.4s; }
-        .btn-delay-2 { animation-delay: 10.7s; }
-        .btn-delay-3 { animation-delay: 11.0s; }
-        .btn-delay-4 { animation-delay: 11.3s; }
+        /* Timing dei pulsanti in sequenza graduale */
+        .btn-delay-1 { animation-delay: 10.5s; }
+        .btn-delay-2 { animation-delay: 10.9s; }
+        .btn-delay-3 { animation-delay: 11.3s; }
+        .btn-delay-4 { animation-delay: 11.7s; }
 
-        @keyframes flyUpAndDecelerate {
+        @keyframes flyUpAndDecelerateSlow {
             0% {
                 opacity: 0;
-                transform: translateY(40px);
-                filter: blur(6px);
+                transform: translateY(45px);
+                filter: blur(8px);
             }
             100% {
                 opacity: 1;
@@ -511,26 +510,26 @@
                         Come possiamo aiutarti?
                     </div>
 
-                    <!-- Contatti (4 Pulsanti con animazione Fly-Up & Deceleration) -->
+                    <!-- Contatti (4 Pulsanti) -->
                     <div class="contact-info">
-                        <!-- Pulsante 1: Soccorso H24 -->
+                        <!-- Pulsante 1: Soccorso stradale H24 -->
                         <a href="tel:0080066245324" class="btn-action btn-delay-1">
-                            Ho bisogno del soccorso H24
+                            Soccorso stradale H24
                         </a>
 
-                        <!-- Pulsante 2: Officina -->
+                        <!-- Pulsante 2: Contatta l'officina -->
                         <a href="tel:+390815962139" class="btn-action btn-delay-2">
-                            Mi occorre parlare con l'officina
+                            Contatta l'officina
                         </a>
 
-                        <!-- Pulsante 3: Accettazione -->
+                        <!-- Pulsante 3: Contatta l'accettazione -->
                         <a href="tel:+390815962139" class="btn-action btn-delay-3">
-                            Mi occorre parlare con l'accettazione
+                            Contatta l'accettazione
                         </a>
 
-                        <!-- Pulsante 4: Magazzino -->
+                        <!-- Pulsante 4: Contatta il magazzino -->
                         <a href="tel:+390815962139" class="btn-action btn-delay-4">
-                            Mi occorre parlare con il magazzino
+                            Contatta il magazzino
                         </a>
                     </div>
                 </div>
