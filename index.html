@@ -115,7 +115,7 @@
         .card-page {
             width: 33.333%;
             height: 100%;
-            padding: 20px 18px 12px 18px;
+            padding: 16px 18px 10px 18px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -213,15 +213,15 @@
         }
 
         .card-logo-img {
-            max-width: 340px;
-            max-height: 135px;
+            max-width: 320px;
+            max-height: 120px;
             object-fit: contain;
             filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
         }
 
         /* TITOLO CONCESSIONARIA */
         .job-title {
-            font-size: 0.98rem;
+            font-size: 0.92rem;
             font-weight: 800;
             letter-spacing: 1.5px;
             text-transform: uppercase;
@@ -235,7 +235,7 @@
             width: 80px;
             height: 3.5px;
             background-color: #e60000;
-            margin: 10px auto 8px auto;
+            margin: 8px auto 6px auto;
             border-radius: 2px;
             transform-origin: center;
             box-shadow: 0 0 12px rgba(230, 0, 0, 0.5);
@@ -243,12 +243,12 @@
 
         /* --- FRASE "COME POSSIAMO AIUTARTI?" --- */
         .help-text {
-            font-size: 1.28rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: #ffffff;
             letter-spacing: 0.4px;
-            margin-top: 18px; 
-            margin-bottom: 38px; /* Distanza maggiorata verso i pulsanti */
+            margin-top: 10px; 
+            margin-bottom: 12px; /* Spazio ridotto per distribuire meglio 5 pulsanti */
             opacity: 0;
             animation: slowBlurAndSmoothMove 4.5s cubic-bezier(0.45, 0, 0.25, 1) forwards 5.2s;
         }
@@ -256,33 +256,33 @@
         @keyframes slowBlurAndSmoothMove {
             0% {
                 opacity: 0;
-                transform: translateY(160px) scale(0.94);
+                transform: translateY(140px) scale(0.94);
                 filter: blur(20px);
             }
             35% {
                 opacity: 1;
-                transform: translateY(160px) scale(1.0);
+                transform: translateY(140px) scale(1.0);
                 filter: blur(0px);
             }
             44% {
                 opacity: 1;
-                transform: translateY(160px) scale(1.0);
+                transform: translateY(140px) scale(1.0);
                 filter: blur(0px);
             }
             100% {
                 opacity: 1;
-                transform: translateY(16px) scale(1.0);
+                transform: translateY(10px) scale(1.0);
                 filter: blur(0px);
             }
         }
 
-        /* WRAPPER CONTATTI (4 PULSANTI) */
+        /* WRAPPER CONTATTI (5 PULSANTI) */
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 9px;
             width: 100%;
-            margin-top: 18px; /* Ulteriore spazio sopra i pulsanti */
+            margin-top: 4px;
         }
 
         /* PULSANTI CON ICONA E FRECCETTA */
@@ -290,28 +290,28 @@
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            gap: 14px;
+            gap: 12px;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.14);
-            border-radius: 14px;
-            padding: 16px 16px;
+            border-radius: 12px;
+            padding: 13px 14px;
             color: #ffffff;
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             font-weight: 600;
             letter-spacing: 0.2px;
             transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
             cursor: pointer;
             opacity: 0;
-            transform: translateY(45px);
+            transform: translateY(40px);
             filter: blur(8px);
             animation: flyUpAndDecelerateSlow 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
             position: relative;
         }
 
         .btn-action .btn-icon {
-            width: 22px;
-            height: 22px;
+            width: 20px;
+            height: 20px;
             stroke: #ffffff;
             fill: none;
             stroke-width: 1.8;
@@ -329,8 +329,8 @@
         }
 
         .btn-action .arrow-icon {
-            width: 16px;
-            height: 16px;
+            width: 15px;
+            height: 15px;
             stroke: rgba(255, 255, 255, 0.6);
             fill: none;
             stroke-width: 2;
@@ -344,11 +344,12 @@
         .btn-delay-2 { animation-delay: 10.0s; }
         .btn-delay-3 { animation-delay: 10.4s; }
         .btn-delay-4 { animation-delay: 10.8s; }
+        .btn-delay-5 { animation-delay: 11.2s; }
 
         @keyframes flyUpAndDecelerateSlow {
             0% {
                 opacity: 0;
-                transform: translateY(45px);
+                transform: translateY(40px);
                 filter: blur(8px);
             }
             100% {
@@ -416,7 +417,7 @@
             color: rgba(255, 255, 255, 0.45);
             letter-spacing: 0.6px;
             text-transform: uppercase;
-            margin-top: 15px;
+            margin-top: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -571,7 +572,7 @@
                         Come possiamo aiutarti?
                     </div>
 
-                    <!-- Contatti (4 Pulsanti con Icone e Frecce) -->
+                    <!-- Contatti (5 Pulsanti con Icone e Frecce) -->
                     <div class="contact-info">
                         <!-- Pulsante 1: Soccorso stradale H24 -->
                         <a href="tel:0080066245324" class="btn-action btn-delay-1">
@@ -598,6 +599,13 @@
                         <a href="tel:+390815962139" class="btn-action btn-delay-4">
                             <svg class="btn-icon" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
                             <span class="btn-text">Contatta il magazzino</span>
+                            <svg class="arrow-icon" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+                        </a>
+
+                        <!-- Pulsante 5: Contatta il back office -->
+                        <a href="tel:+390815962139" class="btn-action btn-delay-5">
+                            <svg class="btn-icon" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                            <span class="btn-text">Contatta il back office</span>
                             <svg class="arrow-icon" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
                         </a>
                     </div>
@@ -628,7 +636,7 @@
                             </svg>
                         </div>
                         <div class="info-box-desc">
-                            Attiva RIO e non preoccuparti delle spie! Il tuo veicolo sarà online e la nostra officina potrà controllarlo per te. Incluso per un anno con l'acquisto del tuo MAN.
+                            Attiva RIO e non preoccuparti delle spie! Il tuo veicolo sarà online e la nostra officina potrà controllarlo per te. Incluso per un anno con l'acquisto del tuo veicolo.
                         </div>
                         <a href="tel:+390815925267" class="info-action-btn">Attiva RIO o richiedi info</a>
                     </div>
@@ -639,7 +647,7 @@
                             Contratto di manutenzione in scadenza?
                         </div>
                         <div class="info-box-desc">
-                            Chiedi alla nostra officina di eseguire il test semaforo per valutare un'estensione!
+                            Chiedi alla nostra officina di eseguire il test semaforo per valutare un'estensione!.
                         </div>
                         <a href="tel:+393929808872" class="info-action-btn">Fissa un appuntamento</a>
                     </div>
