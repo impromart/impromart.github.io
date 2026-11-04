@@ -163,7 +163,7 @@
             flex-grow: 1;
         }
 
-        /* --- ANIMAZIONI LOGO E SCRITTA CONCESSIONARIA (PIÙ LENTE E DOLCI) --- */
+        /* ANIMAZIONI LOGO E SCRITTA CONCESSIONARIA */
         .animate-seq {
             opacity: 0;
             transform: translateY(25px);
@@ -201,7 +201,6 @@
             }
         }
 
-        /* RITARDI DILATATI PER UN'ENTRATA RALLENTATA ED ELEGANTE */
         .delay-1 { animation-delay: 3.2s; }
         .delay-2 { animation-delay: 4.2s; }
 
@@ -243,7 +242,7 @@
         }
 
         /* --- FRASE "COME POSSIAMO AIUTARTI?" --- */
-        /* Applicata la curva cubic-bezier(0.7, 0, 0.1, 1) per marcata accelerazione e decelerazione */
+        /* Sfocatura in entrata resa più lenta + curva di velocità più morbida ed equilibrata */
         .help-text {
             font-size: 1.25rem;
             font-weight: 700;
@@ -252,28 +251,28 @@
             margin-top: 28px;
             margin-bottom: 22px;
             opacity: 0;
-            animation: fadeInThenStrongAccDecMove 5.2s cubic-bezier(0.7, 0, 0.1, 1) forwards 6.8s;
+            animation: slowBlurAndSmoothMove 5.4s cubic-bezier(0.45, 0, 0.25, 1) forwards 6.8s;
         }
 
-        @keyframes fadeInThenStrongAccDecMove {
-            /* 0% - 25%: Dissolvenza in entrata al centro con micro zoom */
+        @keyframes slowBlurAndSmoothMove {
+            /* 0% - 35%: La sfocatura e la dissolvenza si dissolvono più lentamente ed gradualmente al centro */
             0% {
                 opacity: 0;
                 transform: translateY(115px) scale(0.94);
-                filter: blur(16px);
+                filter: blur(20px);
             }
-            25% {
-                opacity: 1;
-                transform: translateY(115px) scale(1.0);
-                filter: blur(0px);
-            }
-            /* 25% - 35%: Pausa ferma al centro */
             35% {
                 opacity: 1;
                 transform: translateY(115px) scale(1.0);
                 filter: blur(0px);
             }
-            /* 35% - 100%: Partenza lenta -> Forte accelerazione -> Frenata graduale e morbida in alto */
+            /* 35% - 44%: Breve pausa naturale */
+            44% {
+                opacity: 1;
+                transform: translateY(115px) scale(1.0);
+                filter: blur(0px);
+            }
+            /* 44% - 100%: Salita morbida e graduale senza strappi visivi */
             100% {
                 opacity: 1;
                 transform: translateY(0) scale(1.0);
@@ -290,7 +289,7 @@
             margin-top: 8px;
         }
 
-        /* PULSANTI DI CHIAMATA (Partono subito dopo la frenata morbida) */
+        /* PULSANTI DI CHIAMATA */
         .btn-action {
             display: flex;
             align-items: center;
@@ -313,8 +312,8 @@
             animation: fadeInSlowBtn 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        .btn-delay-1 { animation-delay: 11.6s; }
-        .btn-delay-2 { animation-delay: 12.2s; }
+        .btn-delay-1 { animation-delay: 11.8s; }
+        .btn-delay-2 { animation-delay: 12.4s; }
 
         @keyframes fadeInSlowBtn {
             to {
@@ -330,7 +329,7 @@
             transform: scale(0.98);
         }
 
-        /* DATI AZIENDALI INGRANDITI */
+        /* DATI AZIENDALI */
         .company-info {
             text-align: center;
             font-size: 0.92rem;
