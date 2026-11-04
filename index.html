@@ -62,8 +62,8 @@
         }
 
         .intro-logo-img {
-            max-width: 65vw;
-            max-height: 45vh;
+            max-width: 50vw; /* Ridotto leggermente rispetto a 65vw */
+            max-height: 35vh; /* Ridotto leggermente rispetto a 45vh */
             object-fit: contain;
             opacity: 0;
             transform: scale(0.92);
@@ -241,13 +241,13 @@
             box-shadow: 0 0 12px rgba(230, 0, 0, 0.5);
         }
 
-        /* --- FRASE "COME POSSIAMO AIUTARTI?" INGRANDITA (MODIFICATA CON MARGINE SUPERIORE MAGGIORE) --- */
+        /* --- FRASE "COME POSSIAMO AIUTARTI?" INGRANDITA --- */
         .help-text {
             font-size: 1.28rem;
             font-weight: 700;
             color: #ffffff;
             letter-spacing: 0.4px;
-            margin-top: 28px; /* Aumentato da 20px a 28px per staccarla di più dalla linea rossa */
+            margin-top: 28px;
             margin-bottom: 22px;
             opacity: 0;
             animation: slowBlurAndSmoothMove 5.0s cubic-bezier(0.45, 0, 0.25, 1) forwards 6.0s;
@@ -332,7 +332,7 @@
             transform: scale(0.98);
         }
 
-        /* DATI AZIENDALI INGRANDITI (TERZA SCHERMATA MODIFICATA) */
+        /* DATI AZIENDALI INGRANDITI (TERZA SCHERMATA) */
         .company-info {
             text-align: center;
             font-size: 0.95rem;
@@ -346,8 +346,8 @@
         }
 
         .card-page-3 .company-info {
-            margin-top: -24px; /* Spostato più in alto rispetto a prima (-10px) */
-            padding-top: 8px;
+            margin-top: -8px; /* Spostato più in alto rispetto a prima */
+            padding-top: 12px;
         }
 
         .company-name {
@@ -373,7 +373,7 @@
             color: rgba(255, 255, 255, 0.45);
             letter-spacing: 0.6px;
             text-transform: uppercase;
-            margin-top: 8px;
+            margin-top: 12px; /* Margine aumentato per staccarlo dai dati aziendali */
         }
 
         /* --- STILI SECONDA E TERZA PAGINA INGRANDITI --- */
@@ -384,7 +384,7 @@
             padding: 16px;
             width: 100%;
             text-align: left;
-            margin-top: 16px; /* Aumentato leggermente per distanziarli di più dalla linea rossa */
+            margin-top: 16px;
         }
 
         .info-box-title {
