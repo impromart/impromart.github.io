@@ -168,13 +168,13 @@
             opacity: 0;
             transform: translateY(25px);
             filter: blur(12px);
-            animation: fadeInVerySlow 3.2s cubic-bezier(0.1, 1, 0.2, 1) forwards;
+            animation: fadeInVerySlow 2.2s cubic-bezier(0.1, 1, 0.2, 1) forwards;
         }
 
         .animate-line-seq {
             opacity: 0;
             transform: scaleX(0);
-            animation: expandLineVerySlow 3.2s cubic-bezier(0.1, 1, 0.2, 1) forwards;
+            animation: expandLineVerySlow 2.2s cubic-bezier(0.1, 1, 0.2, 1) forwards;
         }
 
         @keyframes fadeInVerySlow {
@@ -201,10 +201,10 @@
             }
         }
 
-        /* SEQUENZA DEI RITARDI */
-        .delay-1 { animation-delay: 3.8s; }
-        .delay-2 { animation-delay: 4.3s; }
-        .delay-3 { animation-delay: 4.8s; }
+        /* SEQUENZA DEI RITARDI PER LOGO E TESTI */
+        .delay-1 { animation-delay: 3.4s; }
+        .delay-2 { animation-delay: 3.8s; }
+        .delay-3 { animation-delay: 4.2s; }
 
         /* LOGO AZIENDALE */
         .card-logo-container {
@@ -242,58 +242,55 @@
             box-shadow: 0 0 12px rgba(230, 0, 0, 0.5);
         }
 
-        /* --- LOGICA SPECIALE PER "COME POSSIAMO AIUTARTI?" --- */
+        /* --- ANIMAZIONE FLUIDA IN UNICA SEQUENZA: CENTRO -> SALITA --- */
         .help-text {
-            font-size: 1.3rem;
+            font-size: 1.05rem;
             font-weight: 700;
             color: #ffffff;
             letter-spacing: 0.3px;
-            position: absolute;
-            top: 45%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0;
-            animation: showCenterHelp 0.8s ease forwards 5.2s;
-            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-            width: 100%;
-            z-index: 10;
-        }
-
-        @keyframes showCenterHelp {
-            0% { opacity: 0; transform: translate(-50%, -30%) scale(0.95); filter: blur(8px); }
-            100% { opacity: 1; transform: translate(-50%, -50%) scale(1); filter: blur(0px); }
-        }
-
-        /* Classe applicata via JS dopo 3 secondi per spostare la scritta in alto */
-        .help-text.moved {
-            position: relative;
-            top: auto;
-            left: auto;
-            transform: none;
-            font-size: 1.05rem;
             margin-top: 15px;
             margin-bottom: 15px;
-            animation: none;
-            opacity: 1;
+            opacity: 0;
+            animation: appearCenterAndSlideUp 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards 4.5s;
         }
 
-        /* CONTATTI (Pulsanti che compaiono dopo) */
+        @keyframes appearCenterAndSlideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(120px) scale(1.15);
+                filter: blur(10px);
+            }
+            45% {
+                opacity: 1;
+                transform: translateY(120px) scale(1.1);
+                filter: blur(0px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: blur(0px);
+            }
+        }
+
+        /* CONTATTI (Compaiono fluidamente non appena la scritta arriva in alto) */
         .contact-info {
             display: flex;
             flex-direction: column;
             gap: 12px;
             width: 100%;
             opacity: 0;
-            transform: translateY(15px);
-            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-            pointer-events: none;
+            transform: translateY(20px);
+            filter: blur(6px);
+            animation: fadeInButtons 1s cubic-bezier(0.16, 1, 0.3, 1) forwards 5.9s;
             margin-top: 5px;
         }
 
-        .contact-info.visible {
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: auto;
+        @keyframes fadeInButtons {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0px);
+            }
         }
 
         .btn-action {
@@ -327,7 +324,46 @@
             flex-shrink: 0;
         }
 
-        /* BOX ASSISTENZA */
+        /* DATI AZIENDALI E PARTITA IVA NON CLICCABILE */
+        .company-info {
+            text-align: center;
+            font-size: 0.82rem;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.8);
+            user-select: none;
+            width: 100%;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .company-name {
+            font-weight: 800;
+            font-size: 0.95rem;
+            margin-bottom: 2px;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+
+        .piva-text {
+            color: rgba(255, 255, 255, 0.8) !important;
+            font-size: 0.82rem;
+            font-weight: 400;
+            display: block;
+            margin-top: 2px;
+            text-decoration: none !important;
+            pointer-events: none;
+        }
+
+        .swipe-hint {
+            font-size: 0.72rem;
+            color: rgba(255, 255, 255, 0.4);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-top: 8px;
+        }
+
+        /* --- STILI SECONDA E TERZA PAGINA --- */
         .info-box {
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -335,7 +371,7 @@
             padding: 12px 14px;
             width: 100%;
             text-align: left;
-            margin-top: auto;
+            margin-top: 10px;
         }
 
         .info-box-title {
@@ -380,46 +416,6 @@
             transform: scale(0.98);
         }
 
-        /* DATI AZIENDALI E PARTITA IVA NON CLICCABILE */
-        .company-info {
-            text-align: center;
-            font-size: 0.82rem;
-            line-height: 1.5;
-            color: rgba(255, 255, 255, 0.8);
-            user-select: none;
-            width: 100%;
-            margin-top: 10px;
-            padding-top: 10px;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .company-name {
-            font-weight: 800;
-            font-size: 0.95rem;
-            margin-bottom: 2px;
-            color: #ffffff;
-            letter-spacing: 0.5px;
-        }
-
-        .piva-text {
-            color: rgba(255, 255, 255, 0.8) !important;
-            font-size: 0.82rem;
-            font-weight: 400;
-            display: block;
-            margin-top: 2px;
-            text-decoration: none !important;
-            pointer-events: none;
-        }
-
-        .swipe-hint {
-            font-size: 0.72rem;
-            color: rgba(255, 255, 255, 0.4);
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            margin-top: 8px;
-        }
-
-        /* --- STILI TERZA PAGINA (SOCIAL & WEB) --- */
         .social-page-desc {
             font-size: 0.95rem;
             font-weight: 500;
@@ -499,13 +495,13 @@
                     <!-- Linea Rossa MAN -->
                     <div class="red-line animate-line-seq delay-3"></div>
 
-                    <!-- Frase Come possiamo aiutarti? (Inizialmente al centro) -->
-                    <div class="help-text" id="helpText">
+                    <!-- Frase "Come possiamo aiutarti?" (Animata al centro e poi verso l'alto) -->
+                    <div class="help-text">
                         Come possiamo aiutarti?
                     </div>
 
-                    <!-- Contatti (Compaiono dopo che la scritta si sposta) -->
-                    <div class="contact-info" id="contactInfo">
+                    <!-- Contatti (Compaiono subito dopo lo scivolamento della frase) -->
+                    <div class="contact-info">
                         <!-- Soccorso H24 -->
                         <a href="tel:0080066245324" class="btn-action">
                             <svg class="svg-icon" viewBox="0 0 24 24">
@@ -522,17 +518,6 @@
                             Mi occorre parlare con l'officina
                         </a>
                     </div>
-                </div>
-
-                <!-- BOX ASSISTENZA -->
-                <div class="info-box">
-                    <div class="info-box-title">
-                        Il tuo contratto di assistenza è in scadenza?
-                    </div>
-                    <div class="info-box-desc">
-                        Concorda un appuntamento con la nostra officina per eseguire il test semaforo e valutare un'estensione.
-                    </div>
-                    <a href="tel:+390815962139" class="info-action-btn">Fissa un appuntamento</a>
                 </div>
 
                 <div class="swipe-hint">Scorri per scoprire di più &rarr;</div>
@@ -650,18 +635,6 @@
                 setTimeout(() => loader.style.display = 'none', 1000);
             }
         }, 2800);
-
-        // --- ANIMAZIONE TRANSIZIONE FRASE CENTRALE -> IN ALTO CON PULSANTI ---
-        // L'intro finisce a 2.8s. A 5.2s appare al centro. 
-        // Dopo 3 secondi esatti (quindi a 8.2s), la facciamo salire e comparire i pulsanti.
-        setTimeout(() => {
-            const helpText = document.getElementById('helpText');
-            const contactInfo = document.getElementById('contactInfo');
-            if (helpText && contactInfo) {
-                helpText.classList.add('moved');
-                contactInfo.classList.add('visible');
-            }
-        }, 8200);
 
         // --- GESTIONE SWIPE TOUCH E MOUSE PER LE 3 PAGINE ---
         const wrapper = document.getElementById('pagesWrapper');
