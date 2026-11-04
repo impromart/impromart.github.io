@@ -163,18 +163,18 @@
             flex-grow: 1;
         }
 
-        /* --- ANIMAZIONI LOGO E SCRITTA CONCESSIONARIA PIÙ LENTE E FLUIDE --- */
+        /* ANIMAZIONI LOGO E SCRITTA CON CELERITÀ MAGGIORE TRA LORO */
         .animate-seq {
             opacity: 0;
             transform: translateY(25px);
             filter: blur(14px);
-            animation: fadeInUltraSlow 3.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation: fadeInUltraSlow 3.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
         .animate-line-seq {
             opacity: 0;
             transform: scaleX(0);
-            animation: expandLineSlow 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 5.2s;
+            animation: expandLineSlow 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards 4.4s;
         }
 
         @keyframes fadeInUltraSlow {
@@ -201,11 +201,11 @@
             }
         }
 
-        /* RITARDI CALIBRATI PER UNA COMPARSA IN SEQUENZA PERFETTA */
+        /* RIDOTTO TEMPO TRA LOGO E TESTO CONCESSIONARIA */
         .delay-1 { animation-delay: 3.2s; }
-        .delay-2 { animation-delay: 4.2s; }
+        .delay-2 { animation-delay: 3.7s; } /* Ridotto da 4.2s a 3.7s per velocizzare la sequenza */
 
-        /* LOGO AZIENDALE ULTERIORMENTE INGRANDITO */
+        /* LOGO AZIENDALE */
         .card-logo-container {
             width: 100%;
             display: flex;
@@ -220,7 +220,7 @@
             filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
         }
 
-        /* TITOLO CONCESSIONARIA INGRANDITO */
+        /* TITOLO CONCESSIONARIA */
         .job-title {
             font-size: 0.95rem;
             font-weight: 800;
@@ -243,7 +243,7 @@
         }
 
         /* --- FRASE "COME POSSIAMO AIUTARTI?" --- */
-        /* Partenza a 7.0s (subito dopo la linea rossa) con micro-zoom (0.94 -> 1.0) e salita Ease-In-Out */
+        /* Comparsa molto più lenta + inizio salita anticipata (30% comparsa al centro -> 38% parte la salita) */
         .help-text {
             font-size: 1.25rem;
             font-weight: 700;
@@ -252,21 +252,22 @@
             margin-top: 28px;
             margin-bottom: 22px;
             opacity: 0;
-            animation: fadeInZoomThenEaseInOutMove 4.5s cubic-bezier(0.42, 0, 0.58, 1) forwards 7.0s;
+            animation: fadeInZoomThenMoveUpEarlier 5.0s cubic-bezier(0.42, 0, 0.58, 1) forwards 5.8s;
         }
 
-        @keyframes fadeInZoomThenEaseInOutMove {
+        @keyframes fadeInZoomThenMoveUpEarlier {
             0% {
                 opacity: 0;
                 transform: translateY(115px) scale(0.94);
-                filter: blur(14px);
+                filter: blur(16px);
             }
-            28% {
+            30% {
                 opacity: 1;
                 transform: translateY(115px) scale(1.0);
                 filter: blur(0px);
             }
-            50% {
+            /* Pausa brevissima: parte verso l'alto prima rispetto a prima */
+            38% {
                 opacity: 1;
                 transform: translateY(115px) scale(1.0);
                 filter: blur(0px);
@@ -287,21 +288,21 @@
             margin-top: 8px;
         }
 
-        /* PULSANTI DI CHIAMATA INGRANDITI */
+        /* PULSANTI SENZA ICONE - RIGO SINGOLO GARANTITO */
         .btn-action {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.14);
             border-radius: 14px;
-            padding: 17px 18px;
+            padding: 16px 10px;
             color: #ffffff;
             text-decoration: none;
-            font-size: 1.05rem;
+            font-size: 0.92rem; /* Font regolato per garantire una sola riga su tutti gli smartphone */
             font-weight: 600;
-            letter-spacing: 0.3px;
+            letter-spacing: 0.2px;
+            white-space: nowrap; /* Impedisce al testo di andare a capo */
             transition: all 0.25s ease;
             cursor: pointer;
             opacity: 0;
@@ -310,8 +311,8 @@
             animation: fadeInSlowBtn 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        .btn-delay-1 { animation-delay: 11.6s; }
-        .btn-delay-2 { animation-delay: 12.2s; }
+        .btn-delay-1 { animation-delay: 10.4s; }
+        .btn-delay-2 { animation-delay: 11.0s; }
 
         @keyframes fadeInSlowBtn {
             to {
@@ -325,13 +326,6 @@
             background: rgba(41, 128, 185, 0.3);
             border-color: #2980b9;
             transform: scale(0.98);
-        }
-
-        .svg-icon {
-            width: 22px;
-            height: 22px;
-            fill: #ffffff;
-            flex-shrink: 0;
         }
 
         /* DATI AZIENDALI INGRANDITI */
@@ -373,7 +367,7 @@
             margin-top: 10px;
         }
 
-        /* --- STILI SECONDA E TERZA PAGINA INGRANDITI --- */
+        /* --- STILI SECONDA E TERZA PAGINA --- */
         .info-box {
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -510,21 +504,15 @@
                         Come possiamo aiutarti?
                     </div>
 
-                    <!-- Contatti -->
+                    <!-- Contatti senza icone -->
                     <div class="contact-info">
                         <!-- Soccorso H24 (Pulsante 1) -->
                         <a href="tel:0080066245324" class="btn-action btn-delay-1">
-                            <svg class="svg-icon" viewBox="0 0 24 24">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
-                            </svg>
                             Ho bisogno del soccorso H24
                         </a>
 
-                        <!-- Parola con l'officina (Pulsante 2) -->
+                        <!-- Parlare con l'officina su rigo unico (Pulsante 2) -->
                         <a href="tel:+390815962139" class="btn-action btn-delay-2">
-                            <svg class="svg-icon" viewBox="0 0 24 24">
-                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                            </svg>
                             Mi occorre parlare con l'officina
                         </a>
                     </div>
@@ -545,7 +533,7 @@
                     <div class="info-box" style="margin-top: 10px;">
                         <div class="info-box-title">
                             Il tuo veicolo sempre connesso
-                            <svg class="svg-icon" viewBox="0 0 24 24" style="stroke: #fff; fill: none; stroke-width: 1.8;">
+                            <svg class="svg-icon" viewBox="0 0 24 24" style="width: 20px; height: 20px; stroke: #fff; fill: none; stroke-width: 1.8;">
                                 <circle cx="12" cy="12" r="10"/>
                                 <line x1="2" y1="12" x2="22" y2="12"/>
                                 <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
