@@ -241,14 +241,14 @@
             box-shadow: 0 0 12px rgba(230, 0, 0, 0.5);
         }
 
-        /* --- FRASE "COME POSSIAMO AIUTARTI?" (Posizione allineata all'esempio) --- */
+        /* --- FRASE "COME POSSIAMO AIUTARTI?" --- */
         .help-text {
             font-size: 1.28rem;
             font-weight: 700;
             color: #ffffff;
             letter-spacing: 0.4px;
             margin-top: 18px; 
-            margin-bottom: 16px;
+            margin-bottom: 24px; /* Margine inferiore aumentato per distanziare i pulsanti */
             opacity: 0;
             animation: slowBlurAndSmoothMove 4.5s cubic-bezier(0.45, 0, 0.25, 1) forwards 5.2s;
         }
@@ -271,18 +271,18 @@
             }
             100% {
                 opacity: 1;
-                transform: translateY(16px) scale(1.0); /* Si ferma leggermente più in basso rispetto alla linea rossa */
+                transform: translateY(16px) scale(1.0);
                 filter: blur(0px);
             }
         }
 
-        /* WRAPPER CONTATTI (4 PULSANTI) */
+        /* WRAPPER CONTATTI (4 PULSANTI) - Spostato ulteriormente in basso */
         .contact-info {
             display: flex;
             flex-direction: column;
             gap: 12px;
             width: 100%;
-            margin-top: 4px;
+            margin-top: 10px; /* Aggiunto margine superiore per distanziarli ulteriormente */
         }
 
         /* PULSANTI CON ICONA E FRECCETTA */
@@ -379,7 +379,7 @@
             width: 100%;
         }
 
-        /* DATI AZIENDALI - Spostati ancora più in alto */
+        /* DATI AZIENDALI */
         .company-info {
             text-align: center;
             font-size: 0.95rem;
@@ -387,7 +387,7 @@
             color: rgba(255, 255, 255, 0.88);
             user-select: none;
             width: 100%;
-            margin-top: 15px; /* Spostato visibilmente più in alto */
+            margin-top: 15px;
             padding-top: 14px;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
