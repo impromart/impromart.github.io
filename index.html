@@ -115,7 +115,7 @@
         .card-page {
             width: 33.333%;
             height: 100%;
-            padding: 24px 20px 15px 20px;
+            padding: 20px 18px 12px 18px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -214,20 +214,20 @@
 
         .card-logo-img {
             max-width: 340px;
-            max-height: 140px;
+            max-height: 130px;
             object-fit: contain;
             filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
         }
 
         /* TITOLO CONCESSIONARIA */
         .job-title {
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             font-weight: 800;
-            letter-spacing: 1.5px;
+            letter-spacing: 1.4px;
             text-transform: uppercase;
             color: rgba(255, 255, 255, 0.95);
-            margin-top: 12px;
-            line-height: 1.45;
+            margin-top: 10px;
+            line-height: 1.4;
         }
 
         /* LINEA ROSSA MAN */
@@ -235,27 +235,25 @@
             width: 140px;
             height: 3.5px;
             background-color: #e60000;
-            margin: 16px auto 12px auto;
+            margin: 14px auto 10px auto;
             border-radius: 2px;
             transform-origin: center;
             box-shadow: 0 0 12px rgba(230, 0, 0, 0.5);
         }
 
         /* --- FRASE "COME POSSIAMO AIUTARTI?" --- */
-        /* Sfocatura in entrata resa più lenta + curva di velocità più morbida ed equilibrata */
         .help-text {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: #ffffff;
             letter-spacing: 0.4px;
-            margin-top: 28px;
-            margin-bottom: 22px;
+            margin-top: 20px;
+            margin-bottom: 16px;
             opacity: 0;
             animation: slowBlurAndSmoothMove 5.4s cubic-bezier(0.45, 0, 0.25, 1) forwards 6.8s;
         }
 
         @keyframes slowBlurAndSmoothMove {
-            /* 0% - 35%: La sfocatura e la dissolvenza si dissolvono più lentamente ed gradualmente al centro */
             0% {
                 opacity: 0;
                 transform: translateY(115px) scale(0.94);
@@ -266,13 +264,11 @@
                 transform: translateY(115px) scale(1.0);
                 filter: blur(0px);
             }
-            /* 35% - 44%: Breve pausa naturale */
             44% {
                 opacity: 1;
                 transform: translateY(115px) scale(1.0);
                 filter: blur(0px);
             }
-            /* 44% - 100%: Salita morbida e graduale senza strappi visivi */
             100% {
                 opacity: 1;
                 transform: translateY(0) scale(1.0);
@@ -280,13 +276,13 @@
             }
         }
 
-        /* WRAPPER CONTATTI */
+        /* WRAPPER CONTATTI (4 PULSANTI) */
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 14px;
+            gap: 10px;
             width: 100%;
-            margin-top: 8px;
+            margin-top: 4px;
         }
 
         /* PULSANTI DI CHIAMATA */
@@ -296,11 +292,11 @@
             justify-content: center;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.14);
-            border-radius: 14px;
-            padding: 16px 10px;
+            border-radius: 12px;
+            padding: 13px 8px;
             color: #ffffff;
             text-decoration: none;
-            font-size: 0.92rem;
+            font-size: 0.88rem;
             font-weight: 600;
             letter-spacing: 0.2px;
             white-space: nowrap;
@@ -309,11 +305,14 @@
             opacity: 0;
             transform: translateY(18px);
             filter: blur(8px);
-            animation: fadeInSlowBtn 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation: fadeInSlowBtn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
+        /* Timing scalato in sequenza per i 4 pulsanti */
         .btn-delay-1 { animation-delay: 11.8s; }
-        .btn-delay-2 { animation-delay: 12.4s; }
+        .btn-delay-2 { animation-delay: 12.2s; }
+        .btn-delay-3 { animation-delay: 12.6s; }
+        .btn-delay-4 { animation-delay: 13.0s; }
 
         @keyframes fadeInSlowBtn {
             to {
@@ -332,40 +331,40 @@
         /* DATI AZIENDALI */
         .company-info {
             text-align: center;
-            font-size: 0.92rem;
-            line-height: 1.6;
+            font-size: 0.9rem;
+            line-height: 1.5;
             color: rgba(255, 255, 255, 0.85);
             user-select: none;
             width: 100%;
-            margin-top: 12px;
-            padding-top: 12px;
+            margin-top: 10px;
+            padding-top: 10px;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .company-name {
             font-weight: 800;
-            font-size: 1.1rem;
-            margin-bottom: 3px;
+            font-size: 1.05rem;
+            margin-bottom: 2px;
             color: #ffffff;
             letter-spacing: 0.5px;
         }
 
         .piva-text {
             color: rgba(255, 255, 255, 0.85) !important;
-            font-size: 0.92rem;
+            font-size: 0.88rem;
             font-weight: 400;
             display: block;
-            margin-top: 3px;
+            margin-top: 2px;
             text-decoration: none !important;
             pointer-events: none;
         }
 
         .swipe-hint {
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             color: rgba(255, 255, 255, 0.45);
             letter-spacing: 0.6px;
             text-transform: uppercase;
-            margin-top: 10px;
+            margin-top: 8px;
         }
 
         /* --- STILI SECONDA E TERZA PAGINA --- */
@@ -505,16 +504,26 @@
                         Come possiamo aiutarti?
                     </div>
 
-                    <!-- Contatti senza icone -->
+                    <!-- Contatti (4 Pulsanti) -->
                     <div class="contact-info">
-                        <!-- Soccorso H24 (Pulsante 1) -->
+                        <!-- Pulsante 1: Soccorso H24 -->
                         <a href="tel:0080066245324" class="btn-action btn-delay-1">
                             Ho bisogno del soccorso H24
                         </a>
 
-                        <!-- Parlare con l'officina su rigo unico (Pulsante 2) -->
+                        <!-- Pulsante 2: Officina -->
                         <a href="tel:+390815962139" class="btn-action btn-delay-2">
                             Mi occorre parlare con l'officina
+                        </a>
+
+                        <!-- Pulsante 3: Accettazione -->
+                        <a href="tel:+390815962139" class="btn-action btn-delay-3">
+                            Mi occorre parlare con l'accettazione
+                        </a>
+
+                        <!-- Pulsante 4: Magazzino -->
+                        <a href="tel:+390815962139" class="btn-action btn-delay-4">
+                            Mi occorre parlare con il magazzino
                         </a>
                     </div>
                 </div>
