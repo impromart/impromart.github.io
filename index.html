@@ -62,8 +62,8 @@
         }
 
         .intro-logo-img {
-            max-width: 60vw;
-            max-height: 40vh;
+            max-width: 65vw;
+            max-height: 45vh;
             object-fit: contain;
             opacity: 0;
             transform: scale(0.92);
@@ -83,9 +83,9 @@
         ---------------------------------------------------- */
         .card-container {
             width: 92%;
-            max-width: 400px;
+            max-width: 410px;
             height: 92vh;
-            max-height: 780px;
+            max-height: 790px;
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
@@ -108,7 +108,7 @@
         .pages-wrapper {
             display: flex;
             width: 300%;
-            height: calc(100% - 38px);
+            height: calc(100% - 40px);
             transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
@@ -132,7 +132,7 @@
 
         /* INDICATORI A PALLINI IN BASSO */
         .pagination-dots {
-            height: 38px;
+            height: 40px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -163,26 +163,25 @@
             flex-grow: 1;
         }
 
-        /* ANIMAZIONI LOGO E LINEA ROSSA */
+        /* --- ANIMAZIONI LOGO E SCRITTA CONCESSIONARIA PIÙ LENTE E FLUIDE --- */
         .animate-seq {
             opacity: 0;
-            transform: translateY(20px);
-            filter: blur(10px);
-            animation: fadeInSlow 2.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            transform: translateY(25px);
+            filter: blur(14px);
+            animation: fadeInUltraSlow 3.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
         .animate-line-seq {
             opacity: 0;
             transform: scaleX(0);
-            /* Barra rossa parte a 3.8s e finisce esattamente a 5.4s */
-            animation: expandLineSlow 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards 3.8s;
+            animation: expandLineSlow 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 5.2s;
         }
 
-        @keyframes fadeInSlow {
+        @keyframes fadeInUltraSlow {
             0% {
                 opacity: 0;
-                transform: translateY(20px);
-                filter: blur(10px);
+                transform: translateY(25px);
+                filter: blur(14px);
             }
             100% {
                 opacity: 1;
@@ -202,10 +201,11 @@
             }
         }
 
+        /* RITARDI CALIBRATI PER UNA COMPARSA IN SEQUENZA PERFETTA */
         .delay-1 { animation-delay: 3.2s; }
-        .delay-2 { animation-delay: 3.5s; }
+        .delay-2 { animation-delay: 4.2s; }
 
-        /* LOGO AZIENDALE */
+        /* LOGO AZIENDALE ULTERIORMENTE INGRANDITO */
         .card-logo-container {
             width: 100%;
             display: flex;
@@ -214,48 +214,48 @@
         }
 
         .card-logo-img {
-            max-width: 310px;
-            max-height: 125px;
+            max-width: 340px;
+            max-height: 140px;
             object-fit: contain;
             filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
         }
 
+        /* TITOLO CONCESSIONARIA INGRANDITO */
         .job-title {
-            font-size: 0.88rem;
-            font-weight: 700;
-            letter-spacing: 1.4px;
+            font-size: 0.95rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.9);
-            margin-top: 10px;
+            color: rgba(255, 255, 255, 0.95);
+            margin-top: 12px;
             line-height: 1.45;
         }
 
         /* LINEA ROSSA MAN */
         .red-line {
-            width: 130px;
+            width: 140px;
             height: 3.5px;
             background-color: #e60000;
-            margin: 14px auto 10px auto;
+            margin: 16px auto 12px auto;
             border-radius: 2px;
             transform-origin: center;
             box-shadow: 0 0 12px rgba(230, 0, 0, 0.5);
         }
 
         /* --- FRASE "COME POSSIAMO AIUTARTI?" --- */
-        /* Partenza immediata a 5.4s (senza pause) + micro-zoom iniziale (scale 0.94 -> 1.0) */
+        /* Partenza a 7.0s (subito dopo la linea rossa) con micro-zoom (0.94 -> 1.0) e salita Ease-In-Out */
         .help-text {
-            font-size: 1.15rem;
+            font-size: 1.25rem;
             font-weight: 700;
             color: #ffffff;
             letter-spacing: 0.4px;
             margin-top: 28px;
             margin-bottom: 22px;
             opacity: 0;
-            animation: fadeInZoomThenEaseInOutMove 4.5s cubic-bezier(0.42, 0, 0.58, 1) forwards 5.4s;
+            animation: fadeInZoomThenEaseInOutMove 4.5s cubic-bezier(0.42, 0, 0.58, 1) forwards 7.0s;
         }
 
         @keyframes fadeInZoomThenEaseInOutMove {
-            /* 0% - 28%: dissolvenza al centro con leggerissimo zoom-in (da 0.94 a 1.0) */
             0% {
                 opacity: 0;
                 transform: translateY(115px) scale(0.94);
@@ -266,13 +266,11 @@
                 transform: translateY(115px) scale(1.0);
                 filter: blur(0px);
             }
-            /* 28% - 50%: Pausa ferma al centro */
             50% {
                 opacity: 1;
                 transform: translateY(115px) scale(1.0);
                 filter: blur(0px);
             }
-            /* 50% - 100%: Salita con fisica Ease-in-out (decelerazione morbida in arrivo) */
             100% {
                 opacity: 1;
                 transform: translateY(0) scale(1.0);
@@ -289,7 +287,7 @@
             margin-top: 8px;
         }
 
-        /* PULSANTI (Compaiono a seguire la fine della salita della scritta a ~9.9s) */
+        /* PULSANTI DI CHIAMATA INGRANDITI */
         .btn-action {
             display: flex;
             align-items: center;
@@ -298,10 +296,10 @@
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.14);
             border-radius: 14px;
-            padding: 16px 18px;
+            padding: 17px 18px;
             color: #ffffff;
             text-decoration: none;
-            font-size: 0.98rem;
+            font-size: 1.05rem;
             font-weight: 600;
             letter-spacing: 0.3px;
             transition: all 0.25s ease;
@@ -312,8 +310,8 @@
             animation: fadeInSlowBtn 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        .btn-delay-1 { animation-delay: 10.0s; }
-        .btn-delay-2 { animation-delay: 10.6s; }
+        .btn-delay-1 { animation-delay: 11.6s; }
+        .btn-delay-2 { animation-delay: 12.2s; }
 
         @keyframes fadeInSlowBtn {
             to {
@@ -330,17 +328,17 @@
         }
 
         .svg-icon {
-            width: 20px;
-            height: 20px;
+            width: 22px;
+            height: 22px;
             fill: #ffffff;
             flex-shrink: 0;
         }
 
-        /* DATI AZIENDALI E PARTITA IVA */
+        /* DATI AZIENDALI INGRANDITI */
         .company-info {
             text-align: center;
-            font-size: 0.88rem;
-            line-height: 1.55;
+            font-size: 0.92rem;
+            line-height: 1.6;
             color: rgba(255, 255, 255, 0.85);
             user-select: none;
             width: 100%;
@@ -351,7 +349,7 @@
 
         .company-name {
             font-weight: 800;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             margin-bottom: 3px;
             color: #ffffff;
             letter-spacing: 0.5px;
@@ -359,7 +357,7 @@
 
         .piva-text {
             color: rgba(255, 255, 255, 0.85) !important;
-            font-size: 0.88rem;
+            font-size: 0.92rem;
             font-weight: 400;
             display: block;
             margin-top: 3px;
@@ -368,26 +366,26 @@
         }
 
         .swipe-hint {
-            font-size: 0.78rem;
+            font-size: 0.8rem;
             color: rgba(255, 255, 255, 0.45);
             letter-spacing: 0.6px;
             text-transform: uppercase;
             margin-top: 10px;
         }
 
-        /* --- STILI SECONDA E TERZA PAGINA --- */
+        /* --- STILI SECONDA E TERZA PAGINA INGRANDITI --- */
         .info-box {
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 16px;
-            padding: 14px 16px;
+            padding: 16px;
             width: 100%;
             text-align: left;
             margin-top: 12px;
         }
 
         .info-box-title {
-            font-size: 0.95rem;
+            font-size: 1rem;
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 8px;
@@ -398,9 +396,9 @@
         }
 
         .info-box-desc {
-            font-size: 0.86rem;
+            font-size: 0.9rem;
             color: rgba(255, 255, 255, 0.8);
-            line-height: 1.45;
+            line-height: 1.5;
             margin-bottom: 12px;
         }
 
@@ -415,9 +413,9 @@
             border: 1px solid rgba(52, 152, 219, 0.5);
             color: #ffffff;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.92rem;
             font-weight: 700;
-            padding: 12px;
+            padding: 13px;
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(41, 128, 185, 0.25);
             transition: all 0.2s;
@@ -429,10 +427,10 @@
         }
 
         .social-page-desc {
-            font-size: 1rem;
+            font-size: 1.05rem;
             font-weight: 500;
             color: rgba(255, 255, 255, 0.9);
-            line-height: 1.55;
+            line-height: 1.6;
             margin: 40px 10px 30px 10px;
             text-align: center;
         }
@@ -449,8 +447,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 68px;
-            height: 68px;
+            width: 70px;
+            height: 70px;
             border-radius: 20px;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.12);
@@ -467,8 +465,8 @@
         }
 
         .social-btn svg {
-            width: 38px;
-            height: 38px;
+            width: 40px;
+            height: 40px;
             fill: none;
             stroke: #ffffff;
             stroke-width: 1.8;
