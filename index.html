@@ -79,7 +79,7 @@
         }
 
         /* ----------------------------------------------------
-            2. CONTAINER PRINCIPALE / CAROSELLO 3 SCHEDE
+            2. CONTAINER PRINCIPALE / CAROSELLO 3 SCHEDE (VERTICALE)
         ---------------------------------------------------- */
         .card-container {
             width: 92%;
@@ -104,17 +104,18 @@
             to { opacity: 1; }
         }
 
-        /* WRAPPER SCORRIBILE PER LE 3 PAGINE (SWIPE) */
+        /* WRAPPER VERTICALE PER LE 3 PAGINE (SWIPE VERTICALE) */
         .pages-wrapper {
             display: flex;
-            width: 300%;
-            height: calc(100% - 40px);
+            flex-direction: column;
+            width: 100%;
+            height: 300%;
             transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         .card-page {
-            width: 33.333%;
-            height: 100%;
+            width: 100%;
+            height: 33.333%;
             padding: 20px 18px 12px 18px;
             display: flex;
             flex-direction: column;
@@ -130,9 +131,38 @@
             display: none;
         }
 
+        /* BLOCCO INFERIORE: TESTO, FRECCETTA E PALLINI */
+        .footer-navigation {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin-top: 10px;
+            flex-shrink: 0;
+        }
+
+        .swipe-hint {
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.65);
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .swipe-arrow-icon {
+            width: 16px;
+            height: 16px;
+            stroke: rgba(255, 255, 255, 0.65);
+            fill: none;
+            stroke-width: 2.2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            margin: 4px 0 8px 0;
+        }
+
         /* INDICATORI A PALLINI IN BASSO */
         .pagination-dots {
-            height: 40px;
+            height: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -232,7 +262,7 @@
 
         /* LINEA ROSSA MAN - Più corta */
         .red-line {
-            width: 80px; /* Ridotta a 80px */
+            width: 80px;
             height: 3.5px;
             background-color: #e60000;
             margin: 10px auto 8px auto;
@@ -247,8 +277,8 @@
             font-weight: 700;
             color: #ffffff;
             letter-spacing: 0.4px;
-            margin-top: 14px; /* Posizionata più vicino alla linea rossa */
-            margin-bottom: 14px;
+            margin-top: 18px; 
+            margin-bottom: 16px;
             opacity: 0;
             animation: slowBlurAndSmoothMove 4.5s cubic-bezier(0.45, 0, 0.25, 1) forwards 5.2s;
         }
@@ -256,22 +286,22 @@
         @keyframes slowBlurAndSmoothMove {
             0% {
                 opacity: 0;
-                transform: translateY(140px) scale(0.94); /* Parte da più in basso */
+                transform: translateY(90px) scale(0.94);
                 filter: blur(20px);
             }
             35% {
                 opacity: 1;
-                transform: translateY(140px) scale(1.0);
+                transform: translateY(90px) scale(1.0);
                 filter: blur(0px);
             }
             44% {
                 opacity: 1;
-                transform: translateY(140px) scale(1.0);
+                transform: translateY(90px) scale(1.0);
                 filter: blur(0px);
             }
             100% {
                 opacity: 1;
-                transform: translateY(0) scale(1.0); /* Sale fino alla posizione finale */
+                transform: translateY(16px) scale(1.0);
                 filter: blur(0px);
             }
         }
@@ -364,7 +394,7 @@
             transform: scale(0.98);
         }
 
-        /* --- TERZA PAGINA RIGENERATA SECONDO LAYOUT ALLEGATO --- */
+        /* --- TERZA PAGINA --- */
         .card-page-3 {
             display: flex;
             flex-direction: column;
@@ -379,7 +409,7 @@
             width: 100%;
         }
 
-        /* DATI AZIENDALI COME DA FOTO ALLEGATA */
+        /* DATI AZIENDALI */
         .company-info {
             text-align: center;
             font-size: 0.95rem;
@@ -387,8 +417,8 @@
             color: rgba(255, 255, 255, 0.88);
             user-select: none;
             width: 100%;
-            margin-top: 40px;
-            padding-top: 18px;
+            margin-top: 15px;
+            padding-top: 14px;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
 
@@ -408,14 +438,6 @@
             margin-top: 2px;
             text-decoration: none !important;
             pointer-events: none;
-        }
-
-        .swipe-hint {
-            font-size: 0.82rem;
-            color: rgba(255, 255, 255, 0.45);
-            letter-spacing: 0.6px;
-            text-transform: uppercase;
-            margin-top: 20px;
         }
 
         /* --- STILI SECONDA PAGINA --- */
@@ -532,7 +554,7 @@
     <!-- CONTAINER PRINCIPALE -->
     <div class="card-container">
         
-        <!-- WRAPPER DELLE TRE PAGINE (GESTIONE SWIPE) -->
+        <!-- WRAPPER DELLE TRE PAGINE (GESTIONE SWIPE VERTICALE) -->
         <div class="pages-wrapper" id="pagesWrapper">
             
             <!-- ================= PAGINA 1 ================= -->
@@ -588,7 +610,16 @@
                     </div>
                 </div>
 
-                <div class="swipe-hint">Scorri per scoprire di più &rarr;</div>
+                <!-- Footer con testo, freccia e pallini (Pagina 1) -->
+                <div class="footer-navigation">
+                    <div class="swipe-hint">SCORRI PER SCOPRIRE DI PIÙ</div>
+                    <svg class="swipe-arrow-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    <div class="pagination-dots">
+                        <div class="dot active" id="dot0"></div>
+                        <div class="dot" id="dot1"></div>
+                        <div class="dot" id="dot2"></div>
+                    </div>
+                </div>
             </div>
 
             <!-- ================= PAGINA 2 ================= -->
@@ -627,7 +658,16 @@
                     </div>
                 </div>
 
-                <div class="swipe-hint">&larr; Scorri &rarr;</div>
+                <!-- Footer con testo, freccia e pallini (Pagina 2) -->
+                <div class="footer-navigation">
+                    <div class="swipe-hint">SCORRI PER SCOPRIRE DI PIÙ</div>
+                    <svg class="swipe-arrow-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    <div class="pagination-dots">
+                        <div class="dot" id="dot0"></div>
+                        <div class="dot active" id="dot1"></div>
+                        <div class="dot" id="dot2"></div>
+                    </div>
+                </div>
             </div>
 
             <!-- ================= PAGINA 3 ================= -->
@@ -672,8 +712,8 @@
                     </div>
                 </div>
 
-                <!-- DATI AZIENDALI CON LAYOUT DA FOTO -->
-                <div>
+                <!-- DATI AZIENDALI E FOOTER (PAGINA 3) -->
+                <div style="width: 100%;">
                     <div class="company-info">
                         <div class="company-name">Impromart SRL</div>
                         Traversa Fossitelli snc &bull; 80147 Napoli<br>
@@ -681,17 +721,18 @@
                         <span class="piva-text">P.IVA: 04911050633</span>
                     </div>
 
-                    <div class="swipe-hint">&larr; SCORRI PER TORNARE INDIETRO</div>
+                    <div class="footer-navigation" style="margin-top: 8px;">
+                        <div class="swipe-hint">SCORRI PER TORNARE INDIETRO</div>
+                        <svg class="swipe-arrow-icon" viewBox="0 0 24 24" style="transform: rotate(180deg);"><polyline points="6 9 12 15 18 9"/></svg>
+                        <div class="pagination-dots">
+                            <div class="dot" id="dot0"></div>
+                            <div class="dot" id="dot1"></div>
+                            <div class="dot active" id="dot2"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-        </div>
-
-        <!-- INDICATORI A PALLINI -->
-        <div class="pagination-dots">
-            <div class="dot active" id="dot0"></div>
-            <div class="dot" id="dot1"></div>
-            <div class="dot" id="dot2"></div>
         </div>
 
     </div>
@@ -706,18 +747,18 @@
             }
         }, 2800);
 
-        // --- GESTIONE SWIPE TOUCH E MOUSE PER LE 3 PAGINE ---
+        // --- GESTIONE SWIPE TOUCH E MOUSE VERTICALE PER LE 3 PAGINE ---
         const wrapper = document.getElementById('pagesWrapper');
         const dot0 = document.getElementById('dot0');
         const dot1 = document.getElementById('dot1');
         const dot2 = document.getElementById('dot2');
         let currentPage = 0;
-        let startX = 0;
+        let startY = 0;
         let isDragging = false;
 
         function goToPage(page) {
             currentPage = page;
-            wrapper.style.transform = `translateX(-${currentPage * 33.333}%)`;
+            wrapper.style.transform = `translateY(-${currentPage * 33.333}%)`;
             
             [dot0, dot1, dot2].forEach((d, idx) => {
                 if (idx === currentPage) {
@@ -729,14 +770,14 @@
         }
 
         wrapper.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
             isDragging = true;
         }, {passive: true});
 
         wrapper.addEventListener('touchend', (e) => {
             if (!isDragging) return;
-            const endX = e.changedTouches[0].clientX;
-            const diff = startX - endX;
+            const endY = e.changedTouches[0].clientY;
+            const diff = startY - endY;
 
             if (Math.abs(diff) > 40) {
                 if (diff > 0 && currentPage < 2) {
@@ -749,14 +790,14 @@
         });
 
         wrapper.addEventListener('mousedown', (e) => {
-            startX = e.clientX;
+            startY = e.clientY;
             isDragging = true;
         });
 
         window.addEventListener('mouseup', (e) => {
             if (!isDragging) return;
-            const endX = e.clientX;
-            const diff = startX - endX;
+            const endY = e.clientY;
+            const diff = startY - endY;
 
             if (Math.abs(diff) > 40) {
                 if (diff > 0 && currentPage < 2) {
