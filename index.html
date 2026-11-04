@@ -159,6 +159,8 @@
             flex-direction: column;
             align-items: center;
             width: 100%;
+            position: relative;
+            flex-grow: 1;
         }
 
         /* ELEMENTI NASCOSTI PER L'ANIMAZIONE IN SEQUENZA */
@@ -203,9 +205,6 @@
         .delay-1 { animation-delay: 3.8s; }
         .delay-2 { animation-delay: 4.3s; }
         .delay-3 { animation-delay: 4.8s; }
-        .delay-3-5 { animation-delay: 5.1s; }
-        .delay-4 { animation-delay: 5.4s; }
-        .delay-5 { animation-delay: 5.9s; }
 
         /* LOGO AZIENDALE */
         .card-logo-container {
@@ -243,36 +242,73 @@
             box-shadow: 0 0 12px rgba(230, 0, 0, 0.5);
         }
 
+        /* --- LOGICA SPECIALE PER "COME POSSIAMO AIUTARTI?" --- */
         .help-text {
-            font-size: 1rem;
-            font-weight: 600;
-            color: rgba(255, 255, 255, 0.9);
-            margin-top: 22px;
-            margin-bottom: 12px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
             letter-spacing: 0.3px;
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            animation: showCenterHelp 0.8s ease forwards 5.2s;
+            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+            width: 100%;
+            z-index: 10;
         }
 
-        /* CONTATTI */
+        @keyframes showCenterHelp {
+            0% { opacity: 0; transform: translate(-50%, -30%) scale(0.95); filter: blur(8px); }
+            100% { opacity: 1; transform: translate(-50%, -50%) scale(1); filter: blur(0px); }
+        }
+
+        /* Classe applicata via JS dopo 3 secondi per spostare la scritta in alto */
+        .help-text.moved {
+            position: relative;
+            top: auto;
+            left: auto;
+            transform: none;
+            font-size: 1.05rem;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            animation: none;
+            opacity: 1;
+        }
+
+        /* CONTATTI (Pulsanti che compaiono dopo) */
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
             width: 100%;
+            opacity: 0;
+            transform: translateY(15px);
+            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+            pointer-events: none;
+            margin-top: 5px;
+        }
+
+        .contact-info.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
         }
 
         .btn-action {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 10px;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 12px;
-            padding: 12px 14px;
+            padding: 14px 16px;
             color: #ffffff;
             text-decoration: none;
             font-size: 0.9rem;
-            font-weight: 500;
+            font-weight: 600;
             letter-spacing: 0.3px;
             transition: all 0.2s ease;
             cursor: pointer;
@@ -285,30 +321,13 @@
         }
 
         .svg-icon {
-            width: 16px;
-            height: 16px;
+            width: 18px;
+            height: 18px;
             fill: #ffffff;
             flex-shrink: 0;
-            margin: 0 2px;
         }
 
-        .badge-h24 {
-            background-color: #e60000;
-            color: #ffffff;
-            font-weight: 800;
-            font-size: 0.75rem;
-            padding: 3px 6px;
-            border-radius: 5px;
-            letter-spacing: 0.5px;
-            box-shadow: 0 0 8px rgba(230, 0, 0, 0.4);
-        }
-
-        .btn-label {
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-
-        /* BOX INFORMATIVI */
+        /* BOX ASSISTENZA */
         .info-box {
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -316,7 +335,7 @@
             padding: 12px 14px;
             width: 100%;
             text-align: left;
-            margin-top: 14px;
+            margin-top: auto;
         }
 
         .info-box-title {
@@ -328,20 +347,6 @@
             align-items: center;
             gap: 7px;
             flex-wrap: wrap;
-        }
-
-        .web-icon {
-            width: 16px;
-            height: 16px;
-            fill: none;
-            stroke: #ffffff;
-            stroke-width: 1.8;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            flex-shrink: 0;
-            vertical-align: middle;
-            display: inline-block;
-            margin-left: 2px;
         }
 
         .info-box-desc {
@@ -494,38 +499,40 @@
                     <!-- Linea Rossa MAN -->
                     <div class="red-line animate-line-seq delay-3"></div>
 
-                    <!-- Frase Come possiamo aiutarti? -->
-                    <div class="help-text animate-seq delay-3-5">
+                    <!-- Frase Come possiamo aiutarti? (Inizialmente al centro) -->
+                    <div class="help-text" id="helpText">
                         Come possiamo aiutarti?
                     </div>
 
-                    <!-- Contatti -->
-                    <div class="contact-info animate-seq delay-4">
-                        <!-- H24 -->
+                    <!-- Contatti (Compaiono dopo che la scritta si sposta) -->
+                    <div class="contact-info" id="contactInfo">
+                        <!-- Soccorso H24 -->
                         <a href="tel:0080066245324" class="btn-action">
-                            <span class="badge-h24">H24</span> 00800 66 24 53 24
+                            <svg class="svg-icon" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                            </svg>
+                            Ho bisogno del soccorso H24
                         </a>
 
-                        <!-- ACCETTAZIONE -->
+                        <!-- Parola con l'officina -->
                         <a href="tel:+390815962139" class="btn-action">
-                            <span class="btn-label">Accettazione</span>
                             <svg class="svg-icon" viewBox="0 0 24 24">
                                 <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                             </svg>
-                            +39 081 596 2139
+                            Mi occorre parlare con l'officina
                         </a>
                     </div>
+                </div>
 
-                    <!-- BOX ASSISTENZA -->
-                    <div class="info-box animate-seq delay-5" style="margin-top: 22px;">
-                        <div class="info-box-title">
-                            Il tuo contratto di assistenza è in scadenza?
-                        </div>
-                        <div class="info-box-desc">
-                            Concorda un appuntamento con la nostra officina per eseguire il test semaforo e valutare un'estensione.
-                        </div>
-                        <a href="tel:+390815962139" class="info-action-btn">Fissa un appuntamento</a>
+                <!-- BOX ASSISTENZA -->
+                <div class="info-box">
+                    <div class="info-box-title">
+                        Il tuo contratto di assistenza è in scadenza?
                     </div>
+                    <div class="info-box-desc">
+                        Concorda un appuntamento con la nostra officina per eseguire il test semaforo e valutare un'estensione.
+                    </div>
+                    <a href="tel:+390815962139" class="info-action-btn">Fissa un appuntamento</a>
                 </div>
 
                 <div class="swipe-hint">Scorri per scoprire di più &rarr;</div>
@@ -543,7 +550,7 @@
                     <div class="info-box" style="margin-top: 10px;">
                         <div class="info-box-title">
                             Il tuo veicolo sempre connesso
-                            <svg class="web-icon" viewBox="0 0 24 24">
+                            <svg class="svg-icon" viewBox="0 0 24 24" style="stroke: #fff; fill: none; stroke-width: 1.8;">
                                 <circle cx="12" cy="12" r="10"/>
                                 <line x1="2" y1="12" x2="22" y2="12"/>
                                 <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
@@ -594,7 +601,7 @@
                             </svg>
                         </a>
 
-                        <!-- TikTok (Nuovo) -->
+                        <!-- TikTok -->
                         <a href="https://www.tiktok.com/@impromart.it" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="TikTok">
                             <svg viewBox="0 0 24 24" style="fill: #ffffff; stroke: none;">
                                 <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
@@ -643,6 +650,18 @@
                 setTimeout(() => loader.style.display = 'none', 1000);
             }
         }, 2800);
+
+        // --- ANIMAZIONE TRANSIZIONE FRASE CENTRALE -> IN ALTO CON PULSANTI ---
+        // L'intro finisce a 2.8s. A 5.2s appare al centro. 
+        // Dopo 3 secondi esatti (quindi a 8.2s), la facciamo salire e comparire i pulsanti.
+        setTimeout(() => {
+            const helpText = document.getElementById('helpText');
+            const contactInfo = document.getElementById('contactInfo');
+            if (helpText && contactInfo) {
+                helpText.classList.add('moved');
+                contactInfo.classList.add('visible');
+            }
+        }, 8200);
 
         // --- GESTIONE SWIPE TOUCH E MOUSE PER LE 3 PAGINE ---
         const wrapper = document.getElementById('pagesWrapper');
@@ -707,4 +726,5 @@
         });
     </script>
 </body>
+
 </html>
