@@ -242,7 +242,7 @@
         }
 
         /* --- FRASE "COME POSSIAMO AIUTARTI?" --- */
-        /* Aumentati i margini (top: 32px) per maggior distacco dalla linea rossa */
+        /* Unico movimento fluido continuo da 3.0s senza tappe intermedie */
         .help-text {
             font-size: 1rem;
             font-weight: 700;
@@ -251,23 +251,15 @@
             margin-top: 32px;
             margin-bottom: 20px;
             opacity: 0;
-            /* Durata estesa a 4.6s con inizio anticipato dello spostamento prima del termine della sfocatura */
-            animation: ultraSlowFadeAndMoveUp 4.6s cubic-bezier(0.22, 1, 0.36, 1) forwards 5.4s;
+            animation: singleContinuousMotion 3s cubic-bezier(0.25, 1, 0.5, 1) forwards 5.2s;
         }
 
-        @keyframes ultraSlowFadeAndMoveUp {
+        @keyframes singleContinuousMotion {
             0% {
                 opacity: 0;
                 transform: translateY(110px);
-                filter: blur(18px);
+                filter: blur(12px);
             }
-            /* La dissolvenza e la sfocatura si completano quasi al 45% */
-            45% {
-                opacity: 0.95;
-                transform: translateY(90px);
-                filter: blur(1.5px);
-            }
-            /* Lo spostamento verso l'alto inizia subito prima e conclude in posizione finale */
             100% {
                 opacity: 1;
                 transform: translateY(0);
@@ -284,7 +276,7 @@
             margin-top: 10px;
         }
 
-        /* ANIMAZIONE DEI PULSANTI (Compaiono MEZZO SECONDO dopo la stabilizzazione della scritta) */
+        /* ANIMAZIONE PULSANTI (Partenza dopo esattamente 0.5s dalla fine del movimento: 5.2s + 3.0s + 0.5s = 8.7s) */
         .btn-action {
             display: flex;
             align-items: center;
@@ -304,12 +296,11 @@
             opacity: 0;
             transform: translateY(15px);
             filter: blur(8px);
-            animation: fadeInSlowBtn 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation: fadeInSlowBtn 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        /* Timing: la scritta finisce di salire a 10.0s. Mezzo secondo di ritardo -> 10.5s e 11.1s */
-        .btn-delay-1 { animation-delay: 10.5s; }
-        .btn-delay-2 { animation-delay: 11.1s; }
+        .btn-delay-1 { animation-delay: 8.7s; }
+        .btn-delay-2 { animation-delay: 9.3s; }
 
         @keyframes fadeInSlowBtn {
             to {
