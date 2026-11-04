@@ -241,14 +241,14 @@
             box-shadow: 0 0 12px rgba(230, 0, 0, 0.5);
         }
 
-        /* --- FRASE "COME POSSIAMO AIUTARTI?" --- */
+        /* --- FRASE "COME POSSIAMO AIUTARTI?" (Parte da ancora più in basso) --- */
         .help-text {
             font-size: 1.28rem;
             font-weight: 700;
             color: #ffffff;
             letter-spacing: 0.4px;
             margin-top: 18px; 
-            margin-bottom: 24px; /* Margine inferiore aumentato per distanziare i pulsanti */
+            margin-bottom: 24px;
             opacity: 0;
             animation: slowBlurAndSmoothMove 4.5s cubic-bezier(0.45, 0, 0.25, 1) forwards 5.2s;
         }
@@ -256,33 +256,33 @@
         @keyframes slowBlurAndSmoothMove {
             0% {
                 opacity: 0;
-                transform: translateY(90px) scale(0.94);
+                transform: translateY(160px) scale(0.94); /* Parte molto più in basso */
                 filter: blur(20px);
             }
             35% {
                 opacity: 1;
-                transform: translateY(90px) scale(1.0);
+                transform: translateY(160px) scale(1.0);
                 filter: blur(0px);
             }
             44% {
                 opacity: 1;
-                transform: translateY(90px) scale(1.0);
+                transform: translateY(160px) scale(1.0);
                 filter: blur(0px);
             }
             100% {
                 opacity: 1;
-                transform: translateY(16px) scale(1.0);
+                transform: translateY(16px) scale(1.0); /* Si ferma dove si trova ora */
                 filter: blur(0px);
             }
         }
 
-        /* WRAPPER CONTATTI (4 PULSANTI) - Spostato ulteriormente in basso */
+        /* WRAPPER CONTATTI (4 PULSANTI) */
         .contact-info {
             display: flex;
             flex-direction: column;
             gap: 12px;
             width: 100%;
-            margin-top: 10px; /* Aggiunto margine superiore per distanziarli ulteriormente */
+            margin-top: 10px;
         }
 
         /* PULSANTI CON ICONA E FRECCETTA */
@@ -379,7 +379,7 @@
             width: 100%;
         }
 
-        /* DATI AZIENDALI */
+        /* DATI AZIENDALI - Spostati in alto di oltre 1cm rispetto al testo in basso */
         .company-info {
             text-align: center;
             font-size: 0.95rem;
@@ -387,8 +387,9 @@
             color: rgba(255, 255, 255, 0.88);
             user-select: none;
             width: 100%;
-            margin-top: 15px;
-            padding-top: 14px;
+            margin-top: 0;
+            margin-bottom: 50px; /* Notevole distacco da SCORRI PER TORNARE INDIETRO */
+            padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
 
@@ -673,7 +674,7 @@
                 </div>
 
                 <!-- DATI AZIENDALI -->
-                <div>
+                <div style="width: 100%;">
                     <div class="company-info">
                         <div class="company-name">Impromart SRL</div>
                         Traversa Fossitelli snc &bull; 80147 Napoli<br>
