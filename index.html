@@ -115,7 +115,7 @@
         .card-page {
             width: 33.333%;
             height: 100%;
-            padding: 16px 18px 10px 18px;
+            padding: 16px 18px 12px 18px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -221,13 +221,13 @@
 
         /* TITOLO CONCESSIONARIA */
         .job-title {
-            font-size: 0.92rem;
+            font-size: 0.95rem;
             font-weight: 800;
             letter-spacing: 1.5px;
             text-transform: uppercase;
             color: rgba(255, 255, 255, 0.95);
             margin-top: 4px;
-            line-height: 1.4;
+            line-height: 1.35;
         }
 
         /* LINEA ROSSA MAN - Più corta */
@@ -247,8 +247,8 @@
             font-weight: 700;
             color: #ffffff;
             letter-spacing: 0.4px;
-            margin-top: 10px; 
-            margin-bottom: 12px; /* Spazio ridotto per distribuire meglio 5 pulsanti */
+            margin-top: 12px; 
+            margin-bottom: 20px;
             opacity: 0;
             animation: slowBlurAndSmoothMove 4.5s cubic-bezier(0.45, 0, 0.25, 1) forwards 5.2s;
         }
@@ -256,22 +256,22 @@
         @keyframes slowBlurAndSmoothMove {
             0% {
                 opacity: 0;
-                transform: translateY(140px) scale(0.94);
+                transform: translateY(160px) scale(0.94);
                 filter: blur(20px);
             }
             35% {
                 opacity: 1;
-                transform: translateY(140px) scale(1.0);
+                transform: translateY(160px) scale(1.0);
                 filter: blur(0px);
             }
             44% {
                 opacity: 1;
-                transform: translateY(140px) scale(1.0);
+                transform: translateY(160px) scale(1.0);
                 filter: blur(0px);
             }
             100% {
                 opacity: 1;
-                transform: translateY(10px) scale(1.0);
+                transform: translateY(16px) scale(1.0);
                 filter: blur(0px);
             }
         }
@@ -282,7 +282,7 @@
             flex-direction: column;
             gap: 9px;
             width: 100%;
-            margin-top: 4px;
+            margin-top: 10px;
         }
 
         /* PULSANTI CON ICONA E FRECCETTA */
@@ -303,7 +303,7 @@
             transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
             cursor: pointer;
             opacity: 0;
-            transform: translateY(40px);
+            transform: translateY(45px);
             filter: blur(8px);
             animation: flyUpAndDecelerateSlow 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
             position: relative;
@@ -329,8 +329,8 @@
         }
 
         .btn-action .arrow-icon {
-            width: 15px;
-            height: 15px;
+            width: 16px;
+            height: 16px;
             stroke: rgba(255, 255, 255, 0.6);
             fill: none;
             stroke-width: 2;
@@ -341,15 +341,15 @@
         }
 
         .btn-delay-1 { animation-delay: 9.6s; }
-        .btn-delay-2 { animation-delay: 10.0s; }
-        .btn-delay-3 { animation-delay: 10.4s; }
-        .btn-delay-4 { animation-delay: 10.8s; }
-        .btn-delay-5 { animation-delay: 11.2s; }
+        .btn-delay-2 { animation-delay: 9.9s; }
+        .btn-delay-3 { animation-delay: 10.2s; }
+        .btn-delay-4 { animation-delay: 10.5s; }
+        .btn-delay-5 { animation-delay: 10.8s; }
 
         @keyframes flyUpAndDecelerateSlow {
             0% {
                 opacity: 0;
-                transform: translateY(40px);
+                transform: translateY(45px);
                 filter: blur(8px);
             }
             100% {
@@ -417,7 +417,7 @@
             color: rgba(255, 255, 255, 0.45);
             letter-spacing: 0.6px;
             text-transform: uppercase;
-            margin-top: 10px;
+            margin-top: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -604,7 +604,7 @@
 
                         <!-- Pulsante 5: Contatta il back office -->
                         <a href="tel:+390815962139" class="btn-action btn-delay-5">
-                            <svg class="btn-icon" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                            <svg class="btn-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                             <span class="btn-text">Contatta il back office</span>
                             <svg class="arrow-icon" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
                         </a>
