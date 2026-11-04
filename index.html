@@ -168,13 +168,13 @@
             opacity: 0;
             transform: translateY(25px);
             filter: blur(16px);
-            animation: fadeInUltraSlow 4.0s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation: fadeInUltraSlow 3.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
         .animate-line-seq {
             opacity: 0;
             transform: scaleX(0);
-            animation: expandLineSlow 2.0s cubic-bezier(0.16, 1, 0.3, 1) forwards 5.2s;
+            animation: expandLineSlow 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 4.8s;
         }
 
         @keyframes fadeInUltraSlow {
@@ -202,7 +202,7 @@
         }
 
         .delay-1 { animation-delay: 3.2s; }
-        .delay-2 { animation-delay: 4.2s; }
+        .delay-2 { animation-delay: 4.0s; }
 
         /* LOGO AZIENDALE */
         .card-logo-container {
@@ -242,15 +242,16 @@
         }
 
         /* --- FRASE "COME POSSIAMO AIUTARTI?" --- */
+        /* Inizio anticipato a 6.0s + maggior margine inferiore per spingere i pulsanti più in basso */
         .help-text {
             font-size: 1.2rem;
             font-weight: 700;
             color: #ffffff;
             letter-spacing: 0.4px;
             margin-top: 20px;
-            margin-bottom: 16px;
+            margin-bottom: 24px; /* Aumentato il distacco dai pulsanti */
             opacity: 0;
-            animation: slowBlurAndSmoothMove 5.4s cubic-bezier(0.45, 0, 0.25, 1) forwards 6.8s;
+            animation: slowBlurAndSmoothMove 5.0s cubic-bezier(0.45, 0, 0.25, 1) forwards 6.0s;
         }
 
         @keyframes slowBlurAndSmoothMove {
@@ -285,7 +286,7 @@
             margin-top: 4px;
         }
 
-        /* PULSANTI DI CHIAMATA */
+        /* --- NUOVA ANIMAZIONE PULSANTI: SALITA DAL BASSO CON DECELERAZIONE DOLCE --- */
         .btn-action {
             display: flex;
             align-items: center;
@@ -300,22 +301,28 @@
             font-weight: 600;
             letter-spacing: 0.2px;
             white-space: nowrap;
-            transition: all 0.25s ease;
+            transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
             cursor: pointer;
             opacity: 0;
-            transform: translateY(18px);
-            filter: blur(8px);
-            animation: fadeInSlowBtn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            transform: translateY(40px); /* Partono più in basso per evidenziare la salita */
+            filter: blur(6px);
+            /* Curva cubic-bezier per forte decelerazione finale morbida */
+            animation: flyUpAndDecelerate 1.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        /* Timing scalato in sequenza per i 4 pulsanti */
-        .btn-delay-1 { animation-delay: 11.8s; }
-        .btn-delay-2 { animation-delay: 12.2s; }
-        .btn-delay-3 { animation-delay: 12.6s; }
-        .btn-delay-4 { animation-delay: 13.0s; }
+        /* Timing dei pulsanti ricalibrato in sequenza fluida a seguire la frase */
+        .btn-delay-1 { animation-delay: 10.4s; }
+        .btn-delay-2 { animation-delay: 10.7s; }
+        .btn-delay-3 { animation-delay: 11.0s; }
+        .btn-delay-4 { animation-delay: 11.3s; }
 
-        @keyframes fadeInSlowBtn {
-            to {
+        @keyframes flyUpAndDecelerate {
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
+                filter: blur(6px);
+            }
+            100% {
                 opacity: 1;
                 transform: translateY(0);
                 filter: blur(0px);
@@ -504,7 +511,7 @@
                         Come possiamo aiutarti?
                     </div>
 
-                    <!-- Contatti (4 Pulsanti) -->
+                    <!-- Contatti (4 Pulsanti con animazione Fly-Up & Deceleration) -->
                     <div class="contact-info">
                         <!-- Pulsante 1: Soccorso H24 -->
                         <a href="tel:0080066245324" class="btn-action btn-delay-1">
