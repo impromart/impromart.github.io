@@ -168,13 +168,14 @@
             opacity: 0;
             transform: translateY(20px);
             filter: blur(10px);
-            animation: fadeInSlow 3.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation: fadeInSlow 2.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
         .animate-line-seq {
             opacity: 0;
             transform: scaleX(0);
-            animation: expandLineSlow 3.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            /* Animazione riga rossa: dura fino a 6.2s totali */
+            animation: expandLineSlow 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards 4.0s;
         }
 
         @keyframes fadeInSlow {
@@ -201,11 +202,10 @@
             }
         }
 
-        .delay-1 { animation-delay: 3.5s; }
-        .delay-2 { animation-delay: 4.1s; }
-        .delay-3 { animation-delay: 4.7s; }
+        .delay-1 { animation-delay: 3.2s; }
+        .delay-2 { animation-delay: 3.6s; }
 
-        /* LOGO AZIENDALE INGRANDITO */
+        /* LOGO AZIENDALE */
         .card-logo-container {
             width: 100%;
             display: flex;
@@ -220,7 +220,6 @@
             filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
         }
 
-        /* TITOLO INGRANDITO */
         .job-title {
             font-size: 0.88rem;
             font-weight: 700;
@@ -243,7 +242,7 @@
         }
 
         /* --- FRASE "COME POSSIAMO AIUTARTI?" --- */
-        /* 1) Compare prima al centro con dissolvenza. 2) Poi scivola lentamente verso l'alto */
+        /* Partenza a 6.3s (subito dopo il completamento della riga rossa a 6.2s) */
         .help-text {
             font-size: 1.15rem;
             font-weight: 700;
@@ -252,22 +251,28 @@
             margin-top: 28px;
             margin-bottom: 22px;
             opacity: 0;
-            animation: fadeInCenterThenMoveUp 4.2s cubic-bezier(0.25, 1, 0.4, 1) forwards 5.2s;
+            animation: fadeInThenEaseInOutMove 4.5s cubic-bezier(0.42, 0, 0.58, 1) forwards 6.3s;
         }
 
-        @keyframes fadeInCenterThenMoveUp {
-            /* 0% - 30%: dissolvenza e comparsa distinta al centro dello schermo */
+        @keyframes fadeInThenEaseInOutMove {
+            /* 0% - 30%: dissolvenza lenta e graduale al centro */
             0% {
                 opacity: 0;
                 transform: translateY(115px);
-                filter: blur(12px);
+                filter: blur(14px);
             }
             30% {
                 opacity: 1;
                 transform: translateY(115px);
                 filter: blur(0px);
             }
-            /* 30% - 100%: dopo la comparsa al centro, si muove più lentamente verso l'alto */
+            /* 30% - 52%: Pausa di 1 secondo esatto ferma al centro */
+            52% {
+                opacity: 1;
+                transform: translateY(115px);
+                filter: blur(0px);
+            }
+            /* 52% - 100%: Parte lenta, accelera al centro e frena dolcemente in alto */
             100% {
                 opacity: 1;
                 transform: translateY(0);
@@ -284,7 +289,7 @@
             margin-top: 8px;
         }
 
-        /* PULSANTI INGRANDITI E CON RITARDO SULLA SALITA */
+        /* PULSANTI (Compaiono dopo il termine della frenata della scritta) */
         .btn-action {
             display: flex;
             align-items: center;
@@ -307,8 +312,8 @@
             animation: fadeInSlowBtn 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        .btn-delay-1 { animation-delay: 9.8s; }
-        .btn-delay-2 { animation-delay: 10.4s; }
+        .btn-delay-1 { animation-delay: 11.0s; }
+        .btn-delay-2 { animation-delay: 11.6s; }
 
         @keyframes fadeInSlowBtn {
             to {
@@ -331,7 +336,7 @@
             flex-shrink: 0;
         }
 
-        /* DATI AZIENDALI INGRANDITI */
+        /* DATI AZIENDALI E PARTITA IVA */
         .company-info {
             text-align: center;
             font-size: 0.88rem;
@@ -370,7 +375,7 @@
             margin-top: 10px;
         }
 
-        /* --- STILI SECONDA E TERZA PAGINA INGRANDITI --- */
+        /* --- STILI SECONDA E TERZA PAGINA --- */
         .info-box {
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -424,7 +429,7 @@
         }
 
         .social-page-desc {
-            font-size: 1rem3;
+            font-size: 1rem;
             font-weight: 500;
             color: rgba(255, 255, 255, 0.9);
             line-height: 1.55;
@@ -500,7 +505,7 @@
                     </div>
 
                     <!-- Linea Rossa MAN -->
-                    <div class="red-line animate-line-seq delay-3"></div>
+                    <div class="red-line animate-line-seq"></div>
 
                     <!-- Frase "Come possiamo aiutarti?" -->
                     <div class="help-text">
