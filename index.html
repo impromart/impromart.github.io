@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     
-    <!-- FORZA BARRE BROWSER NERE E SCURE SU IPHONE E ANDROID -->
+    <meta name="format-detection" content="telephone=no">
     <meta name="theme-color" content="#000000">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="format-detection" content="telephone=no">
 
     <title>Impromart</title>
     <!-- Font moderno e pulito -->
@@ -54,7 +53,7 @@
             align-items: center;
             justify-content: center;
             z-index: 9999;
-            transition: opacity 1s ease;
+            transition: opacity 1.2s ease;
         }
 
         #loader.hidden {
@@ -63,8 +62,8 @@
         }
 
         .intro-logo-img {
-            max-width: 50vw;
-            max-height: 35vh;
+            max-width: 65vw;
+            max-height: 45vh;
             object-fit: contain;
             opacity: 0;
             transform: scale(0.92);
@@ -80,32 +79,79 @@
         }
 
         /* ----------------------------------------------------
-            2. BIGLIETTO DA VISITA DIGITALE
+            2. CONTAINER PRINCIPALE / CAROSELLO 3 SCHEDE
         ---------------------------------------------------- */
-        .card {
-            width: 90%;
-            max-width: 380px;
-            height: 85vh;
-            max-height: 720px;
-            padding: 35px 28px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            text-align: center;
-            box-sizing: border-box;
+        .card-container {
+            width: 92%;
+            max-width: 410px;
+            height: 92vh;
+            max-height: 790px;
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 24px;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
             opacity: 0;
-            animation: fadeInCard 1.2s ease forwards 2.8s;
+            animation: fadeInCard 1.4s ease forwards 2.8s;
+            position: relative;
         }
 
         @keyframes fadeInCard {
             to { opacity: 1; }
+        }
+
+        /* WRAPPER SCORRIBILE PER LE 3 PAGINE (SWIPE) */
+        .pages-wrapper {
+            display: flex;
+            width: 300%;
+            height: calc(100% - 40px);
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .card-page {
+            width: 33.333%;
+            height: 100%;
+            padding: 20px 18px 12px 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            box-sizing: border-box;
+            overflow-y: auto;
+            scrollbar-width: none;
+        }
+
+        .card-page::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* INDICATORI A PALLINI IN BASSO */
+        .pagination-dots {
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            width: 100%;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            width: 24px;
+            border-radius: 4px;
+            background: #e60000;
         }
 
         .header-content {
@@ -113,174 +159,29 @@
             flex-direction: column;
             align-items: center;
             width: 100%;
+            position: relative;
+            flex-grow: 1;
         }
 
-        /* LOGO AZIENDALE NELLA CARD */
-        .card-logo-container {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        /* ANIMAZIONI LOGO E SCRITTA CONCESSIONARIA */
+        .animate-seq {
             opacity: 0;
             transform: translateY(25px);
-            filter: blur(12px);
+            filter: blur(16px);
+            animation: fadeInUltraSlow 3.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        .card-logo-img {
-            max-width: 300px;
-            max-height: 125px;
-            object-fit: contain;
-            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
-        }
-
-        /* RUOLO / TESTO SPLITTATO SU DUE RIGHE */
-        .job-title {
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 1.2px;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.8);
-            margin-top: 10px;
-            line-height: 1.4;
-            opacity: 0;
-            transform: translateY(25px);
-            filter: blur(12px);
-        }
-
-        /* LINEA ROSSA MAN */
-        .red-line {
-            width: 140px;
-            height: 3px;
-            background-color: #e60000;
-            margin: 18px auto 14px auto;
-            border-radius: 2px;
+        .animate-line-seq {
             opacity: 0;
             transform: scaleX(0);
-            transform-origin: center;
-            box-shadow: 0 0 12px rgba(230, 0, 0, 0.5);
+            animation: expandLineSlow 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 4.8s;
         }
 
-        /* FRASE SOTTO LA LINEA ROSSA (SEMIBOLD) */
-        .help-text {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 22px;
-            letter-spacing: 0.3px;
-            opacity: 0;
-            transform: translateY(25px);
-            filter: blur(12px);
-        }
-
-        /* CONTATTI (PULSANTI/SCHEDE) */
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-            width: 100%;
-        }
-
-        .btn-action {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 14px;
-            padding: 15px;
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            letter-spacing: 0.3px;
-            opacity: 0;
-            transform: translateY(25px);
-            filter: blur(10px);
-            transition: all 0.2s ease;
-            cursor: pointer;
-        }
-
-        .btn-action:active {
-            background: rgba(230, 0, 0, 0.2);
-            border-color: #e60000;
-            transform: scale(0.98);
-        }
-
-        /* ICONA TELEFONO BIANCA */
-        .svg-icon {
-            width: 18px;
-            height: 18px;
-            fill: #ffffff;
-            flex-shrink: 0;
-        }
-
-        /* RIQUADRO ROSSO PER H24 */
-        .badge-h24 {
-            background-color: #e60000;
-            color: #ffffff;
-            font-weight: 800;
-            font-size: 0.8rem;
-            padding: 4px 8px;
-            border-radius: 6px;
-            letter-spacing: 0.5px;
-            box-shadow: 0 0 8px rgba(230, 0, 0, 0.4);
-        }
-
-        /* ETICHETTA PER OFFICINA */
-        .btn-label {
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-
-        /* AZIENDA & PARTITA IVA */
-        .company-info {
-            text-align: center;
-            font-size: 0.9rem;
-            line-height: 1.5;
-            color: rgba(255, 255, 255, 0.8);
-            opacity: 0;
-            transform: translateY(25px);
-            filter: blur(10px);
-            user-select: none;
-            width: 100%;
-            margin-top: 15px;
-        }
-
-        .company-name {
-            font-weight: 800;
-            font-size: 1.05rem;
-            margin-bottom: 3px;
-            color: #ffffff;
-            letter-spacing: 0.5px;
-        }
-
-        .piva-text {
-            color: rgba(255, 255, 255, 0.6) !important;
-            -webkit-text-fill-color: rgba(255, 255, 255, 0.6) !important;
-            text-decoration: none !important;
-            font-size: 0.82rem;
-            font-weight: 500;
-            display: block;
-            margin-top: 3px;
-        }
-
-        /* ----------------------------------------------------
-            ANIMAZIONI LENTE
-        ---------------------------------------------------- */
-        .animate-in {
-            animation: fadeInVerySlow 3.2s cubic-bezier(0.1, 1, 0.2, 1) forwards;
-        }
-
-        .animate-line {
-            animation: expandLineVerySlow 3.2s cubic-bezier(0.1, 1, 0.2, 1) forwards;
-        }
-
-        @keyframes fadeInVerySlow {
+        @keyframes fadeInUltraSlow {
             0% {
                 opacity: 0;
                 transform: translateY(25px);
-                filter: blur(12px);
+                filter: blur(16px);
             }
             100% {
                 opacity: 1;
@@ -289,7 +190,7 @@
             }
         }
 
-        @keyframes expandLineVerySlow {
+        @keyframes expandLineSlow {
             0% {
                 opacity: 0;
                 transform: scaleX(0);
@@ -300,14 +201,278 @@
             }
         }
 
-        /* TEMPI DI APPARIZIONE AGGIORNATI */
-        .delay-1 { animation-delay: 3.8s; } /* Logo Impromart */
-        .delay-2 { animation-delay: 4.3s; } /* Testo Concessionaria */
-        .delay-3 { animation-delay: 4.8s; } /* Linea Rossa */
-        .delay-3-5 { animation-delay: 5.1s; } /* Come possiamo aiutarti? */
-        .delay-4 { animation-delay: 5.4s; } /* H24 */
-        .delay-5 { animation-delay: 5.9s; } /* Officina */
-        .delay-6 { animation-delay: 6.4s; } /* Azienda */
+        .delay-1 { animation-delay: 3.2s; }
+        .delay-2 { animation-delay: 4.0s; }
+
+        /* LOGO AZIENDALE */
+        .card-logo-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card-logo-img {
+            max-width: 340px;
+            max-height: 130px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+        }
+
+        /* TITOLO CONCESSIONARIA */
+        .job-title {
+            font-size: 0.92rem;
+            font-weight: 800;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.95);
+            margin-top: 10px;
+            line-height: 1.4;
+        }
+
+        /* LINEA ROSSA MAN */
+        .red-line {
+            width: 140px;
+            height: 3.5px;
+            background-color: #e60000;
+            margin: 14px auto 10px auto;
+            border-radius: 2px;
+            transform-origin: center;
+            box-shadow: 0 0 12px rgba(230, 0, 0, 0.5);
+        }
+
+        /* --- FRASE "COME POSSIAMO AIUTARTI?" --- */
+        .help-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 0.4px;
+            margin-top: 20px;
+            margin-bottom: 24px;
+            opacity: 0;
+            animation: slowBlurAndSmoothMove 5.0s cubic-bezier(0.45, 0, 0.25, 1) forwards 6.0s;
+        }
+
+        @keyframes slowBlurAndSmoothMove {
+            0% {
+                opacity: 0;
+                transform: translateY(115px) scale(0.94);
+                filter: blur(20px);
+            }
+            35% {
+                opacity: 1;
+                transform: translateY(115px) scale(1.0);
+                filter: blur(0px);
+            }
+            44% {
+                opacity: 1;
+                transform: translateY(115px) scale(1.0);
+                filter: blur(0px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1.0);
+                filter: blur(0px);
+            }
+        }
+
+        /* WRAPPER CONTATTI (4 PULSANTI) */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            margin-top: 4px;
+        }
+
+        /* --- ANIMAZIONE PULSANTI: PIÙ LENTA E CON DECELERAZIONE FLUIDA --- */
+        .btn-action {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 12px;
+            padding: 13px 8px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+            white-space: nowrap;
+            transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(45px);
+            filter: blur(8px);
+            /* Durata portata a 1.8s per un movimento più lento e decelerazione morbida finale */
+            animation: flyUpAndDecelerateSlow 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* Timing dei pulsanti in sequenza graduale */
+        .btn-delay-1 { animation-delay: 10.5s; }
+        .btn-delay-2 { animation-delay: 10.9s; }
+        .btn-delay-3 { animation-delay: 11.3s; }
+        .btn-delay-4 { animation-delay: 11.7s; }
+
+        @keyframes flyUpAndDecelerateSlow {
+            0% {
+                opacity: 0;
+                transform: translateY(45px);
+                filter: blur(8px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0px);
+            }
+        }
+
+        .btn-action:active {
+            background: rgba(41, 128, 185, 0.3);
+            border-color: #2980b9;
+            transform: scale(0.98);
+        }
+
+        /* DATI AZIENDALI */
+        .company-info {
+            text-align: center;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.85);
+            user-select: none;
+            width: 100%;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .company-name {
+            font-weight: 800;
+            font-size: 1.05rem;
+            margin-bottom: 2px;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+
+        .piva-text {
+            color: rgba(255, 255, 255, 0.85) !important;
+            font-size: 0.88rem;
+            font-weight: 400;
+            display: block;
+            margin-top: 2px;
+            text-decoration: none !important;
+            pointer-events: none;
+        }
+
+        .swipe-hint {
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.45);
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            margin-top: 8px;
+        }
+
+        /* --- STILI SECONDA E TERZA PAGINA --- */
+        .info-box {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 16px;
+            width: 100%;
+            text-align: left;
+            margin-top: 12px;
+        }
+
+        .info-box-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .info-box-desc {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+
+        .info-action-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            text-align: center;
+            background: rgba(41, 128, 185, 0.85);
+            border: 1px solid rgba(52, 152, 219, 0.5);
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 700;
+            padding: 13px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(41, 128, 185, 0.25);
+            transition: all 0.2s;
+        }
+
+        .info-action-btn:active {
+            background: rgba(41, 128, 185, 1);
+            transform: scale(0.98);
+        }
+
+        .social-page-desc {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            margin: 40px 10px 30px 10px;
+            text-align: center;
+        }
+
+        .social-buttons-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 22px;
+            width: 100%;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px;
+            height: 70px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.25s ease;
+        }
+
+        .social-btn:active {
+            transform: scale(0.92);
+            background: rgba(41, 128, 185, 0.25);
+            border-color: rgba(52, 152, 219, 0.6);
+        }
+
+        .social-btn svg {
+            width: 40px;
+            height: 40px;
+            fill: none;
+            stroke: #ffffff;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
     </style>
 </head>
 
@@ -318,90 +483,235 @@
         <img src="logo intro.png" alt="Logo" class="intro-logo-img">
     </div>
 
-    <!-- CARD DIGITALE -->
-    <div class="card">
-        <div class="header-content">
-            <!-- Logo Impromart -->
-            <div class="card-logo-container animate-in delay-1">
-                <img src="logo impromart.png" alt="Logo Impromart" class="card-logo-img">
+    <!-- CONTAINER PRINCIPALE -->
+    <div class="card-container">
+        
+        <!-- WRAPPER DELLE TRE PAGINE (GESTIONE SWIPE) -->
+        <div class="pages-wrapper" id="pagesWrapper">
+            
+            <!-- ================= PAGINA 1 ================= -->
+            <div class="card-page">
+                <div class="header-content">
+                    <!-- Logo Impromart -->
+                    <div class="card-logo-container animate-seq delay-1">
+                        <img src="logo impromart.png" alt="Logo Impromart" class="card-logo-img">
+                    </div>
+
+                    <!-- Testo su due righe -->
+                    <div class="job-title animate-seq delay-2">
+                        CONCESSIONARIA E OFFICINA<br>AUTORIZZATA MAN
+                    </div>
+
+                    <!-- Linea Rossa MAN -->
+                    <div class="red-line animate-line-seq"></div>
+
+                    <!-- Frase "Come possiamo aiutarti?" -->
+                    <div class="help-text">
+                        Come possiamo aiutarti?
+                    </div>
+
+                    <!-- Contatti (4 Pulsanti) -->
+                    <div class="contact-info">
+                        <!-- Pulsante 1: Soccorso stradale H24 -->
+                        <a href="tel:0080066245324" class="btn-action btn-delay-1">
+                            Soccorso stradale H24
+                        </a>
+
+                        <!-- Pulsante 2: Contatta l'officina -->
+                        <a href="tel:+390815962139" class="btn-action btn-delay-2">
+                            Contatta l'officina
+                        </a>
+
+                        <!-- Pulsante 3: Contatta l'accettazione -->
+                        <a href="tel:+390815962139" class="btn-action btn-delay-3">
+                            Contatta l'accettazione
+                        </a>
+
+                        <!-- Pulsante 4: Contatta il magazzino -->
+                        <a href="tel:+390815962139" class="btn-action btn-delay-4">
+                            Contatta il magazzino
+                        </a>
+                    </div>
+                </div>
+
+                <div class="swipe-hint">Scorri per scoprire di più &rarr;</div>
             </div>
 
-            <!-- Testo su due righe -->
-            <div class="job-title animate-in delay-2">
-                CONCESSIONARIA E OFFICINA<br>AUTORIZZATA MAN
+            <!-- ================= PAGINA 2 ================= -->
+            <div class="card-page">
+                <div class="header-content">
+                    <div class="job-title" style="margin-top: 5px;">
+                        TECNOLOGIA E SERVIZI
+                    </div>
+                    <div class="red-line" style="transform: scaleX(1); opacity: 1;"></div>
+
+                    <!-- BOX RIO -->
+                    <div class="info-box" style="margin-top: 10px;">
+                        <div class="info-box-title">
+                            Il tuo veicolo sempre connesso
+                            <svg class="svg-icon" viewBox="0 0 24 24" style="width: 20px; height: 20px; stroke: #fff; fill: none; stroke-width: 1.8;">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="2" y1="12" x2="22" y2="12"/>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                        </div>
+                        <div class="info-box-desc">
+                            Attiva RIO e non preoccuparti delle spie! Il tuo veicolo sarà online e la nostra officina potrà controllarlo per te. Incluso per un anno con l'acquisto del tuo veicolo.
+                        </div>
+                        <a href="tel:+390815925267" class="info-action-btn">Attiva RIO o richiedi info</a>
+                    </div>
+
+                    <!-- BOX RICAMBI -->
+                    <div class="info-box" style="margin-top: 10px;">
+                        <div class="info-box-title">
+                            Contratto di manutenzione in scadenza?
+                        </div>
+                        <div class="info-box-desc">
+                            Chiedi all'officina di eseguire il test semaforo per valutare un'estensione!
+                        </div>
+                        <a href="tel:+393929808872" class="info-action-btn">Fissa un appuntamento</a>
+                    </div>
+                </div>
+
+                <div class="swipe-hint">&larr; Scorri &rarr;</div>
             </div>
 
-            <!-- Linea Rossa MAN -->
-            <div class="red-line animate-line delay-3"></div>
+            <!-- ================= PAGINA 3 ================= -->
+            <div class="card-page">
+                <div class="header-content">
+                    <div class="job-title" style="margin-top: 5px;">
+                        SCOPRI IL MONDO IMPROMART
+                    </div>
+                    <div class="red-line" style="transform: scaleX(1); opacity: 1;"></div>
 
-            <!-- Frase Come possiamo aiutarti? -->
-            <div class="help-text animate-in delay-3-5">
-                Come possiamo aiutarti?
+                    <!-- FRASE CENTRATA -->
+                    <div class="social-page-desc">
+                        Rimani aggiornato sulle novità ed esplora la nostra gamma completa di veicoli
+                    </div>
+
+                    <!-- 3 ICONE SOCIAL / WEB CENTRATE (INSTAGRAM, TIKTOK, WEB) -->
+                    <div class="social-buttons-container">
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/impromart.it?psln=MThyZjU2eXNuYW5zbA==" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+
+                        <!-- TikTok -->
+                        <a href="https://www.tiktok.com/@impromart.it" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="TikTok">
+                            <svg viewBox="0 0 24 24" style="fill: #ffffff; stroke: none;">
+                                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                            </svg>
+                        </a>
+
+                        <!-- Web -->
+                        <a href="https://www.impromart.it/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Sito Web">
+                            <svg viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="2" y1="12" x2="22" y2="12"/>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- DATI AZIENDALI -->
+                <div class="company-info">
+                    <div class="company-name">Impromart SRL</div>
+                    Traversa Fossitelli snc &bull; 80147 Napoli<br>
+                    Strada Consortile &bull; 81032 Carinaro<br>
+                    <span class="piva-text">P.IVA: 04911050633</span>
+                </div>
+
+                <div class="swipe-hint">&larr; Scorri per tornare indietro</div>
             </div>
 
-            <!-- Contatti -->
-            <div class="contact-info">
-                <!-- H24 CON RIQUADRO ROSSO -->
-                <a href="tel:99999999999" class="btn-action animate-in delay-4">
-                    <span class="badge-h24">H24</span> 999 999 999 99
-                </a>
-
-                <!-- OFFICINA CON ICONA TELEFONO E DOWNLOAD VCARD -->
-                <a href="#" onclick="handlePhoneClick(event)" class="btn-action animate-in delay-5">
-                    <svg class="svg-icon" viewBox="0 0 24 24">
-                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                    </svg>
-                    <span class="btn-label">Officina</span> +39 081 596 2139
-                </a>
-            </div>
         </div>
 
-        <!-- Dati Aziendali -->
-        <div class="company-info animate-in delay-6">
-            <div class="company-name">Impromart SRL</div>
-            Traversa Fossitelli snc &bull; 80147 Napoli<br>
-            <span class="piva-text">P.IVA: 04911&#8203;050633</span>
+        <!-- INDICATORI A PALLINI -->
+        <div class="pagination-dots">
+            <div class="dot active" id="dot0"></div>
+            <div class="dot" id="dot1"></div>
+            <div class="dot" id="dot2"></div>
         </div>
+
     </div>
 
     <script>
-        // Nasconde l'intro e sblocca la pagina dopo 2.8s
+        // Nasconde l'intro dopo 2.8s
         setTimeout(() => {
             const loader = document.getElementById("loader");
             if (loader) {
                 loader.classList.add("hidden");
-                setTimeout(() => loader.style.display = 'none', 1000);
+                setTimeout(() => loader.style.display = 'none', 1200);
             }
         }, 2800);
 
-        // Gestione Salva Contatto + Chiamata al tap
-        function handlePhoneClick(e) {
-            e.preventDefault();
+        // --- GESTIONE SWIPE TOUCH E MOUSE PER LE 3 PAGINE ---
+        const wrapper = document.getElementById('pagesWrapper');
+        const dot0 = document.getElementById('dot0');
+        const dot1 = document.getElementById('dot1');
+        const dot2 = document.getElementById('dot2');
+        let currentPage = 0;
+        let startX = 0;
+        let isDragging = false;
+
+        function goToPage(page) {
+            currentPage = page;
+            wrapper.style.transform = `translateX(-${currentPage * 33.333}%)`;
             
-            const vcardData = 
-`BEGIN:VCARD
-VERSION:3.0
-N:Ciotola;Massimo;;;
-FN:Massimo Ciotola
-ORG:Impromart SRL
-TITLE:Concessionaria e Officina Autorizzata MAN
-TEL;TYPE=CELL:+390815962139
-ADR;TYPE=WORK:;;Traversa Fossitelli snc;Napoli;;80147;Italy
-END:VCARD`;
-
-            const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8;' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.setAttribute('download', 'Impromart_Officina.vcf');
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-
-            setTimeout(() => {
-                window.location.href = "tel:+390815962139";
-            }, 300);
+            [dot0, dot1, dot2].forEach((d, idx) => {
+                if (idx === currentPage) {
+                    d.classList.add('active');
+                } else {
+                    d.classList.remove('active');
+                }
+            });
         }
+
+        wrapper.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+        }, {passive: true});
+
+        wrapper.addEventListener('touchend', (e) => {
+            if (!isDragging) return;
+            const endX = e.changedTouches[0].clientX;
+            const diff = startX - endX;
+
+            if (Math.abs(diff) > 40) {
+                if (diff > 0 && currentPage < 2) {
+                    goToPage(currentPage + 1);
+                } else if (diff < 0 && currentPage > 0) {
+                    goToPage(currentPage - 1);
+                }
+            }
+            isDragging = false;
+        });
+
+        wrapper.addEventListener('mousedown', (e) => {
+            startX = e.clientX;
+            isDragging = true;
+        });
+
+        window.addEventListener('mouseup', (e) => {
+            if (!isDragging) return;
+            const endX = e.clientX;
+            const diff = startX - endX;
+
+            if (Math.abs(diff) > 40) {
+                if (diff > 0 && currentPage < 2) {
+                    goToPage(currentPage + 1);
+                } else if (diff < 0 && currentPage > 0) {
+                    goToPage(currentPage - 1);
+                }
+            }
+            isDragging = false;
+        });
     </script>
 </body>
+
 </html>
