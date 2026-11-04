@@ -163,25 +163,25 @@
             flex-grow: 1;
         }
 
-        /* ANIMAZIONI LOGO E SCRITTA CON CELERITÀ MAGGIORE TRA LORO */
+        /* --- ANIMAZIONI LOGO E SCRITTA CONCESSIONARIA (PIÙ LENTE E DOLCI) --- */
         .animate-seq {
             opacity: 0;
             transform: translateY(25px);
-            filter: blur(14px);
-            animation: fadeInUltraSlow 3.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            filter: blur(16px);
+            animation: fadeInUltraSlow 4.0s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
         .animate-line-seq {
             opacity: 0;
             transform: scaleX(0);
-            animation: expandLineSlow 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards 4.4s;
+            animation: expandLineSlow 2.0s cubic-bezier(0.16, 1, 0.3, 1) forwards 5.2s;
         }
 
         @keyframes fadeInUltraSlow {
             0% {
                 opacity: 0;
                 transform: translateY(25px);
-                filter: blur(14px);
+                filter: blur(16px);
             }
             100% {
                 opacity: 1;
@@ -201,9 +201,9 @@
             }
         }
 
-        /* RIDOTTO TEMPO TRA LOGO E TESTO CONCESSIONARIA */
+        /* RITARDI DILATATI PER UN'ENTRATA RALLENTATA ED ELEGANTE */
         .delay-1 { animation-delay: 3.2s; }
-        .delay-2 { animation-delay: 3.7s; } /* Ridotto da 4.2s a 3.7s per velocizzare la sequenza */
+        .delay-2 { animation-delay: 4.2s; }
 
         /* LOGO AZIENDALE */
         .card-logo-container {
@@ -243,7 +243,7 @@
         }
 
         /* --- FRASE "COME POSSIAMO AIUTARTI?" --- */
-        /* Comparsa molto più lenta + inizio salita anticipata (30% comparsa al centro -> 38% parte la salita) */
+        /* Applicata la curva cubic-bezier(0.7, 0, 0.1, 1) per marcata accelerazione e decelerazione */
         .help-text {
             font-size: 1.25rem;
             font-weight: 700;
@@ -252,26 +252,28 @@
             margin-top: 28px;
             margin-bottom: 22px;
             opacity: 0;
-            animation: fadeInZoomThenMoveUpEarlier 5.0s cubic-bezier(0.42, 0, 0.58, 1) forwards 5.8s;
+            animation: fadeInThenStrongAccDecMove 5.2s cubic-bezier(0.7, 0, 0.1, 1) forwards 6.8s;
         }
 
-        @keyframes fadeInZoomThenMoveUpEarlier {
+        @keyframes fadeInThenStrongAccDecMove {
+            /* 0% - 25%: Dissolvenza in entrata al centro con micro zoom */
             0% {
                 opacity: 0;
                 transform: translateY(115px) scale(0.94);
                 filter: blur(16px);
             }
-            30% {
+            25% {
                 opacity: 1;
                 transform: translateY(115px) scale(1.0);
                 filter: blur(0px);
             }
-            /* Pausa brevissima: parte verso l'alto prima rispetto a prima */
-            38% {
+            /* 25% - 35%: Pausa ferma al centro */
+            35% {
                 opacity: 1;
                 transform: translateY(115px) scale(1.0);
                 filter: blur(0px);
             }
+            /* 35% - 100%: Partenza lenta -> Forte accelerazione -> Frenata graduale e morbida in alto */
             100% {
                 opacity: 1;
                 transform: translateY(0) scale(1.0);
@@ -288,7 +290,7 @@
             margin-top: 8px;
         }
 
-        /* PULSANTI SENZA ICONE - RIGO SINGOLO GARANTITO */
+        /* PULSANTI DI CHIAMATA (Partono subito dopo la frenata morbida) */
         .btn-action {
             display: flex;
             align-items: center;
@@ -299,10 +301,10 @@
             padding: 16px 10px;
             color: #ffffff;
             text-decoration: none;
-            font-size: 0.92rem; /* Font regolato per garantire una sola riga su tutti gli smartphone */
+            font-size: 0.92rem;
             font-weight: 600;
             letter-spacing: 0.2px;
-            white-space: nowrap; /* Impedisce al testo di andare a capo */
+            white-space: nowrap;
             transition: all 0.25s ease;
             cursor: pointer;
             opacity: 0;
@@ -311,8 +313,8 @@
             animation: fadeInSlowBtn 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        .btn-delay-1 { animation-delay: 10.4s; }
-        .btn-delay-2 { animation-delay: 11.0s; }
+        .btn-delay-1 { animation-delay: 11.6s; }
+        .btn-delay-2 { animation-delay: 12.2s; }
 
         @keyframes fadeInSlowBtn {
             to {
