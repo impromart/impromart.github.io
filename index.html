@@ -241,33 +241,35 @@
             box-shadow: 0 0 12px rgba(230, 0, 0, 0.5);
         }
 
-        /* --- FRASE "COME POSSIAMO AIUTARTI?" (DISSOLVENZA E SPOSTAMENTO CONTINUO E MORBIDO) --- */
+        /* --- FRASE "COME POSSIAMO AIUTARTI?" --- */
+        /* Dimensione fissa senza cambi di scala. Dissolvenza morbida al centro e poi salita lenta */
         .help-text {
-            font-size: 1.05rem;
+            font-size: 1rem;
             font-weight: 700;
             color: #ffffff;
             letter-spacing: 0.3px;
             margin-top: 15px;
             margin-bottom: 15px;
             opacity: 0;
-            /* Ritardo aumentato di 1 secondo (6.2s) e animazione a curva Bezier ultra-morbida */
-            animation: smoothFadeAndSlide 3.4s cubic-bezier(0.19, 1, 0.22, 1) forwards 6.2s;
+            animation: fadeAndMoveUp 4s cubic-bezier(0.25, 1, 0.25, 1) forwards 5.5s;
         }
 
-        @keyframes smoothFadeAndSlide {
+        @keyframes fadeAndMoveUp {
+            /* 0% - 35%: Dissolvenza in entrata lenta al centro (nessun cambio di dimensione) */
             0% {
                 opacity: 0;
-                transform: translateY(110px) scale(1.12);
-                filter: blur(12px);
+                transform: translateY(110px);
+                filter: blur(14px);
             }
-            /* La dissolvenza finisce già al 30%, mentre la salita continua in modo fluido fino al 100% */
-            30% {
+            35% {
                 opacity: 1;
+                transform: translateY(110px);
                 filter: blur(0px);
             }
+            /* 35% - 100%: Spostamento lento e graduale verso la posizione in alto */
             100% {
                 opacity: 1;
-                transform: translateY(0) scale(1);
+                transform: translateY(0);
                 filter: blur(0px);
             }
         }
@@ -281,7 +283,7 @@
             margin-top: 5px;
         }
 
-        /* ANIMAZIONE DEI PULSANTI IN SEQUENZA DOLCE */
+        /* ANIMAZIONE DEI PULSANTI (Compaiono 1 secondo dopo il termine dello spostamento della scritta) */
         .btn-action {
             display: flex;
             align-items: center;
@@ -299,16 +301,16 @@
             transition: all 0.25s ease;
             cursor: pointer;
             opacity: 0;
-            transform: translateY(18px);
-            filter: blur(6px);
-            animation: fadeInSingleBtn 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            transform: translateY(15px);
+            filter: blur(8px);
+            animation: fadeInSlowBtn 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        /* Timing calibrati sulla nuova salita della scritta */
-        .btn-delay-1 { animation-delay: 8.6s; }
-        .btn-delay-2 { animation-delay: 9.2s; }
+        /* Timing: la scritta finisce di salire a 9.5s. Pausa di 1s -> i pulsanti partono a 10.5s e 11.2s */
+        .btn-delay-1 { animation-delay: 10.5s; }
+        .btn-delay-2 { animation-delay: 11.2s; }
 
-        @keyframes fadeInSingleBtn {
+        @keyframes fadeInSlowBtn {
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -505,7 +507,7 @@
                         Come possiamo aiutarti?
                     </div>
 
-                    <!-- Contatti con animazione sequenziale separata -->
+                    <!-- Contatti -->
                     <div class="contact-info">
                         <!-- Soccorso H24 (Pulsante 1) -->
                         <a href="tel:0080066245324" class="btn-action btn-delay-1">
