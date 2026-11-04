@@ -62,8 +62,8 @@
         }
 
         .intro-logo-img {
-            max-width: 50vw;
-            max-height: 35vh;
+            max-width: 60vw;
+            max-height: 40vh;
             object-fit: contain;
             opacity: 0;
             transform: scale(0.92);
@@ -82,10 +82,10 @@
             2. CONTAINER PRINCIPALE / CAROSELLO 3 SCHEDE
         ---------------------------------------------------- */
         .card-container {
-            width: 90%;
-            max-width: 380px;
-            height: 90vh;
-            max-height: 760px;
+            width: 92%;
+            max-width: 400px;
+            height: 92vh;
+            max-height: 780px;
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
@@ -108,7 +108,7 @@
         .pages-wrapper {
             display: flex;
             width: 300%;
-            height: calc(100% - 35px);
+            height: calc(100% - 38px);
             transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
@@ -132,7 +132,7 @@
 
         /* INDICATORI A PALLINI IN BASSO */
         .pagination-dots {
-            height: 35px;
+            height: 38px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -141,15 +141,15 @@
         }
 
         .dot {
-            width: 6px;
-            height: 6px;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.3);
             transition: all 0.3s ease;
         }
 
         .dot.active {
-            width: 20px;
+            width: 24px;
             border-radius: 4px;
             background: #e60000;
         }
@@ -205,7 +205,7 @@
         .delay-2 { animation-delay: 4.1s; }
         .delay-3 { animation-delay: 4.7s; }
 
-        /* LOGO AZIENDALE */
+        /* LOGO AZIENDALE INGRANDITO */
         .card-logo-container {
             width: 100%;
             display: flex;
@@ -214,52 +214,60 @@
         }
 
         .card-logo-img {
-            max-width: 270px;
-            max-height: 105px;
+            max-width: 310px;
+            max-height: 125px;
             object-fit: contain;
             filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
         }
 
+        /* TITOLO INGRANDITO */
         .job-title {
-            font-size: 0.78rem;
+            font-size: 0.88rem;
             font-weight: 700;
-            letter-spacing: 1.2px;
+            letter-spacing: 1.4px;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.8);
-            margin-top: 8px;
-            line-height: 1.4;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 10px;
+            line-height: 1.45;
         }
 
         /* LINEA ROSSA MAN */
         .red-line {
-            width: 120px;
-            height: 3px;
+            width: 130px;
+            height: 3.5px;
             background-color: #e60000;
-            margin: 12px auto 8px auto;
+            margin: 14px auto 10px auto;
             border-radius: 2px;
             transform-origin: center;
             box-shadow: 0 0 12px rgba(230, 0, 0, 0.5);
         }
 
         /* --- FRASE "COME POSSIAMO AIUTARTI?" --- */
-        /* Unico movimento fluido continuo da 3.0s senza tappe intermedie */
+        /* 1) Compare prima al centro con dissolvenza. 2) Poi scivola lentamente verso l'alto */
         .help-text {
-            font-size: 1rem;
+            font-size: 1.15rem;
             font-weight: 700;
             color: #ffffff;
-            letter-spacing: 0.3px;
-            margin-top: 32px;
-            margin-bottom: 20px;
+            letter-spacing: 0.4px;
+            margin-top: 28px;
+            margin-bottom: 22px;
             opacity: 0;
-            animation: singleContinuousMotion 3s cubic-bezier(0.25, 1, 0.5, 1) forwards 5.2s;
+            animation: fadeInCenterThenMoveUp 4.2s cubic-bezier(0.25, 1, 0.4, 1) forwards 5.2s;
         }
 
-        @keyframes singleContinuousMotion {
+        @keyframes fadeInCenterThenMoveUp {
+            /* 0% - 30%: dissolvenza e comparsa distinta al centro dello schermo */
             0% {
                 opacity: 0;
-                transform: translateY(110px);
+                transform: translateY(115px);
                 filter: blur(12px);
             }
+            30% {
+                opacity: 1;
+                transform: translateY(115px);
+                filter: blur(0px);
+            }
+            /* 30% - 100%: dopo la comparsa al centro, si muove più lentamente verso l'alto */
             100% {
                 opacity: 1;
                 transform: translateY(0);
@@ -273,34 +281,34 @@
             flex-direction: column;
             gap: 14px;
             width: 100%;
-            margin-top: 10px;
+            margin-top: 8px;
         }
 
-        /* ANIMAZIONE PULSANTI (Partenza dopo esattamente 0.5s dalla fine del movimento: 5.2s + 3.0s + 0.5s = 8.7s) */
+        /* PULSANTI INGRANDITI E CON RITARDO SULLA SALITA */
         .btn-action {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
             background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 12px;
-            padding: 14px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 14px;
+            padding: 16px 18px;
             color: #ffffff;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.98rem;
             font-weight: 600;
             letter-spacing: 0.3px;
             transition: all 0.25s ease;
             cursor: pointer;
             opacity: 0;
-            transform: translateY(15px);
+            transform: translateY(18px);
             filter: blur(8px);
             animation: fadeInSlowBtn 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        .btn-delay-1 { animation-delay: 8.7s; }
-        .btn-delay-2 { animation-delay: 9.3s; }
+        .btn-delay-1 { animation-delay: 9.8s; }
+        .btn-delay-2 { animation-delay: 10.4s; }
 
         @keyframes fadeInSlowBtn {
             to {
@@ -317,78 +325,78 @@
         }
 
         .svg-icon {
-            width: 18px;
-            height: 18px;
+            width: 20px;
+            height: 20px;
             fill: #ffffff;
             flex-shrink: 0;
         }
 
-        /* DATI AZIENDALI E PARTITA IVA NON CLICCABILE */
+        /* DATI AZIENDALI INGRANDITI */
         .company-info {
             text-align: center;
-            font-size: 0.82rem;
-            line-height: 1.5;
-            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.88rem;
+            line-height: 1.55;
+            color: rgba(255, 255, 255, 0.85);
             user-select: none;
             width: 100%;
-            margin-top: 10px;
-            padding-top: 10px;
+            margin-top: 12px;
+            padding-top: 12px;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .company-name {
             font-weight: 800;
-            font-size: 0.95rem;
-            margin-bottom: 2px;
+            font-size: 1.05rem;
+            margin-bottom: 3px;
             color: #ffffff;
             letter-spacing: 0.5px;
         }
 
         .piva-text {
-            color: rgba(255, 255, 255, 0.8) !important;
-            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.85) !important;
+            font-size: 0.88rem;
             font-weight: 400;
             display: block;
-            margin-top: 2px;
+            margin-top: 3px;
             text-decoration: none !important;
             pointer-events: none;
         }
 
         .swipe-hint {
-            font-size: 0.72rem;
-            color: rgba(255, 255, 255, 0.4);
-            letter-spacing: 0.5px;
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.45);
+            letter-spacing: 0.6px;
             text-transform: uppercase;
-            margin-top: 8px;
-        }
-
-        /* --- STILI SECONDA E TERZA PAGINA --- */
-        .info-box {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 14px;
-            padding: 12px 14px;
-            width: 100%;
-            text-align: left;
             margin-top: 10px;
         }
 
+        /* --- STILI SECONDA E TERZA PAGINA INGRANDITI --- */
+        .info-box {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 14px 16px;
+            width: 100%;
+            text-align: left;
+            margin-top: 12px;
+        }
+
         .info-box-title {
-            font-size: 0.88rem;
+            font-size: 0.95rem;
             font-weight: 700;
             color: #ffffff;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
-            gap: 7px;
+            gap: 8px;
             flex-wrap: wrap;
         }
 
         .info-box-desc {
-            font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.75);
-            line-height: 1.4;
-            margin-bottom: 10px;
+            font-size: 0.86rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.45;
+            margin-bottom: 12px;
         }
 
         .info-action-btn {
@@ -402,10 +410,10 @@
             border: 1px solid rgba(52, 152, 219, 0.5);
             color: #ffffff;
             text-decoration: none;
-            font-size: 0.82rem;
+            font-size: 0.9rem;
             font-weight: 700;
-            padding: 10px;
-            border-radius: 8px;
+            padding: 12px;
+            border-radius: 10px;
             box-shadow: 0 4px 12px rgba(41, 128, 185, 0.25);
             transition: all 0.2s;
         }
@@ -416,10 +424,10 @@
         }
 
         .social-page-desc {
-            font-size: 0.95rem;
+            font-size: 1rem3;
             font-weight: 500;
-            color: rgba(255, 255, 255, 0.85);
-            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.55;
             margin: 40px 10px 30px 10px;
             text-align: center;
         }
@@ -428,7 +436,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 20px;
+            gap: 22px;
             width: 100%;
         }
 
@@ -436,9 +444,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 64px;
-            height: 64px;
-            border-radius: 18px;
+            width: 68px;
+            height: 68px;
+            border-radius: 20px;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.12);
             color: #ffffff;
@@ -454,8 +462,8 @@
         }
 
         .social-btn svg {
-            width: 36px;
-            height: 36px;
+            width: 38px;
+            height: 38px;
             fill: none;
             stroke: #ffffff;
             stroke-width: 1.8;
