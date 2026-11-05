@@ -476,10 +476,10 @@
         .tech-content-container {
             width: 100%;
             text-align: left;
-            margin-top: 12px;
+            margin-top: 10px;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
         }
 
         .tech-center-icon-wrap {
@@ -487,24 +487,24 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin-top: 6px;
-            margin-bottom: 4px;
+            margin-top: 4px;
+            margin-bottom: 2px;
         }
 
         .tech-main-icon {
-            width: 52px;
-            height: 52px;
+            width: 60px;
+            height: 60px;
             stroke: #3498db;
             fill: none;
             stroke-width: 1.8;
             stroke-linecap: round;
             stroke-linejoin: round;
             filter: drop-shadow(0 0 10px rgba(52, 152, 219, 0.4));
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
         .tech-center-title {
-            font-size: 1.05rem;
+            font-size: 1.0rem;
             font-weight: 700;
             color: #ffffff;
             text-align: center;
@@ -512,38 +512,38 @@
         }
 
         .tech-section-heading {
-            font-size: 0.98rem;
+            font-size: 0.92rem;
             font-weight: 800;
             color: #ffffff;
-            margin-top: 4px;
+            margin-top: 2px;
             letter-spacing: 0.3px;
         }
 
         .tech-section-text {
-            font-size: 0.88rem;
+            font-size: 0.84rem;
             color: rgba(255, 255, 255, 0.82);
-            line-height: 1.45;
+            line-height: 1.4;
         }
 
         .tech-features-list {
             display: flex;
             flex-direction: column;
-            gap: 8px;
-            margin: 4px 0;
+            gap: 6px;
+            margin: 2px 0;
         }
 
         .tech-feature-item {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 0.88rem;
+            gap: 8px;
+            font-size: 0.84rem;
             color: rgba(255, 255, 255, 0.9);
             font-weight: 500;
         }
 
         .tech-feature-icon {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             stroke: #3498db;
             fill: none;
             stroke-width: 2;
@@ -691,7 +691,7 @@
                         <a href="scheda garanzia.PDF" target="_blank" rel="noopener noreferrer" class="info-action-btn">Scarica la scheda informativa</a>
                     </div>
 
-                    <!-- BOX 2: CONTRATTO IN SCADENZA (TESTO AGGIORNATO) -->
+                    <!-- BOX 2: COSA FARE SE IL CONTRATTO E' IN SCADENZA -->
                     <div class="info-box">
                         <div class="info-box-title">
                             Cosa fare se il contratto è in scadenza?
@@ -716,54 +716,88 @@
                     <div class="job-title" style="margin-top: 5px;">
                         TECNOLOGIA E SERVIZI
                     </div>
-                    <div class="red-line" style="transform: scaleX(1); opacity: 1; margin-bottom: 14px;"></div>
+                    <div class="red-line" style="transform: scaleX(1); opacity: 1; margin-bottom: 12px;"></div>
 
-                    <!-- ICONA CAMION CONNESSO E FRASE CENTRALE -->
-                    <div class="tech-center-icon-wrap">
-                        <svg class="tech-main-icon" viewBox="0 0 24 24">
-                            <rect x="1" y="3" width="15" height="13" rx="1"/>
-                            <path d="M16 8h4l3 3v5h-7V8z"/>
-                            <circle cx="5.5" cy="18.5" r="2.5"/>
-                            <circle cx="18.5" cy="18.5" r="2.5"/>
-                            <path d="M1 8h15"/>
-                            <path d="M12 2a10 10 0 0 1 8 4"/>
-                        </svg>
-                        <div class="tech-center-title">Il tuo veicolo sempre connesso</div>
+                    <!-- TUTTO IL CONTENUTO DENTRO UN UNICO BOX -->
+                    <div class="info-box" style="margin-top: 4px;">
+                        
+                        <!-- ICONA: Camion frontale MAN + Spia motore + Carburante + Tachimetro + Wi-Fi in alto -->
+                        <div class="tech-center-icon-wrap">
+                            <svg class="tech-main-icon" viewBox="0 0 64 64">
+                                <!-- SIMBOLO WIFI IN ALTO AL CENTRO -->
+                                <path d="M26 12 a10 10 0 0 1 12 0" />
+                                <path d="M23 16 a14 14 0 0 1 18 0" />
+                                <circle cx="32" cy="21" r="1.5" fill="#3498db" stroke="none"/>
+
+                                <!-- CAMION VISTO FRONTALMENTE -->
+                                <!-- Cabina -->
+                                <rect x="18" y="24" width="28" height="24" rx="4" />
+                                <!-- Parabrezza -->
+                                <path d="M22 27 h20 v10 h-20 z" fill="rgba(52, 152, 219, 0.2)" />
+                                <!-- Griglia frontale centrale -->
+                                <rect x="26" y="39" width="12" height="6" rx="1" />
+                                <line x1="26" y1="41" x2="38" y2="41" />
+                                <line x1="26" y1="43" x2="38" y2="43" />
+                                <!-- Ruote anteriori visibili lateralmente -->
+                                <rect x="14" y="32" width="4" height="8" rx="1" />
+                                <rect x="46" y="32" width="4" height="8" rx="1" />
+
+                                <!-- SIMBOLO SPIA MOTORE (A sinistra del camion) -->
+                                <g transform="translate(6, 26) scale(0.65)">
+                                    <path d="M3 6h2l2 3h6l2-3h2v4h-2v3h2v4h-2v3h-3v2h-4v-2H8v-3H6v-4H4V6z"/>
+                                </g>
+
+                                <!-- SIMBOLO CARBURANTE (A destra del camion) -->
+                                <g transform="translate(48, 26) scale(0.65)">
+                                    <path d="M3 2v14h10V2H3zm8 12H5V4h6v10z"/>
+                                    <path d="M15 5h2v4h-2z"/>
+                                </g>
+
+                                <!-- SIMBOLO TACHIMETRO / LANCETTA VELOCITÀ (In basso al centro sopra la griglia o sotto) -->
+                                <g transform="translate(28, 48) scale(0.6)">
+                                    <path d="M2 10a8 8 0 0 1 12 0"/>
+                                    <line x1="8" y1="10" x2="11" y2="5"/>
+                                    <circle cx="8" cy="10" r="1" fill="#3498db"/>
+                                </g>
+                            </svg>
+                            <div class="tech-center-title">Il tuo veicolo sempre connesso</div>
+                        </div>
+
+                        <!-- CONTENUTO DEL BOX -->
+                        <div class="tech-content-container">
+                            <div class="tech-section-heading">Cos'è RIO?</div>
+                            <div class="tech-section-text">
+                                RIO è la piattaforma digitale che ti permette di collegare il tuo MAN e accedere a informazioni e servizi utili per gestirlo al meglio.
+                            </div>
+
+                            <!-- LISTA ICONE -->
+                            <div class="tech-features-list">
+                                <div class="tech-feature-item">
+                                    <svg class="tech-feature-icon" viewBox="0 0 24 24"><circle cx="12" cy="10" r="3"/><path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 7 8 11.7z"/></svg>
+                                    <span>Dati e informazioni sul veicolo</span>
+                                </div>
+                                <div class="tech-feature-item">
+                                    <svg class="tech-feature-icon" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                                    <span>Monitoraggio e analisi dei viaggi</span>
+                                </div>
+                                <div class="tech-feature-item">
+                                    <svg class="tech-feature-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                                    <span>Servizi digitali MAN</span>
+                                </div>
+                            </div>
+
+                            <div class="tech-section-text" style="margin-top: 4px;">
+                                Anomalie e indicatori di spie saranno inoltre trasmesse anche alla nostra officina che potrà avvisarvi prontamente per un intervento.
+                            </div>
+
+                            <!-- PULSANTE BLU -->
+                            <a href="tel:+390815925267" class="info-action-btn" style="margin-top: 10px;">Attiva RIO o richiedi info</a>
+                        </div>
                     </div>
 
-                    <!-- CONTENUTO ALLINEATO A SINISTRA -->
-                    <div class="tech-content-container">
-                        <div class="tech-section-heading">Cos'è RIO?</div>
-                        <div class="tech-section-text">
-                            RIO è la piattaforma digitale che ti permette di collegare il tuo MAN e accedere a informazioni e servizi utili per gestirlo al meglio.
-                        </div>
-
-                        <!-- LISTA ICONE -->
-                        <div class="tech-features-list">
-                            <div class="tech-feature-item">
-                                <svg class="tech-feature-icon" viewBox="0 0 24 24"><circle cx="12" cy="10" r="3"/><path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 7 8 11.7z"/></svg>
-                                <span>Dati e informazioni sul veicolo</span>
-                            </div>
-                            <div class="tech-feature-item">
-                                <svg class="tech-feature-icon" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-                                <span>Monitoraggio e analisi dei viaggi</span>
-                            </div>
-                            <div class="tech-feature-item">
-                                <svg class="tech-feature-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-                                <span>Servizi digitali MAN</span>
-                            </div>
-                        </div>
-
-                        <div class="tech-section-text" style="margin-top: 2px;">
-                            Anomalie e indicatori di spie saranno inoltre trasmesse anche alla nostra officina che potrà avvisarvi prontamente per un intervento.
-                        </div>
-
-                        <!-- PULSANTE BLU -->
-                        <a href="tel:+390815925267" class="info-action-btn" style="margin-top: 6px;">Attiva RIO o richiedi info</a>
-                    </div>
                 </div>
 
-                <div class="swipe-hint" style="margin-top: 10px;">
+                <div class="swipe-hint" style="margin-top: 6px;">
                     <svg viewBox="0 0 24 24" style="transform: rotate(180deg);"><polyline points="9 18 15 12 9 6"/></svg>
                     Scorri
                     <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
