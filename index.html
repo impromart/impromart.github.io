@@ -479,17 +479,17 @@
             margin-bottom: 10px;
         }
 
-        /* ICONA CAMION MAN FRONTALE + RETE */
+        /* NUOVA ICONA CAMION MAN FRONTALE REALISTICO CON RUOTE SOTTO + RETE 3 ONDE INGRANDITA */
         .tech-main-icon {
-            width: 80px;
-            height: 60px;
+            width: 90px;
+            height: 64px;
             stroke: #ffffff;
             fill: none;
             stroke-width: 1.8;
             stroke-linecap: round;
             stroke-linejoin: round;
             filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.25));
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .tech-center-title {
@@ -697,31 +697,42 @@
                     <!-- UNICO BOX PER TUTTO IL CONTENUTO -->
                     <div class="info-box" style="margin-top: 2px;">
                         
-                        <!-- ICONA: CAMION MAN VISTO FRONTALMENTE + SIMBOLO DELLA RETE -->
+                        <!-- ICONA: CAMION MAN VISTO FRONTALMENTE CON RUOTE SOTTO E "MAN" + RETE 3 LINEE INGRANDITA -->
                         <div class="tech-center-icon-wrap">
-                            <svg class="tech-main-icon" viewBox="0 0 76 56">
-                                <!-- Camion MAN visto frontalmente (stile minimale) -->
-                                <g transform="translate(4, 10)">
-                                    <!-- Cabina principale -->
-                                    <rect x="8" y="4" width="28" height="32" rx="4" fill="none" stroke="#ffffff" stroke-width="1.8"/>
-                                    <!-- Parabrezza -->
-                                    <path d="M11 8 h22 v12 h-22 z" fill="rgba(255,255,255,0.15)" stroke="#ffffff" stroke-width="1.2"/>
-                                    <!-- Mascherina / Griglia frontale -->
-                                    <rect x="13" y="24" width="18" height="8" rx="1.5" fill="none" stroke="#ffffff" stroke-width="1.4"/>
-                                    <line x1="16" y1="28" x2="28" y2="28" stroke="#ffffff" stroke-width="1.2"/>
-                                    <!-- Specchietti laterali -->
-                                    <line x1="5" y1="10" x2="8" y2="12" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round"/>
-                                    <line x1="39" y1="10" x2="36" y2="12" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round"/>
-                                    <!-- Ruote visibili frontalmente -->
-                                    <circle cx="6" cy="31" r="2.5" fill="#ffffff"/>
-                                    <circle cx="38" cy="31" r="2.5" fill="#ffffff"/>
+                            <svg class="tech-main-icon" viewBox="0 0 84 58">
+                                <!-- CAMION MAN FRONTALE REALISTICO MINIMALE -->
+                                <g transform="translate(4, 12)">
+                                    <!-- Cabina principale del camion -->
+                                    <path d="M4 2 h30 a3 3 0 0 1 3 3 v27 a2 2 0 0 1 -2 2 h-31 a2 2 0 0 1 -2 -2 v-27 a3 3 0 0 1 3 -3 z" fill="none" stroke="#ffffff" stroke-width="1.8"/>
+                                    <!-- Parabrezza superiore -->
+                                    <path d="M7 6 h24 v10 h-24 z" fill="rgba(255,255,255,0.15)" stroke="#ffffff" stroke-width="1.2"/>
+                                    
+                                    <!-- Specchietti laterali alti -->
+                                    <line x1="1" y1="8" x2="4" y2="10" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round"/>
+                                    <line x1="37" y1="8" x2="34" y2="10" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round"/>
+
+                                    <!-- Mascherina frontale MAN -->
+                                    <rect x="9" y="20" width="20" height="9" rx="1.5" fill="none" stroke="#ffffff" stroke-width="1.4"/>
+                                    <!-- Scritta MAN stilizzata dentro la mascherina -->
+                                    <text x="19" y="27" font-family="'Inter', sans-serif" font-weight="900" font-size="6.5" fill="#ffffff" text-anchor="middle" letter-spacing="0.8">MAN</text>
+
+                                    <!-- Fari frontali -->
+                                    <rect x="6" y="24" width="2" height="4" fill="#ffffff"/>
+                                    <rect x="30" y="24" width="2" height="4" fill="#ffffff"/>
+
+                                    <!-- Ruote posizionate SOTTO al camion -->
+                                    <rect x="7" y="34" width="6" height="4" rx="1" fill="#ffffff"/>
+                                    <rect x="25" y="34" width="6" height="4" rx="1" fill="#ffffff"/>
                                 </g>
 
-                                <!-- Simbolo della rete / Wi-Fi fluttuante a destra -->
-                                <g transform="translate(44, 14)">
-                                    <path d="M4 14 a9 9 0 0 1 16 0" fill="none" stroke="#ffffff" stroke-width="1.8"/>
-                                    <path d="M7 17 a5 5 0 0 1 10 0" fill="none" stroke="#ffffff" stroke-width="1.8"/>
-                                    <circle cx="12" cy="21" r="1.5" fill="#ffffff"/>
+                                <!-- ICONA RETE INGRANDITA CON 3 LINEE DI SEGNALE -->
+                                <g transform="translate(46, 6)">
+                                    <!-- 3 Onde Wi-Fi / Rete -->
+                                    <path d="M2 10 a14 14 0 0 1 24 0" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"/>
+                                    <path d="M6 15 a9 9 0 0 1 16 0" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"/>
+                                    <path d="M10 20 a4.5 4.5 0 0 1 8 0" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"/>
+                                    <!-- Punto di origine del segnale -->
+                                    <circle cx="14" cy="25" r="2" fill="#ffffff"/>
                                 </g>
                             </svg>
                             <div class="tech-center-title">Il tuo veicolo sempre connesso</div>
