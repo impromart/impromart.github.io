@@ -479,17 +479,17 @@
             margin-bottom: 10px;
         }
 
-        /* ICONA CAMION MAN CON RETE RIDISEGNATA DA ZERO */
+        /* ICONA RETE CENTRALE + INDICATORI CIRCOSTANTI */
         .tech-main-icon {
-            width: 88px;
-            height: 68px;
+            width: 76px;
+            height: 60px;
             stroke: #ffffff;
             fill: none;
             stroke-width: 1.8;
             stroke-linecap: round;
             stroke-linejoin: round;
-            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
-            margin-bottom: 10px;
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.25));
+            margin-bottom: 8px;
         }
 
         .tech-center-title {
@@ -697,25 +697,27 @@
                     <!-- UNICO BOX PER TUTTO IL CONTENUTO -->
                     <div class="info-box" style="margin-top: 2px;">
                         
-                        <!-- ICONA CAMION MAN CON ONDE DI RETE (NUOVO DESIGN PULITO E BEN DEFINITO) -->
+                        <!-- ICONA: RETE CENTRALE CIRCONDATA DA TACHIMETRO, SPIA MOTORE E CARBURANTE -->
                         <div class="tech-center-icon-wrap">
-                            <svg class="tech-main-icon" viewBox="0 0 80 60">
-                                <!-- Onde della rete in alto al centro -->
-                                <path d="M30 11 a14 14 0 0 1 20 0" stroke="#ffffff" stroke-width="1.8" fill="none"/>
-                                <path d="M34 15 a8 8 0 0 1 12 0" stroke="#ffffff" stroke-width="1.8" fill="none"/>
-                                <circle cx="40" cy="19" r="1.5" fill="#ffffff"/>
+                            <svg class="tech-main-icon" viewBox="0 0 64 50">
+                                <!-- Icona centrale della rete / Wi-Fi -->
+                                <path d="M24 26 a10 10 0 0 1 16 0"/>
+                                <path d="M20 21 a17 17 0 0 1 24 0"/>
+                                <circle cx="32" cy="31" r="2" fill="#ffffff"/>
 
-                                <!-- Camion MAN visto frontalmente -->
-                                <rect x="23" y="22" width="34" height="34" rx="4" fill="#1e2732" stroke="#ffffff" stroke-width="1.8"/>
-                                <path d="M26 26 h28 v14 h-28 z" fill="rgba(255,255,255,0.18)" stroke="#ffffff" stroke-width="1.2"/>
-                                <!-- Griglia e logo MAN frontale -->
-                                <rect x="30" y="44" width="20" height="7" rx="1.5" fill="none" stroke="#ffffff" stroke-width="1.4"/>
-                                <line x1="33" y1="47.5" x2="47" y2="47.5" stroke="#ffffff" stroke-width="1.2"/>
-                                <!-- Specchietti e fari -->
-                                <rect x="18" y="30" width="3" height="10" rx="1" fill="#ffffff"/>
-                                <rect x="59" y="30" width="3" height="10" rx="1" fill="#ffffff"/>
-                                <circle cx="27" cy="47" r="1.5" fill="#ffffff"/>
-                                <circle cx="53" cy="47" r="1.5" fill="#ffffff"/>
+                                <!-- Indicatore 1 (Sinistra): Tachimetro -->
+                                <path d="M5 28 a9 9 0 0 1 12 -6"/>
+                                <line x1="11" y1="28" x2="15" y2="23"/>
+                                <circle cx="11" cy="28" r="1" fill="#ffffff"/>
+
+                                <!-- Indicatore 2 (Destra): Spia Motore / Ingranaggio -->
+                                <circle cx="53" cy="25" r="5" fill="none" stroke-width="1.5"/>
+                                <path d="M53 19 v2 M53 29 v2 M47 25 h2 M57 25 h2"/>
+
+                                <!-- Indicatore 3 (Basso al centro): Livello Carburante -->
+                                <rect x="27" y="40" width="10" height="6" rx="1"/>
+                                <line x1="30" y1="40" x2="30" y2="37"/>
+                                <line x1="34" y1="40" x2="34" y2="38"/>
                             </svg>
                             <div class="tech-center-title">Il tuo veicolo sempre connesso</div>
                         </div>
@@ -740,7 +742,7 @@
                                     <span>Monitoraggio e analisi dei viaggi</span>
                                 </div>
                                 <div class="tech-feature-item">
-                                    <svg class="tech-feature-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06-.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                                    <svg class="tech-feature-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l-.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06-.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
                                     <span>Servizi digitali MAN</span>
                                 </div>
                             </div>
