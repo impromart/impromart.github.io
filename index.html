@@ -419,7 +419,7 @@
             stroke-linejoin: round;
         }
 
-        /* --- STILI BOX INFORMATIVI (PAGINA 2 E 3) --- */
+        /* --- STILI BOX INFORMATIVI --- */
         .info-box {
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -533,61 +533,51 @@
     <!-- CONTAINER PRINCIPALE -->
     <div class="card-container">
         
-        <!-- WRAPPER DELLE 4 PAGINE (GESTIONE SWIPE) -->
+        <!-- WRAPPER DELLE 4 PAGINE -->
         <div class="pages-wrapper" id="pagesWrapper">
             
             <!-- ================= PAGINA 1 ================= -->
             <div class="card-page">
                 <div class="header-content">
-                    <!-- Logo Impromart -->
                     <div class="card-logo-container animate-seq delay-1">
                         <img src="logo impromart.png" alt="Logo Impromart" class="card-logo-img">
                     </div>
 
-                    <!-- Testo su due righe -->
                     <div class="job-title animate-seq delay-2">
                         CONCESSIONARIA E OFFICINA<br>AUTORIZZATA MAN
                     </div>
 
-                    <!-- Linea Rossa MAN -->
                     <div class="red-line animate-line-seq"></div>
 
-                    <!-- Frase "Come possiamo aiutarti?" -->
                     <div class="help-text">
                         Come possiamo aiutarti?
                     </div>
 
-                    <!-- Contatti (5 Pulsanti con Icone e Frecce) -->
                     <div class="contact-info">
-                        <!-- Pulsante 1: Soccorso stradale H24 -->
                         <a href="tel:0080066245324" class="btn-action btn-delay-1">
                             <svg class="btn-icon" viewBox="0 0 24 24"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
                             <span class="btn-text">Soccorso stradale H24</span>
                             <svg class="arrow-icon" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
                         </a>
 
-                        <!-- Pulsante 2: Contatta l'officina -->
                         <a href="tel:+390815962139" class="btn-action btn-delay-2">
                             <svg class="btn-icon" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
                             <span class="btn-text">Contatta l'officina</span>
                             <svg class="arrow-icon" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
                         </a>
 
-                        <!-- Pulsante 3: Contatta l'accettazione -->
                         <a href="tel:+390815962139" class="btn-action btn-delay-3">
                             <svg class="btn-icon" viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg>
                             <span class="btn-text">Contatta l'accettazione</span>
                             <svg class="arrow-icon" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
                         </a>
 
-                        <!-- Pulsante 4: Contatta il magazzino -->
                         <a href="tel:+390815962139" class="btn-action btn-delay-4">
                             <svg class="btn-icon" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
                             <span class="btn-text">Contatta il magazzino</span>
                             <svg class="arrow-icon" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
                         </a>
 
-                        <!-- Pulsante 5: Contatta il back office -->
                         <a href="tel:+390815962139" class="btn-action btn-delay-5">
                             <svg class="btn-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                             <span class="btn-text">Contatta il back office</span>
@@ -602,7 +592,7 @@
                 </div>
             </div>
 
-            <!-- ================= PAGINA 2 (NUOVA) ================= -->
+            <!-- ================= PAGINA 2 ================= -->
             <div class="card-page">
                 <div class="header-content">
                     <div class="job-title" style="margin-top: 5px;">
@@ -610,7 +600,7 @@
                     </div>
                     <div class="red-line" style="transform: scaleX(1); opacity: 1; margin-bottom: 22px;"></div>
 
-                    <!-- BOX 1: COSA COMPRENDE IL CONTRATTO -->
+                    <!-- BOX 1: PDF GARANZIA -->
                     <div class="info-box">
                         <div class="info-box-title">
                             <strong>Cosa comprende il contratto di manutenzione?</strong>
@@ -618,7 +608,8 @@
                         <div class="info-box-desc">
                             Scarica la scheda informativa dettagliata per scoprire tutti i servizi inclusi e la copertura della garanzia.
                         </div>
-                        <a href="scheda garanzia.pdf" target="_blank" rel="noopener noreferrer" class="info-action-btn">Scarica la scheda informativa</a>
+                        <!-- LINK AGGIORNATO CON L'ESTENSIONE IN MAIUSCOLO .PDF -->
+                        <a href="scheda garanzia.PDF" target="_blank" rel="noopener noreferrer" class="info-action-btn">Scarica la scheda informativa</a>
                     </div>
 
                     <!-- BOX 2: CONTRATTO IN SCADENZA -->
@@ -640,7 +631,7 @@
                 </div>
             </div>
 
-            <!-- ================= PAGINA 3 (PRECEDENTE 2) ================= -->
+            <!-- ================= PAGINA 3 ================= -->
             <div class="card-page">
                 <div class="header-content">
                     <div class="job-title" style="margin-top: 5px;">
@@ -648,7 +639,6 @@
                     </div>
                     <div class="red-line" style="transform: scaleX(1); opacity: 1; margin-bottom: 22px;"></div>
 
-                    <!-- BOX RIO -->
                     <div class="info-box">
                         <div class="info-box-title">
                             Il tuo veicolo sempre connesso
@@ -659,10 +649,9 @@
                         <a href="tel:+390815925267" class="info-action-btn">Attiva RIO o richiedi info</a>
                     </div>
 
-                    <!-- BOX RICAMBI -->
                     <div class="info-box">
                         <div class="info-box-title">
-                            Contratto di manutenzione in scadenza?
+                            Cosa fare se il contratto è in scadenza?
                         </div>
                         <div class="info-box-desc">
                             Chiedi alla nostra officina di eseguire il test semaforo per valutare un'estensione!
@@ -678,7 +667,7 @@
                 </div>
             </div>
 
-            <!-- ================= PAGINA 4 (PRECEDENTE 3) ================= -->
+            <!-- ================= PAGINA 4 ================= -->
             <div class="card-page card-page-3">
                 <div class="header-content">
                     <div class="job-title" style="margin-top: 5px;">
@@ -686,14 +675,11 @@
                     </div>
                     <div class="red-line" style="transform: scaleX(1); opacity: 1;"></div>
 
-                    <!-- FRASE CENTRATA -->
                     <div class="social-page-desc">
                         Rimani aggiornato sulle novità ed esplora la nostra gamma completa di veicoli
                     </div>
 
-                    <!-- 3 ICONE SOCIAL / WEB CENTRATE -->
                     <div class="social-buttons-container">
-                        <!-- Instagram -->
                         <a href="https://www.instagram.com/impromart.it?psln=MThyZjU2eXNuYW5zbA==" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
                             <svg viewBox="0 0 24 24">
                                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -702,14 +688,12 @@
                             </svg>
                         </a>
 
-                        <!-- TikTok -->
                         <a href="https://www.tiktok.com/@impromart.it" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="TikTok">
                             <svg viewBox="0 0 24 24" style="fill: #ffffff; stroke: none;">
                                 <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
                             </svg>
                         </a>
 
-                        <!-- Web -->
                         <a href="https://www.impromart.it/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Sito Web">
                             <svg viewBox="0 0 24 24">
                                 <circle cx="12" cy="12" r="10"/>
@@ -720,7 +704,6 @@
                     </div>
                 </div>
 
-                <!-- DATI AZIENDALI -->
                 <div style="width: 100%;">
                     <div class="company-info">
                         <div class="company-name">Impromart SRL</div>
@@ -738,7 +721,6 @@
 
         </div>
 
-        <!-- INDICATORI A PALLINI (4 PALLINI) -->
         <div class="pagination-dots">
             <div class="dot active" id="dot0"></div>
             <div class="dot" id="dot1"></div>
@@ -749,7 +731,6 @@
     </div>
 
     <script>
-        // Nasconde l'intro dopo 2.8s
         setTimeout(() => {
             const loader = document.getElementById("loader");
             if (loader) {
@@ -758,7 +739,6 @@
             }
         }, 2800);
 
-        // --- GESTIONE SWIPE TOUCH E MOUSE PER LE 4 PAGINE ---
         const wrapper = document.getElementById('pagesWrapper');
         const dot0 = document.getElementById('dot0');
         const dot1 = document.getElementById('dot1');
@@ -771,7 +751,6 @@
 
         function goToPage(page) {
             currentPage = page;
-            // Ogni pagina occupa ora il 25% del totale (100 / 4)
             wrapper.style.transform = `translateX(-${currentPage * 25}%)`;
             
             [dot0, dot1, dot2, dot3].forEach((d, idx) => {
