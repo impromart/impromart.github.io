@@ -204,7 +204,7 @@
         .delay-1 { animation-delay: 3.2s; }
         .delay-2 { animation-delay: 4.0s; }
 
-        /* LOGO AZIENDALE UNIFORMATO */
+        /* LOGO AZIENDALE INGRANDITO E COERENTE */
         .card-logo-container {
             width: 100%;
             display: flex;
@@ -214,9 +214,9 @@
 
         .card-logo-img {
             width: auto;
-            max-width: 75%;
+            max-width: 95%;
             height: auto;
-            max-height: 75px;
+            max-height: 105px;
             object-fit: contain;
             filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
         }
@@ -575,23 +575,38 @@
         }
 
         /* --- QUARTA SCHERMATA (GESTIONE SINISTRI) --- */
-        .claims-list {
-            margin: 10px 0 14px 20px;
-            text-align: left;
-            font-size: 1.02rem;
-            color: rgba(255, 255, 255, 0.95);
-            line-height: 1.5;
+        .claims-features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 12px 0;
         }
 
-        .claims-list li {
-            margin-bottom: 4px;
+        .claims-feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.02rem;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 500;
+        }
+
+        .claims-feature-icon {
+            width: 22px;
+            height: 22px;
+            stroke: #ffffff;
+            fill: none;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            flex-shrink: 0;
         }
 
         .claims-email-text {
             display: block;
             margin-top: 8px;
             margin-bottom: 14px;
-            font-size: 1.15rem;
+            font-size: 1.05rem;
             font-weight: 700;
             color: #ffffff;
             word-break: break-all;
@@ -808,7 +823,7 @@
                                     <span>Monitoraggio e analisi dei viaggi</span>
                                 </div>
                                 <div class="tech-feature-item">
-                                    <svg class="tech-feature-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l-.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06-.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                                    <svg class="tech-feature-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l-.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l-.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06-.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
                                     <span>Malfunzionamenti</span>
                                 </div>
                             </div>
@@ -841,7 +856,7 @@
                     <div class="red-line" style="transform: scaleX(1); opacity: 1; margin-bottom: 22px;"></div>
 
                     <!-- BOX INFORMATIVO GESTIONE SINISTRI -->
-                    <div class="info-box">
+                    <div class="info-box" style="margin-top: 14px; padding: 14px 16px;">
                         <div class="info-box-title">
                             Come aprire un sinistro KASKO?
                         </div>
@@ -849,23 +864,38 @@
                             Compila il modulo e prepara:
                         </div>
                         
-                        <ul class="claims-list">
-                            <li>Foto del veicolo danneggiato</li>
-                            <li>Copia libretto</li>
-                            <li>Copia patente</li>
-                            <li>Preventivo per la riparazione</li>
-                        </ul>
+                        <!-- LISTA CON MACCHINA FOTOGRAFICA E ALTRE ICONE COERENTI -->
+                        <div class="claims-features-list">
+                            <div class="claims-feature-item">
+                                <svg class="claims-feature-icon" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                                <span>Foto del veicolo danneggiato</span>
+                            </div>
+                            <div class="claims-feature-item">
+                                <svg class="claims-feature-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                                <span>Copia libretto</span>
+                            </div>
+                            <div class="claims-feature-item">
+                                <svg class="claims-feature-icon" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2" ry="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+                                <span>Copia patente</span>
+                            </div>
+                            <div class="claims-feature-item">
+                                <svg class="claims-feature-icon" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                <span>Preventivo per la riparazione</span>
+                            </div>
+                        </div>
+
+                        <div style="height: 6px;"></div>
 
                         <div class="info-box-desc">
                             Invia tutto a questo indirizzo:
                         </div>
                         <span class="claims-email-text">sinistri@man.tratonfs.com</span>
 
-                        <a href="modulo denuncia.pdf" target="_blank" rel="noopener noreferrer" class="info-action-btn" style="margin-top: 12px;">Ottieni Modulo Denuncia</a>
+                        <a href="modulo denuncia.pdf" target="_blank" rel="noopener noreferrer" class="info-action-btn" style="margin-top: 14px;">Ottieni Modulo Denuncia</a>
                     </div>
                 </div>
 
-                <div class="swipe-hint">
+                <div class="swipe-hint" style="margin-top: 4px;">
                     <svg viewBox="0 0 24 24" style="transform: rotate(180deg);"><polyline points="9 18 15 12 9 6"/></svg>
                     Scorri
                     <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
