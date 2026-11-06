@@ -104,16 +104,16 @@
             to { opacity: 1; }
         }
 
-        /* WRAPPER SCORRIBILE PER LE 5 PAGINE (SWIPE) */
+        /* WRAPPER SCORRIBILE PER LE 6 PAGINE (SWIPE) */
         .pages-wrapper {
             display: flex;
-            width: 500%;
+            width: 600%;
             height: calc(100% - 40px);
             transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         .card-page {
-            width: 20%;
+            width: 16.666%;
             height: 100%;
             padding: 16px 18px 12px 18px;
             display: flex;
@@ -136,20 +136,20 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             width: 100%;
         }
 
         .dot {
-            width: 8px;
-            height: 8px;
+            width: 7px;
+            height: 7px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.3);
             transition: all 0.3s ease;
         }
 
         .dot.active {
-            width: 24px;
+            width: 20px;
             border-radius: 4px;
             background: #e60000;
         }
@@ -204,7 +204,7 @@
         .delay-1 { animation-delay: 3.2s; }
         .delay-2 { animation-delay: 4.0s; }
 
-        /* LOGO AZIENDALE LEGGERMENTE RIDOTTO */
+        /* LOGO AZIENDALE RIDOTTO E PROPORZIONATO */
         .card-logo-container {
             width: 100%;
             display: flex;
@@ -612,7 +612,82 @@
             word-break: break-all;
         }
 
-        /* --- QUINTA SCHERMATA (SOCIAL & INFO) --- */
+        /* --- STILI AREA VENDITA --- */
+        .sales-category-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-top: 10px;
+            margin-bottom: 6px;
+            text-align: left;
+            width: 100%;
+        }
+
+        .sales-category-title:first-of-type {
+            margin-top: 4px;
+        }
+
+        .sales-btn {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 12px;
+            padding: 12px 14px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.98rem;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+            transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+            cursor: pointer;
+            width: 100%;
+            position: relative;
+        }
+
+        .sales-btn .btn-icon {
+            width: 20px;
+            height: 20px;
+            stroke: #ffffff;
+            fill: none;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+        }
+
+        .sales-btn .btn-text {
+            flex-grow: 1;
+            text-align: left;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .sales-btn .arrow-icon {
+            width: 16px;
+            height: 16px;
+            stroke: rgba(255, 255, 255, 0.6);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+            margin-left: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .sales-btn:active {
+            background: rgba(41, 128, 185, 0.3);
+            border-color: #2980b9;
+            transform: scale(0.98);
+        }
+
+        /* --- SESTA SCHERMATA (SOCIAL & INFO) --- */
         .social-page-desc {
             font-size: 1.05rem;
             font-weight: 400;
@@ -673,7 +748,7 @@
     <!-- CONTAINER PRINCIPALE -->
     <div class="card-container">
         
-        <!-- WRAPPER DELLE 5 PAGINE -->
+        <!-- WRAPPER DELLE 6 PAGINE -->
         <div class="pages-wrapper" id="pagesWrapper">
             
             <!-- ================= PAGINA 1 ================= -->
@@ -866,7 +941,7 @@
 
                         <div style="height: 10px;"></div>
                         
-                        <!-- LISTA CON SPZIATURE UGUALI A TECNOLOGIA E SERVIZI E ICONA EURO -->
+                        <!-- LISTA CON ICONA PREVENTIVO CORRETTA E SPAZIATURE UNIFORMI -->
                         <div class="claims-features-list">
                             <div class="claims-feature-item">
                                 <svg class="claims-feature-icon" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
@@ -881,7 +956,7 @@
                                 <span>Copia patente</span>
                             </div>
                             <div class="claims-feature-item">
-                                <svg class="claims-feature-icon" viewBox="0 0 24 24"><path d="M4 10h12M4 14h9M19 6a7 7 0 0 0-7-7 7 7 0 0 0-7 7v8a3 3 0 0 0 3 3h11a2 2 0 0 0 2-2v-1"/></svg>
+                                <svg class="claims-feature-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><path d="M10 9H9H8"/></svg>
                                 <span>Preventivo per la riparazione</span>
                             </div>
                         </div>
@@ -904,7 +979,65 @@
                 </div>
             </div>
 
-            <!-- ================= PAGINA 5 (SOCIAL & INFO) ================= -->
+            <!-- ================= PAGINA 5 (AREA VENDITA) ================= -->
+            <div class="card-page">
+                <div class="header-content" style="width: 100%;">
+                    <div class="job-title" style="margin-top: 5px;">
+                        AREA VENDITA
+                    </div>
+                    <div class="red-line" style="transform: scaleX(1); opacity: 1; margin-bottom: 22px;"></div>
+
+                    <!-- BOX INFORMATIVO AREA VENDITA -->
+                    <div class="info-box" style="margin-top: 14px; padding: 14px 16px;">
+                        <div class="info-box-title">
+                            Hai bisogno di un nuovo MAN?
+                        </div>
+                        <div class="info-box-desc" style="margin-bottom: 12px;">
+                            Rivolgiti al nostro team commerciale
+                        </div>
+
+                        <div class="contact-info" style="margin-top: 0;">
+                            <!-- AREA TRUCK -->
+                            <div class="sales-category-title">Area Truck</div>
+                            
+                            <a href="tel:+393465286815" class="sales-btn">
+                                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                <span class="btn-text">Lucio De Angelis</span>
+                                <svg class="arrow-icon" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+                            </a>
+
+                            <a href="tel:+393346044926" class="sales-btn">
+                                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                <span class="btn-text">Massimo Ciotola</span>
+                                <svg class="arrow-icon" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+                            </a>
+
+                            <a href="tel:+393455782612" class="sales-btn">
+                                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                <span class="btn-text">Carlo Comoletti</span>
+                                <svg class="arrow-icon" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+                            </a>
+
+                            <!-- AREA VAN -->
+                            <div class="sales-category-title" style="margin-top: 12px;">Area VAN</div>
+
+                            <a href="tel:+393662699882" class="sales-btn">
+                                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                <span class="btn-text">Alfredo Poggi</span>
+                                <svg class="arrow-icon" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swipe-hint" style="margin-top: 4px;">
+                    <svg viewBox="0 0 24 24" style="transform: rotate(180deg);"><polyline points="9 18 15 12 9 6"/></svg>
+                    Scorri
+                    <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+                </div>
+            </div>
+
+            <!-- ================= PAGINA 6 (SOCIAL & INFO) ================= -->
             <div class="card-page card-page-3">
                 <div class="header-content">
                     <div class="job-title" style="margin-top: 5px;">
@@ -967,6 +1100,7 @@
             <div class="dot" id="dot2"></div>
             <div class="dot" id="dot3"></div>
             <div class="dot" id="dot4"></div>
+            <div class="dot" id="dot5"></div>
         </div>
 
     </div>
@@ -998,25 +1132,30 @@
         }
 
         const wrapper = document.getElementById('pagesWrapper');
-        const dot0 = document.getElementById('dot0');
-        const dot1 = document.getElementById('dot1');
-        const dot2 = document.getElementById('dot2');
-        const dot3 = document.getElementById('dot3');
-        const dot4 = document.getElementById('dot4');
+        const dots = [
+            document.getElementById('dot0'),
+            document.getElementById('dot1'),
+            document.getElementById('dot2'),
+            document.getElementById('dot3'),
+            document.getElementById('dot4'),
+            document.getElementById('dot5')
+        ];
         let currentPage = 0;
         let startX = 0;
         let isDragging = false;
-        const totalPages = 5;
+        const totalPages = 6;
 
         function goToPage(page) {
             currentPage = page;
-            wrapper.style.transform = `translateX(-${currentPage * 20}%)`;
+            wrapper.style.transform = `translateX(-${currentPage * (100 / totalPages)}%)`;
             
-            [dot0, dot1, dot2, dot3, dot4].forEach((d, idx) => {
-                if (idx === currentPage) {
-                    d.classList.add('active');
-                } else {
-                    d.classList.remove('active');
+            dots.forEach((d, idx) => {
+                if (d) {
+                    if (idx === currentPage) {
+                        d.classList.add('active');
+                    } else {
+                        d.classList.remove('active');
+                    }
                 }
             });
         }
