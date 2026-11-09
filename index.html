@@ -104,16 +104,16 @@
             to { opacity: 1; }
         }
 
-        /* WRAPPER SCORRIBILE PER LE 6 PAGINE (SWIPE) */
+        /* WRAPPER SCORRIBILE PER LE PAGINE (SWIPE) - 7 PAGINE TOTALI (14.285% l'una) */
         .pages-wrapper {
             display: flex;
-            width: 600%;
+            width: 700%;
             height: calc(100% - 40px);
             transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         .card-page {
-            width: 16.666%;
+            width: 14.285%;
             height: 100%;
             padding: 16px 18px 12px 18px;
             display: flex;
@@ -344,10 +344,11 @@
             transition: transform 0.3s ease;
         }
 
+        /* Ritardi corretti e sequenziali per ogni singolo pulsante della prima schermata */
         .btn-delay-1 { animation-delay: 9.6s; }
         .btn-delay-2 { animation-delay: 9.9s; }
         .btn-delay-3 { animation-delay: 10.2s; }
-        .btn-delay-4 { animation-delay: 10.8s; }
+        .btn-delay-4 { animation-delay: 10.5s; }
         .btn-delay-5 { animation-delay: 10.8s; }
 
         @keyframes flyUpAndDecelerateSlow {
@@ -574,7 +575,7 @@
             flex-shrink: 0;
         }
 
-        /* --- QUARTA SCHERMATA (GESTIONE SINISTRI) --- */
+        /* --- QUARTA SCHERMATA (GESTIONE SINISTRI) & LEASING --- */
         .claims-features-list {
             display: flex;
             flex-direction: column;
@@ -676,7 +677,7 @@
             transform: scale(0.98);
         }
 
-        /* --- SESTA SCHERMATA (SOCIAL & INFO) --- */
+        /* --- SETTIMA SCHERMATA (SOCIAL & INFO) --- */
         .social-page-desc {
             font-size: 1.05rem;
             font-weight: 400;
@@ -737,7 +738,7 @@
     <!-- CONTAINER PRINCIPALE -->
     <div class="card-container">
         
-        <!-- WRAPPER DELLE 6 PAGINE -->
+        <!-- WRAPPER DELLE 7 PAGINE -->
         <div class="pages-wrapper" id="pagesWrapper">
             
             <!-- ================= PAGINA 1 ================= -->
@@ -772,7 +773,7 @@
                             <svg class="arrow-icon" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
                         </a>
 
-                        <!-- PULSANTE ACCETTAZIONE CON SOTTO-MENU (ICONE TELEFONO ROSSE PIENE) -->
+                        <!-- PULSANTE ACCETTAZIONE CON SOTTO-MENU -->
                         <div style="width: 100%;">
                             <button type="button" class="btn-action btn-delay-3" id="accettazioneBtn" style="width: 100%;">
                                 <svg class="btn-icon" viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg>
@@ -856,19 +857,15 @@
                     <div class="job-title" style="margin-top: 5px;">
                         TECNOLOGIA E SERVIZI
                     </div>
-                    <!-- DISTANZA CORRETTA E ALLINEATA ALLE ALTRE PAGINE -->
                     <div class="red-line" style="transform: scaleX(1); opacity: 1; margin-bottom: 22px;"></div>
 
-                    <!-- UNICO BOX PER TUTTO IL CONTENUTO -->
                     <div class="info-box" style="margin-top: 14px; padding: 14px 16px;">
                         
-                        <!-- LOGO RIO E TITOLO -->
                         <div class="tech-center-icon-wrap">
                             <img src="logo rio.svg" alt="Logo RIO" class="tech-main-icon">
                             <div class="tech-center-title">Il tuo veicolo sempre connesso</div>
                         </div>
 
-                        <!-- CONTENUTO -->
                         <div class="tech-content-container">
                             <div class="info-box-desc">
                                 RIO è la piattaforma che ti permette di collegarti al tuo MAN per gestirlo al meglio.
@@ -876,7 +873,6 @@
 
                             <div style="height: 10px;"></div>
 
-                            <!-- LISTA ICONE BIANCHE -->
                             <div class="tech-features-list">
                                 <div class="tech-feature-item">
                                     <svg class="tech-feature-icon" viewBox="0 0 24 24"><circle cx="12" cy="10" r="3"/><path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 7 8 11.7z"/></svg>
@@ -919,7 +915,6 @@
                     </div>
                     <div class="red-line" style="transform: scaleX(1); opacity: 1; margin-bottom: 22px;"></div>
 
-                    <!-- BOX INFORMATIVO GESTIONE SINISTRI -->
                     <div class="info-box" style="margin-top: 14px; padding: 14px 16px;">
                         <div class="info-box-title">
                             Come aprire un sinistro KASKO?
@@ -930,7 +925,6 @@
 
                         <div style="height: 10px;"></div>
                         
-                        <!-- LISTA CON SIMBOLO EURO PERFETTO E DEFINITO -->
                         <div class="claims-features-list">
                             <div class="claims-feature-item">
                                 <svg class="claims-feature-icon" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
@@ -968,7 +962,36 @@
                 </div>
             </div>
 
-            <!-- ================= PAGINA 5 (AREA VENDITA) ================= -->
+            <!-- ================= PAGINA 5 (LEASING - NUOVA) ================= -->
+            <div class="card-page">
+                <div class="header-content">
+                    <div class="job-title" style="margin-top: 5px;">
+                        LEASING
+                    </div>
+                    <div class="red-line" style="transform: scaleX(1); opacity: 1; margin-bottom: 22px;"></div>
+
+                    <!-- BOX INFORMATIVO LEASING -->
+                    <div class="info-box" style="margin-top: 14px; padding: 14px 16px;">
+                        <div class="info-box-title" style="font-weight: 800;">
+                            Vuoi richiedere un leasing?
+                        </div>
+                        <div class="info-box-desc">
+                            Prepara i documenti necessari ed invia tutto al back office:
+                        </div>
+                        <span class="claims-email-text">giovanni.impromart@gmail.com</span>
+
+                        <a href="documenti leasing.pdf" target="_blank" rel="noopener noreferrer" class="info-action-btn" style="margin-top: 14px;">Scarica la lista documenti</a>
+                    </div>
+                </div>
+
+                <div class="swipe-hint" style="margin-top: 4px;">
+                    <svg viewBox="0 0 24 24" style="transform: rotate(180deg);"><polyline points="9 18 15 12 9 6"/></svg>
+                    Scorri
+                    <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+                </div>
+            </div>
+
+            <!-- ================= PAGINA 6 (AREA VENDITA) ================= -->
             <div class="card-page">
                 <div class="header-content" style="width: 100%;">
                     <div class="job-title" style="margin-top: 5px;">
@@ -976,7 +999,6 @@
                     </div>
                     <div class="red-line" style="transform: scaleX(1); opacity: 1; margin-bottom: 22px;"></div>
 
-                    <!-- BOX INFORMATIVO AREA VENDITA SENZA ICONE VICINO AI NOMI -->
                     <div class="info-box" style="margin-top: 14px; padding: 14px 16px;">
                         <div class="info-box-title">
                             Hai bisogno di un nuovo MAN?
@@ -986,7 +1008,6 @@
                         </div>
 
                         <div class="contact-info" style="margin-top: 0;">
-                            <!-- AREA TRUCK -->
                             <div class="sales-category-title">Area Truck</div>
                             
                             <a href="tel:+393465286815" class="sales-btn">
@@ -1004,7 +1025,6 @@
                                 <svg class="arrow-icon" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
                             </a>
 
-                            <!-- AREA VAN -->
                             <div class="sales-category-title" style="margin-top: 12px;">Area VAN</div>
 
                             <a href="tel:+393662699882" class="sales-btn">
@@ -1022,7 +1042,7 @@
                 </div>
             </div>
 
-            <!-- ================= PAGINA 6 (SOCIAL & INFO) ================= -->
+            <!-- ================= PAGINA 7 (SOCIAL & INFO) ================= -->
             <div class="card-page card-page-3">
                 <div class="header-content">
                     <div class="job-title" style="margin-top: 5px;">
@@ -1030,7 +1050,6 @@
                     </div>
                     <div class="red-line" style="transform: scaleX(1); opacity: 1; margin-bottom: 22px;"></div>
 
-                    <!-- RIQUADRO INFO-BOX PER FRASE E SOCIAL -->
                     <div class="info-box">
                         <div class="social-page-desc">
                             Rimani aggiornato sulle novità ed esplora la nostra gamma completa di veicoli
@@ -1086,6 +1105,7 @@
             <div class="dot" id="dot3"></div>
             <div class="dot" id="dot4"></div>
             <div class="dot" id="dot5"></div>
+            <div class="dot" id="dot6"></div>
         </div>
 
     </div>
@@ -1123,12 +1143,13 @@
             document.getElementById('dot2'),
             document.getElementById('dot3'),
             document.getElementById('dot4'),
-            document.getElementById('dot5')
+            document.getElementById('dot5'),
+            document.getElementById('dot6')
         ];
         let currentPage = 0;
         let startX = 0;
         let isDragging = false;
-        const totalPages = 6;
+        const totalPages = 7;
 
         function goToPage(page) {
             currentPage = page;
